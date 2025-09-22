@@ -25,7 +25,7 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
       minutes: 10,
       difficulty: "初",
       servings: 1,
-      flavor: { spicy: 5, salty: 4, sweet: 1, fermented: 2 },
+      flavor: { spicy: 4, salty: 4, sweet: 1, fermented: 2 },
       shortDescription: "採用四川風味辣椒油，香辣濃郁，麵條勁道。",
       ingredients: [
         { label: "韓式炸醬泡麵", amount: "1 包", image: "../public/images/recipes/yoon-nam-no/i1.webp", link:"https://shorturl.at/2lvmb"},

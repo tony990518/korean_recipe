@@ -4,25 +4,25 @@ import React from "react";
 type Props = {
   servings: number;
   minutes: number;
-  difficulty: string; // "初" | "中" | "高/難" 등
+  difficulty: string; // "初" | "中" | "高/難"
+  spicy: number;
 };
 
 const IconUser = (p: React.SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 24 24" className="w-6 h-6 md:w-7 md:h-7" aria-hidden {...p}>
-    <path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Zm0 2c-4.418 0-8 2.239-8 5v1h16v-1c0-2.761-3.582-5-8-5Z" className="fill-current"/>
+    <path d="M12 12a5 5 0 1 0-5-5 5 5 0 0 0 5 5Zm0 2c-4.418 0-8 2.239-8 5v1h16v-1c0-2.761-3.582-5-8-5Z" className="fill-current" />
   </svg>
 );
 
 const IconClock = (p: React.SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 24 24" className="w-6 h-6 md:w-7 md:h-7" aria-hidden {...p}>
-    <path d="M12 2a10 10 0 1 0 10 10A10.012 10.012 0 0 0 12 2Zm1 11h-3V7h2v4h2Z" className="fill-current"/>
+    <path d="M12 2a10 10 0 1 0 10 10A10.012 10.012 0 0 0 12 2Zm1 11h-3V7h2v4h2Z" className="fill-current" />
   </svg>
 );
 
-// ⭐ 기본 사이즈 유지 + 외부 클래스 병합 + 색상 확실히 적용
 const IconStar = ({ className = "", ...p }: React.SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 24 24" className={`w-5 h-5 md:w-6 md:h-6 ${className}`} aria-hidden {...p}>
-    <path d="m12 2 2.76 5.59L21 9.27l-4.5 4.38L17.52 21 12 17.77 6.48 21l1.02-7.35L3 9.27l6.24-1.68L12 2Z" className="fill-current"/>
+    <path d="m12 2 2.76 5.59L21 9.27l-4.5 4.38L17.52 21 12 17.77 6.48 21l1.02-7.35L3 9.27l6.24-1.68L12 2Z" className="fill-current" />
   </svg>
 );
 
@@ -36,15 +36,23 @@ function difficultyToLevel(d: string): 1 | 2 | 3 {
   return 3;
 }
 
-export default function MetaRow({ servings, minutes, difficulty }: Props) {
+function spicyToLabel(spicy: number): string {
+  if (spicy <= 1) return "不辣";
+  if (spicy === 2) return "小辣";
+  if (spicy === 3) return "中辣";
+  return "大辣";
+}
+
+export default function MetaRow({ servings, minutes, difficulty, spicy }: Props) {
   const level = difficultyToLevel(difficulty);
+  const spicyLabel = spicyToLabel(spicy);
 
   return (
     <ul
       className="
         mt-2 sm:mt-3
-        grid grid-cols-3 place-items-center
-        gap-8 sm:gap-12
+        grid grid-cols-4 place-items-center
+        gap-4 sm:gap-8
         text-slate-500
         w-full max-w-3xl mx-auto
       "
@@ -62,7 +70,7 @@ export default function MetaRow({ servings, minutes, difficulty }: Props) {
         <span className="text-xs sm:text-sm md:text-base">{minutes} 分</span>
       </li>
 
-      {/* 3) 난이도: 별 3개 중 level개 채우기 */}
+      {/* 3) 난이도 */}
       <li className="flex flex-col items-center gap-1.5 text-center">
         <div
           className="flex items-center gap-1.5 text-slate-300"
@@ -75,6 +83,27 @@ export default function MetaRow({ servings, minutes, difficulty }: Props) {
           ))}
         </div>
         <span className="text-xs sm:text-sm md:text-base">難度 {difficulty}</span>
+      </li>
+
+      {/* 4) 매운맛 */}
+      <li className="flex flex-col items-center gap-1.5 text-center">
+        <div
+          className="flex items-center gap-1.5"
+          role="img"
+          aria-label={`辣度 ${spicyLabel}`}
+          title={`辣度 ${spicyLabel}`}
+        >
+          {[0, 1, 2].map(i => (
+            <img
+              key={i}
+              src={i < spicy ? "/images/spicyColor.png" : "/images/spicyone.png"}
+              alt={spicyLabel}
+              className="w-6 h-6 md:w-8 md:h-8 object-contain"
+            />
+          ))}
+        </div>
+
+        <span className="text-xs sm:text-sm md:text-base">{spicyLabel}</span>
       </li>
     </ul>
   );

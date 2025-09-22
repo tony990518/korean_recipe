@@ -115,10 +115,10 @@ const RecipeDetail = ({ recipe }: { recipe: Recipe }) => {
             ) : null}
 
             {/* START of MetaRaw */}
-            <MetaRow servings={recipe.servings} minutes={recipe.minutes} difficulty={recipe.difficulty} />
+            <MetaRow servings={recipe.servings} minutes={recipe.minutes} difficulty={recipe.difficulty} spicy={recipe.flavor.spicy} />
 
             {/* Flavor */}
-            <div className="rounded-2xl border p-4 max-[360px]:p-3">
+            {/* <div className="rounded-2xl border p-4 max-[360px]:p-3">
               <h3
                 className="
                   font-semibold mb-3 text-slate-900
@@ -128,7 +128,7 @@ const RecipeDetail = ({ recipe }: { recipe: Recipe }) => {
                 味道指標
               </h3>
               <FlavorMeter profile={recipe.flavor} />
-            </div>
+            </div> */}
 
             {/* Ingredients */}
             <div className="rounded-2xl border p-4 max-[360px]:p-3">

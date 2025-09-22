@@ -1,76 +1,94 @@
 import { Link } from "react-router-dom";
 import AffiliateNotice from "./AffiliateNotice";
+import { FormEvent } from "react";
 
-const Footer = () => (
+const Footer = () => {
+  const handleSubscribe = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const formData = new FormData(e.currentTarget);
+    const email = String(formData.get("email") || "").trim();
+    if (!email) {
+      alert("이메일을 입력해주세요.");
+      return;
+    }
+    // TODO: Connect to real email service. For now, just a friendly confirmation.
+    alert(`구독해 주셔서 감사합니다!\n${email}`);
+    e.currentTarget.reset();
+  };
+
+  return (
     <footer className="bg-slate-900 text-white">
       <div className="max-w-6xl mx-auto px-4 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* 意見回饋區塊 */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-white">意見回饋 & 聯絡我們</h3>
-            <p className="text-slate-300 text-sm">
-              對食譜有任何建議或疑問，歡迎隨時聯繫我們！
-            </p>
-            <div className="space-y-2">
-              <a 
-                href="mailto:feedback@k-lab.com" 
-                className="block text-sm text-slate-300 hover:text-white transition"
-              >
-                📧 feedback@k-lab.com
-              </a>
-              <a 
-                href="https://forms.gle/example" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="block text-sm text-slate-300 hover:text-white transition"
-              >
-                📝 意見回饋表單
-              </a>
-            </div>
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          {/* 열1: 의견 & 연락 & 제휴광고 */}
+          <div className="space-y-3">
+            <h3 className="text-lg font-semibold text-white">意見 & 聯絡 & 合作廣告</h3>
+            <ul className="space-y-2">
+              <li>
+                <a href="mailto:feedback@k-lab.com" className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition">
+                  <span>📧</span><span>feedback@k-lab.com</span>
+                </a>
+              </li>
+              <li>
+                <a href="https://forms.gle/example" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition">
+                  <span>📋</span><span>意見回饋表單</span>
+                </a>
+              </li>
+            </ul>
           </div>
-  
-          {/* 快速連結區塊 */}
-          <div className="space-y-4">
+
+          {/* 열2: 빠른 연결 */}
+          <div className="space-y-3">
             <h3 className="text-lg font-semibold text-white">快速連結</h3>
-            <div className="space-y-2">
-              <Link to="/" className="block text-sm text-slate-300 hover:text-white transition">
-                🏠 首頁
-              </Link>
-              <a href="#recipes" className="block text-sm text-slate-300 hover:text-white transition">
-                🍳 食譜大全
-              </a>
-              <a href="#tips" className="block text-sm text-slate-300 hover:text-white transition">
-                💡 料理小撇步
-              </a>
-            </div>
+            <ul className="space-y-2">
+              <li><Link to="/" className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition">🏠<span>首頁</span></Link></li>
+              <li><Link to="/#recipes" className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition">🍲<span>食譜總覽</span></Link></li>
+              <li><Link to="/#tips" className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition">💡<span>料理小撇步</span></Link></li>
+            </ul>
           </div>
-  
-          {/* 品牌資訊區塊 */}
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-white">K-Lab 韓味研究所</h3>
-            <p className="text-slate-300 text-sm">
-              在台灣重現韓國家常味的食譜研究室。
-            </p>
-            <div className="flex items-center gap-3">
-              <img src="/images/logo_noText.png" alt="K-Lab Logo" className="w-6 h-6 object-contain" />
-              <span className="text-sm text-slate-300">K-Lab 韓味研究所</span>
-            </div>
+
+          {/* 열3: 정책 */}
+          <div className="space-y-3">
+            <h3 className="text-lg font-semibold text-white">政策</h3>
+            <ul className="space-y-2">
+              <li><Link to="/" className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition">📜<span>個資政策（準備中）</span></Link></li>
+              <li><Link to="/" className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition">⚖️<span>使用條款（準備中）</span></Link></li>
+            </ul>
+          </div>
+
+          {/* 열4: 소셜 & 구독 */}
+          <div className="space-y-3">
+            <h3 className="text-lg font-semibold text-white">社群 & 訂閱</h3>
+            <ul className="space-y-2">
+              <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition">📸<span>Instagram</span></a></li>
+              <li><a href="#" className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition">▶️<span>其他社群</span></a></li>
+            </ul>
+            <form onSubmit={handleSubscribe} className="mt-2 flex items-center gap-2">
+              <input
+                type="email"
+                name="email"
+                placeholder="輸入 e-mail"
+                className="w-full rounded-md bg-white/10 placeholder-slate-400 text-white text-sm px-3 py-2 outline-none ring-1 ring-white/15 focus:ring-2 focus:ring-red-400"
+                required
+              />
+              <button type="submit" className="shrink-0 px-3 py-2 rounded-md bg-red-500 hover:bg-red-400 text-white text-sm transition">訂閱</button>
+            </form>
+            <p className="text-xs text-slate-400">訂閱後我們會將最新食譜與文章透過電子郵件寄給您</p>
           </div>
         </div>
-  
+
         {/* 版權資訊 */}
         <div className="border-t border-slate-700 mt-8 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-sm text-slate-400">
               <AffiliateNotice />
             </div>
-            <div className="text-sm text-slate-400">
-              © {new Date().getFullYear()} K-Lab 韓味研究所. All rights reserved.
-            </div>
+            <div className="text-sm text-slate-400">© {new Date().getFullYear()} K-Lab 韓味研究所. All rights reserved.</div>
           </div>
         </div>
       </div>
     </footer>
   );
+};
 
 export default Footer;
