@@ -1,8 +1,7 @@
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { DB } from "../data";
 import { Recipe } from "../types";
-import FlavorMeter from "../components/FlavorMeter";
 import AffiliateNotice from "../components/AffiliateNotice";
 import IngredientList from "../components/IngredientList";
 import StepBlock from "../components/StepBlock";
@@ -134,12 +133,15 @@ const RecipeDetail = ({ recipe }: { recipe: Recipe }) => {
             <div className="rounded-2xl border p-4 max-[360px]:p-3">
               <h3
                 className="
-                  font-semibold mb-3 text-slate-900
-                  text-lg sm:text-xl md:text-2xl
-                "
+                    font-semibold mb-3 text-slate-900
+                    text-lg sm:text-xl md:text-2xl
+                    leading-snug
+                  "
               >
                 材料
+                <em className="ml-2 text-xs sm:text-sm italic text-slate-500">Ingredient</em>
               </h3>
+
               {/* 안내문 */}
               <div className="text-xs sm:text-sm text-slate-600">
                 <AffiliateNotice />
@@ -153,11 +155,13 @@ const RecipeDetail = ({ recipe }: { recipe: Recipe }) => {
             <div className="rounded-2xl border p-4 max-[360px]:p-3">
               <h3
                 className="
-                  font-semibold mb-3 text-slate-900
-                  text-lg sm:text-xl md:text-2xl
-                "
+                    font-semibold mb-3 text-slate-900
+                    text-lg sm:text-xl md:text-2xl
+                    leading-snug
+                  "
               >
                 步驟
+                <em className="ml-2 text-xs sm:text-sm italic text-slate-500">Steps</em>
               </h3>
 
               {/* ⬇️ StepBlock 전반 폰트 업: 내부에 text-* 강제 없으면 전부 상속 */}

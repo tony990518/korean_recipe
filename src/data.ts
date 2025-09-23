@@ -21,36 +21,35 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
     {
       id: "yoon-nam-no-jjapaghetti",
       title: "黑白大廚 料理狂人 辣油炸醬泡麵",
-      hero: "../public/images/recipes/yoon-nam-no/thumbnail.png",
+      hero: "/images/recipes/yoon-nam-no/thumbnail.png",
       minutes: 10,
       difficulty: "初",
       servings: 1,
       flavor: { spicy: 4, salty: 4, sweet: 1, fermented: 2 },
       shortDescription: "採用四川風味辣椒油，香辣濃郁，麵條勁道。",
       ingredients: [
-        { label: "韓式炸醬泡麵", amount: "1 包", image: "../public/images/recipes/yoon-nam-no/i1.webp", link:"https://shorturl.at/2lvmb"},
-        { label: "青陽辣椒", amount: "1 根" , image:"../public/images/recipes/yoon-nam-no/i2.webp", link:"https://shorturl.at/2lvmb"},
-        { label: "辣椒粉", amount: "1 大匙", image:"../public/images/recipes/yoon-nam-no/i3.jpg", link:"https://shorturl.at/2lvmb"},
-        { label: "鹽巴", amount: "一小撮", image:"../public/images/recipes/yoon-nam-no/i4.jpg" , link:"https://shorturl.at/2lvmb"},
-        { label: "橄欖油", amount: "3 大匙", image:"../public/images/recipes/yoon-nam-no/i5.webp", link:"https://shorturl.at/2lvmb"},
-        { label: "水", amount: "600 毫升" , image:"../public/images/recipes/yoon-nam-no/i6.png" , link:"https://shorturl.at/2lvmb"}
+        { label: "韓式炸醬泡麵", amount: "1 包", image: "/images/recipes/yoon-nam-no/i1.webp", link:"https://shorturl.at/2lvmb"},
+        { label: "青陽辣椒", amount: "1 根" , image:"/images/recipes/yoon-nam-no/i2.webp", link:"https://shorturl.at/2lvmb"},
+        { label: "辣椒粉", amount: "1 大匙", image:"/images/recipes/yoon-nam-no/i3.jpg", link:"https://shorturl.at/2lvmb"},
+        { label: "鹽巴", amount: "一小撮", image:"/images/recipes/yoon-nam-no/i4.jpg" , link:"https://shorturl.at/2lvmb"},
+        { label: "橄欖油", amount: "3 大匙", image:"/images/recipes/yoon-nam-no/i5.webp", link:"https://shorturl.at/2lvmb"},
+        { label: "水", amount: "600 毫升" , image:"/images/recipes/yoon-nam-no/i6.png" , link:"https://shorturl.at/2lvmb"}
       ],
       steps: [
-        { title: "準備青陽辣椒", text: "將 1 根青陽辣椒切成小塊備用。", image: "../public/images/recipes/yoon-nam-no/s1.jpg"},
-        { title: "製作辣椒油醬", text: "在碗中放入 1 大匙辣椒粉、切好的青陽辣椒、少許鹽，並加入炸醬麵附的調味油包，拌勻。", image: "../public/images/recipes/yoon-nam-no/s2.jpeg"},
-        { title: "加熱橄欖油", text: "小鍋入 3 大匙橄欖油，中小火加熱至油面出現波紋，注意不要燒焦。", heat: "med", image: "../public/images/recipes/yoon-nam-no/s3.jpg"},
-        { title: "完成辣椒油", text: "將熱油倒入裝有調味料的碗中，使辣椒粉受熱釋香；加入乾燥蔬菜包並攪拌均勻。", image: "../public/images/recipes/yoon-nam-no/s4.jpg"},
+        { title: "準備青陽辣椒", text: "將 1 根青陽辣椒切成小塊備用。", image: "/images/recipes/yoon-nam-no/s1.jpg"},
+        { title: "製作辣椒油醬", text: "在碗中放入1大匙辣椒粉、切好的青陽辣椒、1小撮鹽和炸醬麵附贈的調味油包。", image: "/images/recipes/yoon-nam-no/s2.jpeg"},
+        { title: "加熱橄欖油", text: "在小鍋中倒入3大匙橄欖油，用中小火加熱，注意不要燒焦。油量不多，很快就會熱。當看到油面出現波紋，表示油已經夠熱了。", heat: "med", image: "/images/recipes/yoon-nam-no/s3.jpg"},
+        { title: "完成辣椒油", text: "將燒熱的橄欖油立即倒入裝有調味料的碗中。熱油會讓辣椒粉均勻散開。接著，加入乾燥蔬菜包，攪拌均勻，讓蔬菜塊也能吸附辣椒油的香味。", image: "/images/recipes/yoon-nam-no/s4.jpg"},
         { 
           title: "煮麵並留麵水",text: "鍋中倒入 600 毫升的水煮滾，放入麵條以中火煮約 2 分鐘至彈牙；撈起麵條後，鍋內保留約 1/3 的麵水，其餘 2/3 盛出備用。",
-          heat: "med",time: "15秒",image: "../public/images/recipes/yoon-nam-no/s5.jpg"
+          heat: "med",time: "2分",image: "/images/recipes/yoon-nam-no/s5.jpg"
         },
-        { title: "調味與拌炒", text: "倒入炸醬粉包，與鍋中剩餘麵水和麵條拌炒，讓麵條均勻掛醬。", heat: "med", image: "../public/images/recipes/yoon-nam-no/s7.jpg"},
-        { title: "加入辣椒油", text: "炸醬粉溶解後，加入先前完成的辣椒油醬，徹底攪拌均勻。", image: "../public/images/recipes/yoon-nam-no/s8.jpg"},
-        { title: "調整濃稠度", text: "視口感分次加入預留的麵水，調到理想的濕潤或濃稠度即可完成。", image: "../public/images/recipes/yoon-nam-no/s9.jpeg"}
+        { title: "調味與拌炒", text: "將炸醬粉包倒入鍋中，與剩下的麵水和麵條拌炒，讓麵條均勻裹上醬汁。", heat: "med", image: "/images/recipes/yoon-nam-no/s7.jpg"},
+        { title: "加入辣椒油", text: "當炸醬粉溶解後，加入步驟5做好的辣椒油醬，徹底攪拌均勻。", image: "/images/recipes/yoon-nam-no/s8.jpg"},
+        { title: "調整濃稠度", text: "如果覺得麵條太乾，可以慢慢加入預留的麵水，調整到你喜歡的濕潤或濃稠度。這樣，一份美味的韓式辣味炸醬麵就完成了！", image: "/images/recipes/yoon-nam-no/s9.jpeg"}
       ],
       tips: [
-        "辣椒量可依喜好調整；偏好重辣可用 1.5 根。沒有青陽辣椒可試用糯米椒，但辣度會偏低。",
-        "調整濃稠度時，麵水請少量多次加入，避免一下子過稀。"
+        "辣椒的量可以根據喜好增加或減少，我自己是蠻喜歡吃辣的，覺得放1.5根剛剛好．沒有青陽辣椒的話可以用糯米椒試試看，不過辣度可能會有點不夠。",
       ],
       conclusion: "好啦～今天的食譜分享就到這邊 😋\n尹男老主廚的炸醬拉麵真的超簡單又好吃，這個週末不妨自己動手煮煮看，保證一口就愛上！\n希望大家都能享受下廚的樂趣，敬請期待下次的食譜，我們下次見👋"
     },

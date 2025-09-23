@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Step } from "../types";
 import HeatBadge from "./HeatBadge";
 
@@ -18,7 +18,6 @@ function parseDurationSeconds(input?: string | number): { seconds: number; label
   const n = num ? parseFloat(num[1]) : NaN;
   if (!isFinite(n)) return { seconds: 0, label: "⏱" };
   const hasSec  = /(秒|second|seconds|sec|secs|\bs\b)/i.test(raw);
-  const hasMin  = /(分|minute|minutes|min|mins|\bm\b)/i.test(raw);
   const hasHour = /(小時|小时|hour|hours|hr|hrs|\bh\b)/i.test(raw);
   let seconds = hasSec ? Math.round(n) : hasHour ? Math.round(n*3600) : Math.round(n*60);
   const label  = hasSec ? `${Math.round(n)} 秒` : hasHour ? `${n} 小時` : `${n} 分`;
@@ -127,14 +126,14 @@ function TimerBadge({
         </span>
       </button>
 
-      <button
+      {/* <button
         onClick={reset}
         className="inline-flex items-center justify-center rounded-full border border-slate-200 w-7 h-7 text-xs text-slate-600 hover:bg-slate-50"
         title="리셋"
         aria-label="리셋"
       >
         ⟲
-      </button>
+      </button> */}
     </div>
   );
 }
