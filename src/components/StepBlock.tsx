@@ -59,7 +59,7 @@ function TimerBadge({
   };
   const pause = () => { setRunning(false); startRef.current = null; emit(remaining, false); };
   const toggle = () => (running ? pause() : start());
-  const reset  = () => { setRunning(false); setRemaining(initial); startRef.current = null; lastSecRef.current = initial; emit(initial, false); };
+  // const reset  = () => { setRunning(false); setRemaining(initial); startRef.current = null; lastSecRef.current = initial; emit(initial, false); };
 
   useEffect(() => {
     if (!running) return;

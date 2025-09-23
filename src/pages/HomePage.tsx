@@ -1,9 +1,21 @@
 
-import { DB } from '../data';
+import { useState } from 'react';
+import { DB, Tip } from '../data';
 import RecipeCard from "../components/RecipeCard";
 import TipCard from "../components/TipCard";
+import TipModal from '../components/TipModal';
 
 const HomePage = () => {
+    const [selectedTip, setSelectedTip] = useState<Tip | null>(null);
+
+    const handleTipClick = (tip: Tip) => {
+      setSelectedTip(tip);
+    };
+
+    const handleCloseModal = () => {
+      setSelectedTip(null);
+    };
+
     return (
       <main className="max-w-6xl mx-auto px-4 py-8">
         <section id="hero" className="mb-8">
@@ -35,9 +47,11 @@ const HomePage = () => {
             <a className="text-sm text-red-600" href="#">全部查看 →</a>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {(DB.tips ?? []).map(tip => <TipCard key={tip.id} data={tip} />)}
+            {(DB.tips ?? []).map(tip => <TipCard key={tip.id} data={tip} onTipClick={handleTipClick} />)}
           </div>
         </section>
+
+        <TipModal tip={selectedTip} onClose={handleCloseModal} />
       </main>
     );
   };

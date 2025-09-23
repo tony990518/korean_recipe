@@ -9,6 +9,7 @@ import TipsBlock from "../components/TipsBlock";
 import ConclusionBlock from "../components/ConclusionBlock";
 import ShareIcons from "../components/ShareIcons";
 import MetaRow from "../components/metaraw";
+// import TipButton from "../components/TipButton";
 
 import { HowToStep } from "schema-dts";
 
