@@ -25,12 +25,12 @@ const Footer = () => {
             <h3 className="text-lg font-semibold text-white">意見 & 聯絡 & 合作廣告</h3>
             <ul className="space-y-2">
               <li>
-                <a href="mailto:feedback@k-lab.com" className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition">
-                  <span>📧</span><span>feedback@k-lab.com</span>
+                <a href="mailto:everyday.studiok@gmail.com" className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition">
+                  <span>📧</span><span>everyday.studiok@gmail.com</span>
                 </a>
               </li>
               <li>
-                <a href="https://forms.gle/example" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition">
+                <a href="https://docs.google.com/forms/u/0/d/13cjeVIwt4BuhVeOU-dSfYNosS9lmgrIMW0U_p460-Og/viewform?edit_requested=true" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition">
                   <span>📋</span><span>意見回饋表單</span>
                 </a>
               </li>
@@ -51,8 +51,8 @@ const Footer = () => {
           <div className="space-y-3">
             <h3 className="text-lg font-semibold text-white">政策</h3>
             <ul className="space-y-2">
-              <li><Link to="/" className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition">📜<span>個資政策（準備中）</span></Link></li>
-              <li><Link to="/" className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition">⚖️<span>使用條款（準備中）</span></Link></li>
+              <li><Link to="/privacy" className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition">📜<span>隱私權政策</span></Link></li>
+              <li><Link to="/terms" className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition">⚖️<span>使用條款</span></Link></li>
             </ul>
           </div>
 
