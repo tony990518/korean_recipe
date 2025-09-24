@@ -1,4 +1,3 @@
-// src/hooks/useFocusTrap.ts
 import { useEffect } from "react";
 
 const FOCUSABLE_SELECTOR = [

@@ -104,6 +104,7 @@ export default function MetaRow({ servings, minutes, difficulty, spicy }: Props)
               />
             ))}
           </div>
+          <span className="text-xs sm:text-sm md:text-base">{spicyLabel}</span>
         </li>
       ) : null}
     </ul>
