@@ -5,7 +5,7 @@ const Header = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-30 backdrop-blur bg-white/80 border-b">
+    <header className="sticky top-0 z-30 backdrop-blur bg-white/80 border-b relative">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Left: Logo + Title */}
         <Link
@@ -14,22 +14,16 @@ const Header = () => {
         >
           <img
             src="/images/logo_noText.png"
-            alt="K-Lab Logo"
+            alt="Studio.K Logo"
             className="w-12 h-12 md:w-14 md:h-14 object-contain"
           />
-          <span className="whitespace-nowrap">K-Lab 韓味研究所</span>
+          <span className="whitespace-nowrap">Studio.K 韓味研究所</span>
         </Link>
 
-        {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-6 text-base md:text-lg text-slate-700">
-          <a className="hover:text-red-600" href="#recipes">食譜</a>
-          <a className="hover:text-red-600" href="#tips">小撇步</a>
-        </nav>
-
-        {/* Mobile Hamburger */}
+        {/* Hamburger (always visible) */}
         <button
           type="button"
-          className="md:hidden inline-flex items-center justify-center rounded-xl p-2 border border-slate-200 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-red-500"
+          className="inline-flex items-center justify-center rounded-xl p-2 border border-slate-200 hover:bg-slate-50 focus:outline-none focus:ring-2 focus:ring-red-500"
           aria-label="Open menu"
           aria-controls="mobile-menu"
           aria-expanded={open}
@@ -52,13 +46,52 @@ const Header = () => {
       {/* Mobile Dropdown */}
       <div
         id="mobile-menu"
-        className={`md:hidden overflow-hidden transition-[max-height] duration-300 ${
-          open ? "max-h-40" : "max-h-0"
+        className={`absolute right-6 mt-2 z-40 w-56 overflow-hidden rounded-xl border shadow-lg transition-[max-height] duration-300 bg-white ${
+          open ? "max-h-80" : "max-h-0"
         }`}
       >
-        <nav className="px-6 pb-4 pt-2 flex flex-col gap-3 text-base text-slate-800 bg-white/90">
-          <a className="py-2 hover:text-red-600" href="#recipes" onClick={() => setOpen(false)}>食譜</a>
-          <a className="py-2 hover:text-red-600" href="#tips" onClick={() => setOpen(false)}>小撇步</a>
+        <nav className="px-2 pb-3 pt-2 flex flex-col gap-1.5 text-base text-slate-800" role="navigation" aria-label="Primary">
+          <div className="px-2 pb-2 pt-1 text-xs font-medium text-slate-500 text-right">快速導航</div>
+
+          <a href="/#recipes" onClick={() => setOpen(false)} className="w-full group rounded-lg px-2 py-2 hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500/40">
+            <div className="flex items-center justify-between gap-3">
+              <div className="flex-1 flex flex-col items-end text-right">
+                <span className="font-medium leading-tight">食譜</span>
+                <span className="text-xs text-slate-500 leading-snug">最新 3 · 全部查看</span>
+              </div>
+              <div className="shrink-0 text-lg">🍲</div>
+            </div>
+          </a>
+
+          <a href="/#tips" onClick={() => setOpen(false)} className="w-full group rounded-lg px-2 py-2 hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500/40">
+            <div className="flex items-center justify-between gap-3">
+              <div className="flex-1 flex flex-col items-end text-right">
+                <span className="font-medium leading-tight">小撇步</span>
+                <span className="text-xs text-slate-500 leading-snug">料理更順手的小技巧</span>
+              </div>
+              <div className="shrink-0 text-lg">💡</div>
+            </div>
+          </a>
+
+          <a href="/#stories" onClick={() => setOpen(false)} className="w-full group rounded-lg px-2 py-2 hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500/40">
+            <div className="flex items-center justify-between gap-3">
+              <div className="flex-1 flex flex-col items-end text-right">
+                <span className="font-medium leading-tight">料理小故事</span>
+                <span className="text-xs text-slate-500 leading-snug">廚房裡的日常與回憶</span>
+              </div>
+              <div className="shrink-0 text-lg">📖</div>
+            </div>
+          </a>
+
+          <a href="/#labs" onClick={() => setOpen(false)} className="w-full group rounded-lg px-2 py-2 hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500/40">
+            <div className="flex items-center justify-between gap-3">
+              <div className="flex-1 flex flex-col items-end text-right">
+                <span className="font-medium leading-tight">料理研究室</span>
+                <span className="text-xs text-slate-500 leading-snug">用實驗精神做料理</span>
+              </div>
+              <div className="shrink-0 text-lg">🧪</div>
+            </div>
+          </a>
         </nav>
       </div>
     </header>

@@ -4,6 +4,10 @@ import { BrowserRouter, Routes, Route, Link, useLocation } from "react-router-do
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import HomePage from "./pages/HomePage";
+import RecipesPage from "./pages/Recipes";
+import TipsPage from "./pages/Tips";
+import StoriesPage from "./pages/Stories";
+import LabsPage from "./pages/Labs";
 import RecipeRoute from "./pages/RecipeDetail";
 import Terms from "./pages/terms";
 import Privacy from "./pages/privacy";
@@ -20,6 +24,10 @@ const AppShell = () => (
     <ScrollToTop />
     <Routes>
       <Route path="/" element={<HomePage />} />
+      <Route path="/recipes" element={<RecipesPage />} />
+      <Route path="/tips" element={<TipsPage />} />
+      <Route path="/stories" element={<StoriesPage />} />
+      <Route path="/labs" element={<LabsPage />} />
       <Route path="/recipe/:id" element={<RecipeRoute />} />
       <Route path="/terms" element={<Terms />} />
       <Route path="/privacy" element={<Privacy />} />

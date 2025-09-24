@@ -46,16 +46,17 @@ function spicyToLabel(spicy: number): string {
 export default function MetaRow({ servings, minutes, difficulty, spicy }: Props) {
   const level = difficultyToLevel(difficulty);
   const spicyLabel = spicyToLabel(spicy);
+  const showSpicy = spicy > 1; // 不辣(≤1) 경우 매운맛 섹션 비표시
 
   return (
     <ul
-      className="
+      className={`
         mt-2 sm:mt-3
-        grid grid-cols-4 place-items-center
+        grid ${showSpicy ? "grid-cols-4" : "grid-cols-3"} place-items-center
         gap-4 sm:gap-8
         text-slate-500
         w-full max-w-3xl mx-auto
-      "
+      `}
       aria-label="食譜資訊"
     >
       {/* 1) 인분 */}
@@ -86,25 +87,25 @@ export default function MetaRow({ servings, minutes, difficulty, spicy }: Props)
       </li>
 
       {/* 4) 매운맛 */}
-      <li className="flex flex-col items-center gap-1.5 text-center">
-        <div
-          className="flex items-center gap-1.5"
-          role="img"
-          aria-label={`辣度 ${spicyLabel}`}
-          title={`辣度 ${spicyLabel}`}
-        >
-          {[0, 1, 2].map(i => (
-            <img
-              key={i}
-              src={i < spicy ? "/images/spicyColor.png" : "/images/spicyone.png"}
-              alt={spicyLabel}
-              className="w-6 h-6 md:w-8 md:h-8 object-contain"
-            />
-          ))}
-        </div>
-
-        <span className="text-xs sm:text-sm md:text-base">{spicyLabel}</span>
-      </li>
+      {showSpicy ? (
+        <li className="flex flex-col items-center gap-1.5 text-center">
+          <div
+            className="flex items-center gap-1.5"
+            role="img"
+            aria-label={`辣度 ${spicyLabel}`}
+            title={`辣度 ${spicyLabel}`}
+          >
+            {[0, 1, 2].map(i => (
+              <img
+                key={i}
+                src={i < spicy ? "/images/spicyColor.png" : "/images/spicyone.png"}
+                alt={spicyLabel}
+                className="w-6 h-6 md:w-8 md:h-8 object-contain"
+              />
+            ))}
+          </div>
+        </li>
+      ) : null}
     </ul>
   );
 }

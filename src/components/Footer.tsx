@@ -22,7 +22,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* 열1: 의견 & 연락 & 제휴광고 */}
           <div className="space-y-3">
-            <h3 className="text-lg font-semibold text-white">意見 & 聯絡 & 合作廣告</h3>
+            <h3 className="text-lg font-semibold text-white">意見回饋 & 合作聯絡</h3>
             <ul className="space-y-2">
               <li>
                 <a href="mailto:everyday.studiok@gmail.com" className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition">
@@ -83,7 +83,7 @@ const Footer = () => {
             <div className="text-sm text-slate-400">
               <AffiliateNotice />
             </div>
-            <div className="text-sm text-slate-400">© {new Date().getFullYear()} K-Lab 韓味研究所. All rights reserved.</div>
+            <div className="text-sm text-slate-400">© {new Date().getFullYear()} Studio.K 韓味研究所. All rights reserved.</div>
           </div>
         </div>
       </div>

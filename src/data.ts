@@ -142,6 +142,76 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
       { text: "加入魚板再煮 1–2 分，關火後靜置 1 分收醬。", heat: "low", time: "2–3 分" },
     ],
   },
+  {
+    id: "kimchi-fried-rice",
+    title: "泡菜炒飯（김치볶음밥）",
+    hero: "https://images.unsplash.com/photo-1505577058444-a3dab90d4253?q=80&w=1600&auto=format&fit=crop",
+    minutes: 15,
+    difficulty: "初",
+    servings: 1,
+    flavor: { spicy: 2, salty: 3, sweet: 1, fermented: 3 },
+    shortDescription: "酸香泡菜與米飯的絕配，快速滿足的一碗。",
+    ingredients: [
+      { label: "白飯", amount: "1 碗" },
+      { label: "泡菜", amount: "1/2 碗" },
+      { label: "五花肉/火腿", amount: "適量" },
+      { label: "洋蔥", amount: "1/4 顆" },
+      { label: "고추장", amount: "1 小匙" },
+      { label: "香油", amount: "1 小匙" },
+      { label: "雞蛋", amount: "1 顆" }
+    ],
+    steps: [
+      { text: "鍋中入油炒香洋蔥與肉。", heat: "med", time: "2–3 分" },
+      { text: "加入泡菜與고추장拌炒出香氣。", heat: "med", time: "1–2 分" },
+      { text: "加入白飯大火拌勻，起鍋前淋香油。", heat: "high", time: "2 分" }
+    ],
+    tips: ["荷包蛋或起司片加上去更香濃。"]
+  },
+  {
+    id: "soy-sauce-eggs",
+    title: "醬油溏心蛋（간장계란장）",
+    hero: "https://images.unsplash.com/photo-1581447109200-1cfd5f2bfae4?q=80&w=1600&auto=format&fit=crop",
+    minutes: 30,
+    difficulty: "初",
+    servings: 4,
+    flavor: { spicy: 0, salty: 3, sweet: 2, fermented: 1 },
+    shortDescription: "提前做起來的萬用配飯神器。",
+    ingredients: [
+      { label: "雞蛋", amount: "6 顆" },
+      { label: "醬油", amount: "150 ml" },
+      { label: "水", amount: "150 ml" },
+      { label: "糖", amount: "1 大匙" },
+      { label: "蒜末", amount: "1 小匙" },
+      { label: "蔥花", amount: "適量" }
+    ],
+    steps: [
+      { text: "蛋入滾水煮 6 分鐘成半熟，冰水冷卻剝殼。", heat: "high", time: "6 分" },
+      { text: "醬油、水、糖、蒜混合，加入蛋浸泡至少 2 小時。", heat: "low" }
+    ]
+  },
+  {
+    id: "seaweed-soup",
+    title: "海帶湯（미역국）",
+    hero: "https://images.unsplash.com/photo-1592417817034-3f1c2c90b9b5?q=80&w=1600&auto=format&fit=crop",
+    minutes: 25,
+    difficulty: "初",
+    servings: 2,
+    flavor: { spicy: 0, salty: 2, sweet: 1, fermented: 1 },
+    shortDescription: "生日必喝，清爽營養的經典韓式湯品。",
+    ingredients: [
+      { label: "乾海帶", amount: "一小把", note: "泡水還原" },
+      { label: "牛肉片", amount: "100 g" },
+      { label: "蒜末", amount: "1 小匙" },
+      { label: "醬油", amount: "1 大匙" },
+      { label: "香油", amount: "1 小匙" },
+      { label: "水/高湯", amount: "700 ml" }
+    ],
+    steps: [
+      { text: "海帶泡軟切段，牛肉用醬油略醃。" },
+      { text: "鍋中香油爆香蒜，入牛肉拌炒後加海帶。", heat: "med" },
+      { text: "倒入水煮 15 分調味即可。", heat: "high", time: "15 分" }
+    ]
+  },
 ],
 
   tips: [
@@ -217,7 +287,94 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
         ]
       }
     }
+    ,
+    {
+      id: "rice-water-tip",
+      title: "洗米水的妙用",
+      hero: "https://images.unsplash.com/photo-1512058564366-18510be2db19?q=80&w=1600&auto=format&fit=crop",
+      shortDescription: "洗米水拿來煮湯或燉煮，味道更溫潤。",
+      content: {
+        sections: [
+          { title: "為什麼有效？", text: "洗米水含少量澱粉，使湯頭更有身、口感更圓。" },
+          { title: "怎麼用？", text: "煮蘿蔔湯、海帶湯、燉肉時以洗米水替代部分清水。" }
+        ]
+      }
+    },
+    {
+      id: "egg-fluffy-omelet",
+      title: "鬆軟蛋捲的關鍵",
+      hero: "https://images.unsplash.com/photo-1544377193-33dcf5f2a3c1?q=80&w=1600&auto=format&fit=crop",
+      shortDescription: "加一點水或牛奶，小火慢煎不過度攪拌。",
+      content: {
+        sections: [
+          { title: "比例", text: "每顆蛋加 1 小匙水或牛奶，口感更嫩。" },
+          { title: "火候", text: "小火慢煎，表面略濕就捲起，餘溫熟成。" }
+        ]
+      }
+    },
+    {
+      id: "pan-preheat",
+      title: "鍋子預熱的重要性",
+      hero: "https://images.unsplash.com/photo-1558030110-2321e6d66a83?q=80&w=1600&auto=format&fit=crop",
+      shortDescription: "食材不黏鍋、上色更漂亮的簡單訣竅。",
+      content: {
+        sections: [
+          { title: "判斷方法", text: "水滴成珠在鍋面跳動，表示預熱到位。" },
+          { title: "注意事項", text: "加入油後稍等 5–10 秒再下食材，避免燒焦。" }
+        ]
+      }
+    }
   ]
 };
 
 export { DB };
+
+// ---- Additional simple content types for homepage sections ----
+export type SimplePost = {
+  id: string;
+  title: string;
+  shortDescription: string;
+  hero: string;
+};
+
+export const STORIES: SimplePost[] = [
+  {
+    id: "grandma-kimchi-memory",
+    title: "外婆與泡菜的記憶",
+    shortDescription: "每一罐泡菜，都是季節、家與耐心的味道。",
+    hero: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1600&auto=format&fit=crop",
+  },
+  {
+    id: "street-food-seoul",
+    title: "首爾夜市的味道",
+    shortDescription: "從魚板湯到糖餅，小吃攤位背後的溫度。",
+    hero: "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600&auto=format&fit=crop",
+  },
+  {
+    id: "first-bibimbap",
+    title: "第一碗石鍋拌飯",
+    shortDescription: "滋滋作響的瞬間，香氣讓時間慢了下來。",
+    hero: "https://images.unsplash.com/photo-1604908554007-9a5e6dc49e45?q=80&w=1600&auto=format&fit=crop",
+  },
+];
+
+export const LABS: SimplePost[] = [
+  {
+    id: "umami-boost",
+    title: "鮮味增強術：醬油 vs 魚露 vs 蘑菇粉",
+    shortDescription: "不同增鮮路線對湯與炒飯的影響實驗。",
+    hero: "https://images.unsplash.com/photo-1512058564366-18510be2db19?q=80&w=1600&auto=format&fit=crop",
+  },
+  {
+    id: "marinate-science",
+    title: "醃製科學：鹽糖比例與浸漬時間",
+    shortDescription: "雞腿排多汁的關鍵參數，逐一檢測。",
+    hero: "https://images.unsplash.com/photo-1526318472351-c75fcf070305?q=80&w=1600&auto=format&fit=crop",
+  },
+  {
+    id: "starch-thickening",
+    title: "勾芡流變學：太白粉與馬鈴薯粉",
+    shortDescription: "同樣 1 茶匙，濃稠度與口感差異有多大？",
+    hero: "https://images.unsplash.com/photo-1514511547113-bff0191bcfd4?q=80&w=1600&auto=format&fit=crop",
+  },
+];

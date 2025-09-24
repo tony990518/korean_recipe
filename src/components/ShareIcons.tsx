@@ -5,7 +5,7 @@ import Icon from "./Icon";
 // ===== Share Icons: minimal (no circle) =====
 const ShareIcons = ({ recipe }: { recipe: Recipe }) => {
   const baseUrl = buildRecipeUrl(recipe.id);
-  const title = `${recipe.title}｜K-Lab 韓味研究所`;
+  const title = `${recipe.title}｜Studio.K 韓味研究所`;
   const text = `${recipe.shortDescription ?? ""}`.trim();
 
   // UTM
