@@ -5,7 +5,18 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: [
+          '"Noto Sans TC"', // 대만어 전용 글꼴
+          'PingFang TC',    // macOS/iOS
+          'Microsoft JhengHei', // Windows
+          'Helvetica Neue',
+          'Arial',
+          'sans-serif',
+        ],
+      },
+    },
   },
   plugins: [
     require('@tailwindcss/line-clamp'),
