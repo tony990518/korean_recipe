@@ -2,7 +2,7 @@ import React from 'react';
 import { Ingredient } from "../types";
 
 /** 썸네일 */
-const IngredientThumb = React.memo(({ url, label }: { url?: string; label: string }) => (
+const IngredientThumb = React.memo(({ url, label, fit }: { url?: string; label: string; fit?: "cover" | "contain" }) => (
   <div
     className="
       w-20 h-20 md:w-24 md:h-24 aspect-square rounded-xl overflow-hidden border bg-slate-100 shrink-0
@@ -14,7 +14,7 @@ const IngredientThumb = React.memo(({ url, label }: { url?: string; label: strin
       <img
         src={url}
         alt={label}
-        className="w-full h-full object-cover"
+        className={`w-full h-full ${fit === "contain" ? "object-contain" : "object-cover"}`}
         loading="lazy"
         decoding="async"
       />
@@ -46,7 +46,7 @@ const IngredientList = ({ ingredients }: { ingredients: Ingredient[] }) => (
           >
             {/* Left: 썸네일 + 텍스트 (텍스트 칸이 공간 우선권 갖도록) */}
             <div className="flex items-center gap-4 max-[360px]:gap-3 flex-1 min-w-0">
-              <IngredientThumb url={it.image} label={it.label} />
+              <IngredientThumb url={it.image} label={it.label} fit={it.imageFit} />
               {/* 텍스트 래퍼: basis-0 + min-w-0 로 줄바꿈/클램프가 제대로 작동 */}
               <div className="min-w-0 basis-0 flex-1">
                 {/* 제목: SE(≤360px)에서는 두 줄 허용 + 단어 강제 줄바꿈, 큰 화면에선 단계별 확대 */}

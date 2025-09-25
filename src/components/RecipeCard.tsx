@@ -5,7 +5,12 @@ import { Recipe } from "../types";
 const RecipeCard = ({ data }: { data: Recipe }) => (
     <Link to={`/recipe/${data.id}`} className="group text-left bg-white rounded-2xl border overflow-hidden hover:shadow-md transition">
       <div className="aspect-video w-full bg-slate-100 overflow-hidden">
-        <img src={data.hero} alt={data.title} className="w-full h-full object-cover group-hover:scale-[1.03] transition" loading="lazy" />
+        <img
+          src={data.hero}
+          alt={data.title}
+          className={`w-full h-full ${data.cardImageFit === "contain" ? "object-contain" : "object-cover"} group-hover:scale-[1.03] transition`}
+          loading="lazy"
+        />
       </div>
       <div className="p-4 space-y-2">
         <div className="flex items-center gap-2 text-xs text-slate-600">

@@ -8,6 +8,8 @@ export type Ingredient = {
   brand?: string;
   link?: string;
   image?: string;
+  /** 썸네일 이미지 맞춤 방식 (기본: cover) */
+  imageFit?: "cover" | "contain";
 };
 
 export type Step = {
@@ -31,6 +33,8 @@ export type Recipe = {
   id: string;
   title: string;
   hero: string;
+  /** 카드 썸네일 이미지 맞춤 방식 (기본: cover) */
+  cardImageFit?: "cover" | "contain";
   minutes: number;
   difficulty: "初" | "中" | "高";
   servings: number;
