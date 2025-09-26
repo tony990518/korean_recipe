@@ -140,29 +140,30 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
       id: "Seul Gi-enoki",
       title: "Red Velvet瑟琪的減肥食譜 - 金針菇豆腐",
       hero: "https://images.unsplash.com/photo-1505577058444-a3dab90d4253?q=80&w=1600&auto=format&fit=crop",
-      minutes: 15,
+      minutes: 10,
       difficulty: "簡單",
       servings: 1,
-      flavor: { spicy: 2, salty: 3, sweet: 1, fermented: 3 },
-      shortDescription: "酸香泡菜與米飯的絕配，快速滿足的一碗。",
+      flavor: { spicy: 0, salty: 3, sweet: 1, fermented: 3 },
+      shortDescription: "Red Velvet 瑟琪在 YouTube 上分享過她回歸期常吃的身材管理食譜之一 - 金針菇豆腐! 不只做法簡單，熱量低，還能吃得很有飽足感。想要控制體重、又不想吃得太單調的朋友，可以一起來試試看～ 🍴",
       ingredients: [
-        { label: "板豆腐", amount: "1 碗" },
-        { label: "金針菇", amount: "1/2 碗" },
-        { label: "醬油", amount: "適量" },
-        { label: "", amount: "1/4 顆" },
-        { label: "고추장", amount: "1 小匙" },
-        { label: "香油", amount: "1 小匙" },
-        { label: "雞蛋", amount: "1 顆" }
+        { label: "板豆腐", amount: "1 盒" , image: "/images/recipes/Seulgi/i1.jpg"},
+        { label: "金針菇", amount: "半 包", image: "/images/recipes/Seulgi/i2.jpg" },
+        { label: "醬油", amount: "1 大匙" , image: "/images/recipes/Seulgi/i3.png"},
+        { label: "阿洛酮糖", amount: "1 大匙" , image: "/images/recipes/Seulgi/i4.jpg"},
+        { label: "蠔油", amount: "1/2 大匙" , image: "/images/recipes/Seulgi/i5.jpg"},
+        { label: "蒜泥", amount: "些許" , image: "/images/recipes/Seulgi/i6.jpg"},
+        { label: "水", amount: "2 大匙" , image: "/images/recipes/yoon-nam-no/i6.png"},
+        { label: "芝麻(可選)", amount: "些許" , image: "/images/recipes/Seulgi/i7.jpeg"},
+        { label: "芝麻油(可選)", amount: "1 小匙" , image: "/images/recipes/Seulgi/i8.jpg"}
       ],
       steps: [
-        { title: "倒油", text: "#", heat: "med", image:"/images/recipes/Seulgi/s1.png" },
-        { title: "製作醬汁", text: "水滾後，加入麵條以及半包湯包，將麵煮至喜歡的口感。", heat: "med", time: "5 分" ,tip: "官方說明書建議煮5分鐘",image:"/images/recipes/Seulgi/s2.png"},
-        { title: "煎豆腐", text: "根據個人喜好加入雞蛋、青蔥、辣椒粉等可選食材，完成！", image:"/images/recipes/Kaguri/i5.png",image:"/images/recipes/Seulgi/s3.png" },
-        { title: "煎金針菇", text: "在鍋中加入水 550 ml，並放入泡麵的乾燥蔬菜包以及咖哩塊，加熱慢慢讓咖哩塊溶解，期間輕拌防沾底。", heat: "med", image:"/images/recipes/Seulgi/s4.png" },
-        { title: "加入醬汁", text: "水滾後，加入麵條以及半包湯包，將麵煮至喜歡的口感。", heat: "med", time: "5 分" ,tip: "官方說明書建議煮5分鐘",image:"/images/recipes/Seulgi/s5.png"},
-        { title: "擺盤完成", text: "根據個人喜好加入雞蛋、青蔥、辣椒粉等可選食材，完成！", image:"/images/recipes/Kaguri/i5.png",image:"/images/recipes/Seulgi/s6.png" }
+        { title: "製作醬汁", text: "將醬油、阿洛酮糖、蠔油、蒜末(各1大匙)和水(2大匙)混合，調成醬汁", heat: "med", image:"/images/recipes/Seulgi/s2.png" },
+        { title: "煎豆腐", text: "在平底鍋加入一點油，並將豆腐放入煎至金黃色，先盛出放在盤中",image:"/images/recipes/Seulgi/s3.png" },
+        { title: "煎金針菇", text: "將金針菇下鍋煎炒", heat: "med", image:"/images/recipes/Seulgi/s4.png" },
+        { title: "加入醬汁", text: "倒入剛剛調好的醬汁，將醬汁收乾入味後，淋在豆腐上即可", heat: "med", time: "5 分", image:"/images/recipes/Seulgi/s5.png"},
+        { title: "擺盤完成", text: "根據個人喜好加入芝麻、芝麻油等可選食材，完成！", image:"/images/recipes/Seulgi/s6.png" }
       ],
-      tips: ["荷包蛋或起司片加上去更香濃。"]
+      tips: ["如果家裡沒有阿洛酮糖，也可以用砂糖代替，大約放 阿洛酮糖用量的 70% 就可以了。例如：食譜裡如果用到 1 大匙阿洛酮糖，改成砂糖的話只要 2/3 大匙 就差不多。不過阿洛酮糖熱量更低、對身材管理更友善，正在控制飲食的朋友還是推薦試試看～"]
     },
     {
       id: "soy-sauce-eggs",
