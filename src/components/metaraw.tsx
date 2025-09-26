@@ -37,9 +37,9 @@ function difficultyToLevel(d: string): 1 | 2 | 3 {
 }
 
 function spicyToLabel(spicy: number): string {
-  if (spicy <= 1) return "不辣";
-  if (spicy === 2) return "小辣";
-  if (spicy === 3) return "中辣";
+  if (spicy <= 1) return "小辣";
+  if (spicy === 2) return "中辣";
+  if (spicy === 3) return "大辣";
   return "大辣";
 }
 
