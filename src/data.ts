@@ -167,7 +167,7 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
     },
     {
       id: "soy-sauce-eggs",
-      title: "醬油溏心蛋（간장계란장）",
+      title: "醬油溏心蛋（마약계란장）",
       hero: "https://images.unsplash.com/photo-1581447109200-1cfd5f2bfae4?q=80&w=1600&auto=format&fit=crop",
       minutes: 30,
       difficulty: "初",
@@ -189,7 +189,7 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
     },
     {
       id: "seaweed-soup",
-      title: "海帶湯（미역국）",
+      title: "투움바（투움바）",
       hero: "https://images.unsplash.com/photo-1592417817034-3f1c2c90b9b5?q=80&w=1600&auto=format&fit=crop",
       minutes: 25,
       difficulty: "初",
