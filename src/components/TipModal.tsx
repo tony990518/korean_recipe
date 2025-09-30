@@ -1,5 +1,6 @@
 // src/components/TipModal.tsx
 import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import { Tip } from "../data";
 
 const FOCUSABLE_SELECTOR = [
@@ -307,10 +308,17 @@ const TipModal = ({ tip, onClose }: { tip: Tip | null; onClose: () => void }) =>
             <div className="p-3 sm:p-4 flex gap-3">
               <button
                 onClick={handleShare}
-                className="flex-1 px-4 py-3 rounded-xl bg-red-500 hover:bg-red-600 text-white font-semibold shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
+                className="px-4 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
               >
-                공유하기
+                공유
               </button>
+              <Link
+                to={`/tip/${tip.id}`}
+                onClick={handleClose}
+                className="flex-1 text-center px-4 py-3 rounded-xl bg-red-500 hover:bg-red-600 text-white font-semibold shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
+              >
+                자세히 보기
+              </Link>
             </div>
           </div>
         </div>
