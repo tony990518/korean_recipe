@@ -9,6 +9,8 @@ import TipsPage from "./pages/Tips";
 import StoriesPage from "./pages/Stories";
 import LabsPage from "./pages/Labs";
 import RecipeRoute from "./pages/RecipeDetail";
+import StoryDetail from "./pages/StoryDetail";
+import LabDetail from "./pages/LabDetail";
 import Terms from "./pages/terms";
 import Privacy from "./pages/privacy";
 
@@ -29,9 +31,11 @@ const AppShell = () => (
       <Route path="/stories" element={<StoriesPage />} />
       <Route path="/labs" element={<LabsPage />} />
       <Route path="/recipe/:id" element={<RecipeRoute />} />
+      <Route path="/story/:id" element={<StoryDetail />} />
+      <Route path="/lab/:id" element={<LabDetail />} />
       <Route path="/terms" element={<Terms />} />
       <Route path="/privacy" element={<Privacy />} />
-      <Route path="*" element={<main className="max-w-3xl mx-auto px-4 py-20 text-center"><h1 className="text-2xl font-bold">頁面不存在</h1><div className="mt-6"><Link className="text-red-600 underline" to="/">返回首頁</Link></div></main>} />
+      <Route path="*" element={<main className="max-w-3xl mx-auto px-4 py-20 text-center"><h1 className="text-2xl font-bold">頁面不存在</h1><div className="mt-6"><Link className="text-red--600 underline" to="/">返回首頁</Link></div></main>} />
     </Routes>
     <Footer />
   </div>
