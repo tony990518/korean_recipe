@@ -101,7 +101,6 @@ const HomePage = () => {
   const startXRef = useRef<number | null>(null);
   const startYRef = useRef<number | null>(null);
   const [dragDX, setDragDX] = useState(0);
-  const [dragDY, setDragDY] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
   const [dragArmed, setDragArmed] = useState(false); // 드래그 활성화 여부(임계치+각도)
 
@@ -174,7 +173,6 @@ const HomePage = () => {
     startXRef.current = e.clientX;
     startYRef.current = e.clientY;
     setDragDX(0);
-    setDragDY(0);
     setDragArmed(false);
   };
 
@@ -183,7 +181,6 @@ const HomePage = () => {
     const dx = e.clientX - startXRef.current;
     const dy = e.clientY - startYRef.current;
     setDragDX(dx);
-    setDragDY(dy);
     if (!dragArmed && maybeArmDrag(dx, dy)) {
       setDragArmed(true);
       setIsDragging(true);
@@ -196,7 +193,6 @@ const HomePage = () => {
       startXRef.current = null;
       startYRef.current = null;
       setDragDX(0);
-      setDragDY(0);
       return;
     }
     if (dragDX > SWIPE_THRESHOLD_PX) prev();
@@ -206,7 +202,6 @@ const HomePage = () => {
     startXRef.current = null;
     startYRef.current = null;
     setDragDX(0);
-    setDragDY(0);
   };
 
   const onPointerUp: React.PointerEventHandler<HTMLDivElement> = () => endDrag();
@@ -219,7 +214,6 @@ const HomePage = () => {
     startXRef.current = e.touches[0].clientX;
     startYRef.current = e.touches[0].clientY;
     setDragDX(0);
-    setDragDY(0);
     setDragArmed(false);
   };
 
@@ -228,7 +222,6 @@ const HomePage = () => {
     const dx = e.touches[0].clientX - startXRef.current;
     const dy = e.touches[0].clientY - startYRef.current;
     setDragDX(dx);
-    setDragDY(dy);
     if (!dragArmed && maybeArmDrag(dx, dy)) {
       setDragArmed(true);
       setIsDragging(true);

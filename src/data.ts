@@ -29,7 +29,7 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
       title: "黑白大廚 料理狂人 辣油炸醬泡麵",
       hero: "/images/recipes/yoon-nam-no/thumbnail.png",
       minutes: 10,
-      difficulty: "簡單",
+      difficulty: "初",
       servings: 1,
       flavor: { spicy: 4, salty: 4, sweet: 1, fermented: 2 },
       shortDescription: "最近剛好在看韓綜叢林飯的第二季，看到料理狂人伊男老主廚用炸醬泡麵做的辣油炸醬麵，就馬上做來吃吃看了，推薦給喜歡吃辣的朋友一起來做～ 那就趕快開始吧！",
@@ -65,7 +65,7 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
       title: "前男友吐司（奶油乳酪藍莓吐司）",
       hero: "/images/recipes/ex-bf-toast/thumbnail.png",
       minutes: 5,
-      difficulty: "簡單",
+      difficulty: "初",
       servings: 1,
       flavor: { spicy: 0, salty: 1, sweet: 4, fermented: 0 },
       shortDescription: "這款吐司因為一則網路小故事而爆紅：有人忍不住去問前男友常做的點心食譜，結果就是這個神組合！外酥內軟的吐司，抹上奶油乳酪與藍莓果醬，酸酸甜甜，保證一吃就愛上～",
@@ -118,7 +118,7 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
       title: "咖哩浣熊麵-Kaguri",
       hero: "/images/recipes/Kaguri/Thumbnail.png",
       minutes: 10,
-      difficulty: "簡單",
+      difficulty: "初",
       servings: 1,
       flavor: { spicy: 2, salty: 2, sweet: 2, fermented: 2 },
       shortDescription: "Kaguri是韓國很有名的一種泡麵吃法，做法很簡單，就是在浣熊泡麵裡加入咖哩塊一起煮。這個吃法最早在韓國的網咖（PC房）裡很流行，因為方便又好吃，後來透過網友口耳相傳變得越來越受歡迎。甚至因為人氣太高，農心還真的推出了官方版的Kaguri產品呢！懶得自己做的朋友也可以直接買官方產品來吃喔！",
@@ -133,7 +133,7 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
       steps: [
         { title: "溶解咖哩", text: "在鍋中加入水 550 ml，並放入泡麵的乾燥蔬菜包以及咖哩塊，加熱慢慢讓咖哩塊溶解，期間輕拌防沾底。", heat: "med", image:"/images/recipes/Kaguri/s1.png" },
         { title: "煮麵", text: "水滾後，加入麵條以及半包湯包，將麵煮至喜歡的口感。", heat: "med", time: "5 分" ,tip: "官方說明書建議煮5分鐘",image:"/images/recipes/Kaguri/s2.png"},
-        { title: "加入配料", text: "根據個人喜好加入雞蛋、青蔥、辣椒粉等可選食材，完成！", image:"/images/recipes/Kaguri/i5.png",image:"/images/recipes/Kaguri/s3.png" }
+        { title: "加入配料", text: "根據個人喜好加入雞蛋、青蔥、辣椒粉等可選食材，完成！",image:"/images/recipes/Kaguri/s3.png" }
       ],
     },
     {
@@ -141,7 +141,7 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
       title: "Red Velvet瑟琪的減肥食譜 - 金針菇豆腐",
       hero: "https://images.unsplash.com/photo-1505577058444-a3dab90d4253?q=80&w=1600&auto=format&fit=crop",
       minutes: 10,
-      difficulty: "簡單",
+      difficulty: "初",
       servings: 1,
       flavor: { spicy: 0, salty: 3, sweet: 1, fermented: 3 },
       shortDescription: "Red Velvet 瑟琪在 YouTube 上分享過她回歸期常吃的身材管理食譜之一 - 金針菇豆腐! 不只做法簡單，熱量低，還能吃得很有飽足感。想要控制體重、又不想吃得太單調的朋友，可以一起來試試看～ 🍴",
