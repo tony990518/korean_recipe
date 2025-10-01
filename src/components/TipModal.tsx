@@ -222,85 +222,63 @@ const TipModal = ({ tip, onClose }: { tip: Tip | null; onClose: () => void }) =>
           {/* BODY (본문만 스크롤) */}
           <div
             ref={contentRef}
-            className="overflow-y-auto overscroll-contain overflow-x-hidden min-w-0 p-4 sm:p-6 space-y-5"
+            className="overflow-y-auto overscroll-contain overflow-x-hidden min-w-0 p-4 sm:p-6"
           >
-            <div className="flex items-center justify-between gap-3">
+            <div className="flex items-center justify-between gap-3 mb-5">
               <span className="inline-flex items-center gap-2 text-xs font-medium px-2.5 py-1 rounded-full bg-yellow-100 text-yellow-800">
                 💡 小撇步
               </span>
             </div>
 
-            {tip.shortDescription && (
-              <p className="text-gray-700 text-sm leading-relaxed break-keep break-words">
-                {tip.shortDescription}
-              </p>
+            {tip.modalData ? (
+              <div className="space-y-5">
+                <section className="space-y-2">
+                  <h3 className="flex items-center gap-2 font-semibold text-gray-900 text-sm break-keep break-words">
+                    <span className="inline-block w-5 h-5">🧠</span> 이유
+                  </h3>
+                  <p className="text-gray-600 text-xs leading-relaxed break-keep break-words">
+                    {tip.modalData.reason}
+                  </p>
+                </section>
+
+                <hr className="border-gray-100" />
+
+                <section className="space-y-2">
+                  <h3 className="flex items-center gap-2 font-semibold text-gray-900 text-sm break-keep break-words">
+                    <span className="inline-block w-5 h-5">🛠️</span> 해결방법
+                  </h3>
+                  <p className="text-gray-600 text-xs leading-relaxed break-keep break-words">
+                    {tip.modalData.solution}
+                  </p>
+                </section>
+
+                {tip.modalData.example && (
+                  <>
+                    <hr className="border-gray-100" />
+                    <section className="space-y-2">
+                      <h3 className="flex items-center gap-2 font-semibold text-gray-900 text-sm break-keep break-words">
+                        <span className="inline-block w-5 h-5">📌</span> 예시
+                      </h3>
+                      <p className="text-gray-700 text-xs leading-relaxed bg-gray-50 p-3 rounded-lg break-keep break-words">
+                        {tip.modalData.example}
+                      </p>
+                    </section>
+                  </>
+                )}
+              </div>
+            ) : (
+              // `modalData`가 없을 경우, shortDescription과 행동 유도 텍스트 표시
+              <div className="text-center py-4">
+                <blockquote className="mb-4">
+                  <p className="text-lg sm:text-xl font-medium text-slate-800 leading-relaxed break-keep break-words">
+                    “{tip.shortDescription}”
+                  </p>
+                </blockquote>
+                <p className="text-sm text-slate-500">
+                  자세한 내용은 아래 '자세히 보기'를 눌러 확인하세요.
+                </p>
+              </div>
             )}
-
-            <div className="space-y-5">
-              {tip.modalData ? (
-                <>
-                  <section className="space-y-2">
-                    <h3 className="flex items-center gap-2 font-semibold text-gray-900 text-sm break-keep break-words">
-                      <span className="inline-block w-5 h-5">🧠</span> 이유
-                    </h3>
-                    <p className="text-gray-600 text-xs leading-relaxed break-keep break-words">
-                      {tip.modalData.reason}
-                    </p>
-                  </section>
-
-                  <hr className="border-gray-100" />
-
-                  <section className="space-y-2">
-                    <h3 className="flex items-center gap-2 font-semibold text-gray-900 text-sm break-keep break-words">
-                      <span className="inline-block w-5 h-5">🛠️</span> 해결방법
-                    </h3>
-                    <p className="text-gray-600 text-xs leading-relaxed break-keep break-words">
-                      {tip.modalData.solution}
-                    </p>
-                  </section>
-
-                  {tip.modalData.example && (
-                    <>
-                      <hr className="border-gray-100" />
-                      <section className="space-y-2">
-                        <h3 className="flex items-center gap-2 font-semibold text-gray-900 text-sm break-keep break-words">
-                          <span className="inline-block w-5 h-5">📌</span> 예시
-                        </h3>
-                        <p className="text-gray-700 text-xs leading-relaxed bg-gray-50 p-3 rounded-lg break-keep break-words">
-                          {tip.modalData.example}
-                        </p>
-                      </section>
-                    </>
-                  )}
-                </>
-              ) : (
-                Array.isArray(tip.content?.sections) &&
-                tip.content.sections.map((section, index) => (
-                  <section key={index} className="space-y-2">
-                    <h3 className="flex items-center gap-2 font-semibold text-gray-900 text-sm break-keep break-words">
-                      <span className="inline-block w-5 h-5">🍳</span>
-                      {section.title}
-                    </h3>
-                    <p className="text-gray-700 text-xs leading-relaxed break-keep break-words">
-                      {section.text}
-                    </p>
-                    {section.image && (
-                      <div className="mt-2">
-                        <img
-                          src={section.image}
-                          alt={section.title}
-                          className="w-full h-32 object-cover rounded-lg"
-                          loading="lazy"
-                        />
-                      </div>
-                    )}
-                    {index < (tip.content.sections.length - 1) && (
-                      <hr className="border-gray-100" />
-                    )}
-                  </section>
-                ))
-              )}
-            </div>
           </div>
 
           {/* FOOTER */}

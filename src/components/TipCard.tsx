@@ -46,11 +46,6 @@ const TipCard = ({ data, onTipClick }: Props) => {
             {data.title}
           </h3>
 
-          {data.shortDescription && (
-            <p className="text-sm text-slate-600 leading-relaxed">
-              {data.shortDescription}
-            </p>
-          )}
         </div>
       </button>
     </article>

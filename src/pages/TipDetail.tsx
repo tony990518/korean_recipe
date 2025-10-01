@@ -30,9 +30,10 @@ const TipDetail = () => {
         <h1 className="text-3xl font-bold text-slate-900">{tip.title}</h1>
         <p className="mt-2 text-lg text-slate-600">{tip.shortDescription}</p>
 
-        <div className="mt-8 prose prose-lg max-w-none">
+        <div className="mt-12 space-y-6">
           {tip.modalData ? (
-            <>
+            // modalData가 있는 경우 (현재는 사용되지 않지만 호환성을 위해 유지)
+            <div className="prose prose-lg max-w-none">
               <h2>🧠 이유</h2>
               <p>{tip.modalData.reason}</p>
               <h2>🛠️ 해결방법</h2>
@@ -43,21 +44,37 @@ const TipDetail = () => {
                   <blockquote>{tip.modalData.example}</blockquote>
                 </>
               )}
-            </>
+            </div>
           ) : (
-            tip.content?.sections.map((section, index) => (
-              <div key={index} className="mb-6">
-                <h2>{section.title}</h2>
-                <p>{section.text}</p>
-                {section.image && (
-                  <img
-                    src={section.image}
-                    alt={section.title}
-                    className="w-full h-auto object-cover rounded-lg mt-2"
-                  />
-                )}
-              </div>
-            ))
+            // content.sections를 새 디자인으로 렌더링
+            tip.content?.sections.map((section, index) => {
+              const icons: { [key: string]: string } = {
+                "總結": "📝",
+                "快速去味方法": "💡",
+                "怪味從哪裡來": "🤔",
+                "正確的保存方式": "📦",
+              };
+              const icon = icons[section.title] || "🔹";
+
+              return (
+                <section key={index} className="bg-slate-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+                  <h2 className="flex items-center gap-3 text-xl sm:text-2xl font-bold text-slate-800 mb-3">
+                    <span className="text-2xl">{icon}</span>
+                    <span>{section.title}</span>
+                  </h2>
+                  <div className="space-y-4 text-slate-600 leading-relaxed text-base sm:text-lg">
+                    <p>{section.text}</p>
+                    {section.image && (
+                      <img
+                        src={section.image}
+                        alt={section.title}
+                        className="w-full h-auto object-cover rounded-lg mt-2"
+                      />
+                    )}
+                  </div>
+                </section>
+              );
+            })
           )}
         </div>
 
