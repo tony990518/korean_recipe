@@ -63,7 +63,7 @@ const TipDetail = () => {
                     <span>{section.title}</span>
                   </h2>
                   <div className="space-y-4 text-slate-600 leading-relaxed text-base sm:text-lg">
-                    <p>{section.text}</p>
+                    <p className="whitespace-pre-line">{section.text}</p>
                     {section.image && (
                       <img
                         src={section.image}

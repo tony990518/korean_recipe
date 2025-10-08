@@ -1,9 +1,10 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { STORIES } from "../data";
 
 const StoryDetail = () => {
   const { id } = useParams();
   const story = STORIES.find((s) => s.id === id);
+  const nav = useNavigate();
 
   if (!story) {
     return (
@@ -19,21 +20,63 @@ const StoryDetail = () => {
   }
 
   return (
-    <main className="max-w-4xl mx-auto px-4 py-8">
-      <article>
-        <img
-          src={story.hero}
-          alt={story.title}
-          className="w-full max-h-[460px] object-cover rounded-2xl"
-        />
-        <h1 className="mt-6 text-3xl font-bold text-slate-900">{story.title}</h1>
-        <p className="mt-4 text-lg text-slate-700 leading-relaxed">
-          {story.shortDescription}
-        </p>
-        <div className="mt-8">
-            <Link to="/stories" className="text-red-600 hover:underline">
-                ← 모든 이야기 보기
+    <main className="max-w-5xl mx-auto px-4 pb-20">
+      <button
+        onClick={() => nav(-1)}
+        className="mt-6 text-slate-600 hover:text-red-600 text-sm sm:text-base"
+      >
+        ← 返回
+      </button>
+
+      <article className="mt-4">
+        {/* Hero */}
+        <div className="rounded-2xl overflow-hidden border bg-white">
+          <img
+            src={story.hero}
+            alt={story.title}
+            className="w-full max-h-[460px] object-cover"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+
+        {/* Content */}
+        <div className="mt-4 flex flex-col gap-6">
+          {/* Title + summary (no border) */}
+          <div>
+            <h1 className="font-extrabold text-slate-900 leading-snug text-2xl sm:text-3xl md:text-4xl">
+              {story.title}
+            </h1>
+            <p className="mt-3 text-slate-700 leading-relaxed text-[15px] sm:text-base md:text-lg">
+              {story.shortDescription}
+            </p>
+          </div>
+
+          {/* Section blocks (like Tips) */}
+          {story.content?.sections?.map((section, index) => (
+            <section key={index} className="bg-slate-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
+              <h2 className="text-xl sm:text-2xl font-bold text-slate-800 mb-3">
+                {section.title}
+              </h2>
+              <div className="space-y-4 text-slate-600 leading-relaxed text-base sm:text-lg">
+                <p className="whitespace-pre-line">{section.text}</p>
+                {section.image && (
+                  <img
+                    src={section.image}
+                    alt={section.title}
+                    className="w-full h-auto object-cover rounded-lg mt-2"
+                  />
+                )}
+              </div>
+            </section>
+          ))}
+
+          {/* Back to list */}
+          <div className="flex">
+            <Link to="/stories" className="text-red-600 hover:underline text-sm sm:text-base">
+              ← 返回故事列表
             </Link>
+          </div>
         </div>
       </article>
     </main>

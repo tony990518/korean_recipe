@@ -1,11 +1,31 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
+  const headerRef = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    if (!open) return;
+    const handlePointerDown = (e: Event) => {
+      const target = e.target as Node | null;
+      if (headerRef.current && target && !headerRef.current.contains(target)) {
+        setOpen(false);
+      }
+    };
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("pointerdown", handlePointerDown, true);
+    window.addEventListener("keydown", handleKeyDown);
+    return () => {
+      window.removeEventListener("pointerdown", handlePointerDown, true);
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [open]);
 
   return (
-    <header className="sticky top-0 z-30 backdrop-blur bg-white/80 border-b relative">
+    <header ref={headerRef} className="sticky top-0 z-30 backdrop-blur bg-white/80 border-b relative">
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Left: Logo + Title */}
         <Link
@@ -42,6 +62,16 @@ const Header = () => {
           )}
         </button>
       </div>
+
+      {/* Backdrop to close on outside click */}
+      {open ? (
+        <button
+          type="button"
+          aria-label="Close menu backdrop"
+          onClick={() => setOpen(false)}
+          className="fixed inset-0 z-30 bg-black/0 cursor-default"
+        />
+      ) : null}
 
       {/* Mobile Dropdown */}
       <div

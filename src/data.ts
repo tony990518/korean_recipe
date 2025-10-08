@@ -55,7 +55,7 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
         { title: "調整濃稠度", text: "如果覺得麵條太乾，可以慢慢加入預留的麵水，調整到你喜歡的濕潤或濃稠度。這樣，一份美味的韓式辣味炸醬麵就完成了！", image: "/images/recipes/yoon-nam-no/s9.jpeg" }
       ],
       tips: [
-        "辣椒的量可以根據喜好增加或減少，我自己是蠻喜歡吃辣的，覺得放1.5根剛剛好．沒有青陽辣椒的話可以用糯米椒試試看，不過辣度可能會有點不夠。",
+        "辣椒的量可以根據喜好增加或減少，沒有青陽辣椒的話可以用糯米椒試試看，不過辣度可能會有點不夠。",
       ],
       conclusion: "好啦～今天的食譜分享就到這邊 😋\n尹男老主廚的炸醬拉麵真的超簡單又好吃，這個週末不妨自己動手煮煮看，保證一口就愛上！\n希望大家都能享受下廚的樂趣，敬請期待下次的食譜，我們下次見👋"
     },
@@ -215,87 +215,103 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
   tips: [
     {
       id: "gochugaru-smell",
-      title: "為什麼辣椒粉會有怪味？",
+      title: "辣椒粉有陳味怎麼辦？！",
       hero: "/images/tips/redpepper/thumbnail.png",
       shortDescription: "辣椒粉有怪味？別擔心，簡單幾招就能解決！",
       content: {
         sections: [
           {
             title: "總結",
-            text: "辣椒粉的怪味主要是保存不當導致油脂氧化。透過簡單加熱即可有效去味，並用正確方式保存便能預防問題再次發生。"
+            text: "辣椒粉存放過久或保存不當會因濕氣、氧化與異味吸附導致風味下降，雖非腐敗但品質受損。\n辣椒粉的陳味主要由濕氣與氧氣暴露引起，可用微波或乾炒去除，但若發霉則必須丟棄。\n密封冷藏、小包分裝並及時食用，可保持新鮮，發現霉味立即丟棄。"
           },
           {
-            title: "快速去味方法",
-            text: "味道稍微跑掉的辣椒粉，可以用乾鍋小火乾炒 10～20 秒，讓水氣蒸發、香氣回來；但如果有明顯霉味或酸敗味，直接淘汰比較安全。下次購買就挑新鮮度高、顆粒乾爽、聞起來是清爽辣香的就對了。"
+            title: "怎麼去除陳味？",
+            text: "微波爐加熱：將辣椒粉放入耐熱容器，微波加熱20~30秒，注意避免過熱燒焦。\n 乾鍋炒製：用小火快炒1~2分鐘，去除濕氣與異味。\n 打散結塊：加熱或炒製後，用湯匙或篩網輕輕打散辣椒粉的結塊。\n發霉注意：若發現霉點或異常氣味，絕對不可食用！霉菌毒素即使煮沸也無法去除，務必丟棄。"
           },
           {
-            title: "怪味從哪裡來",
-            text: "多半是保存出問題。放在潮濕或高溫的環境，容易受潮、發霉，還會長細菌，味道就會變得悶悶酸酸的。另外辣椒籽的油脂會氧化（俗稱油耗味），這也是常見的怪味來源。當然，辣椒本身也有自然的辣香，但如果一開罐就刺鼻或像霉味，那就不是正常的香味了。"
+            title: "陳味從哪裡來",
+            text: "濕氣：辣椒粉吸收濕氣後，易滋生霉菌或品質下降，產生陳味。\n氧化：長時間暴露於空氣中，香氣與辣度因氧化而減弱，生成陳舊氣味。\n 異味吸附：辣椒粉表面積大，容易吸附周圍異味（如冰箱內其他食物氣味）。"
           },
           {
-            title: "正確的保存方式",
-            text: "裝進可密封的容器，放冷藏或陰涼乾燥的地方最穩。怕受潮可以丟一包乾燥劑（矽膠包）一起放。每次用完記得馬上蓋緊，不要用濕湯匙挖，減少水氣跑進去。"
+            title: "正確保存方式",
+            text: "陰涼乾燥：避免陽光直射與潮濕環境，存放於乾燥涼爽處。\n冷藏保存：長期保存時放冰藏，防止結塊與發霉。\n密封保存：開封後使用玻璃或塑膠密封容器，或雙層密封袋，減少受潮與異味污染。\n小包分裝：將辣椒粉分裝成小份，盡快用完以保持新鮮。\n檢查狀態：輕微結塊但無異味仍可食用；若有霉斑或霉味，立即丟棄。\n💡 小秘訣：在容器上標記購買日期，優先使用較舊的辣椒粉。"
           }
         ]
       }
     },
 
     {
-      id: "gochujang-selection",
-      title: "고추장 브랜드별 특징과 선택법",
+      id: "seeweed-moistened",
+      title: "海苔受潮怎麼辦？！",
       hero: "https://images.unsplash.com/photo-1625944529265-9a8bd2bb0182?q=80&w=1600&auto=format&fit=crop",
-      shortDescription: "CJ, 청정원, 해찬들 등 브랜드별 고추장의 차이점",
+      shortDescription: "海苔受潮怎麼辦？！",
       content: {
         sections: [
           {
-            title: "CJ 고추장의 특징",
-            text: "CJ 고추장은 전통적인 발효 공법을 사용하여 깊은 맛이 특징입니다. 단맛과 발효향이 균형있게 어우러져 있어 김치찌개나 된장찌개에 특히 잘 어울립니다.",
+            title: "總結",
+            text: "海苔最怕受潮，一旦失去酥脆口感，就會影響風味。只要保存得當，就能讓海苔長時間保持香氣和脆度。",
             image: "https://images.unsplash.com/photo-1625944529265-9a8bd2bb0182?q=80&w=800&auto=format&fit=crop"
           },
           {
-            title: "청정원 고추장의 특징",
-            text: "청정원 고추장은 상대적으로 단맛이 강하고 부드러운 맛이 특징입니다. 떡볶이나 닭볶음탕 같은 요리에 사용하면 좋습니다."
+            title: "海苔受潮怎麼辦？",
+            text: "若海苔已經受潮，不必急著丟掉！ \n👉 可以用 烤箱或平底鍋小火乾烘 1～2 分鐘，讓水分蒸發後重新變脆。\n👉 也可放入 微波爐加熱 10～15 秒，效果相同。\n加熱後，放涼再密封保存，避免再次吸濕。",
+            image: "https://images.unsplash.com/photo-1625944529265-9a8bd2bb0182?q=80&w=800&auto=format&fit=crop"
           },
           {
-            title: "고추장 선택 팁",
-            text: "고추장을 선택할 때는 용도에 따라 달라집니다. 찌개류에는 발효향이 강한 것을, 볶음류에는 단맛이 강한 것을 선택하는 것이 좋습니다."
+            title: "海苔受潮原因",
+            text: "海苔本身含油且薄，接觸空氣後容易吸收濕氣。\n保存環境若太潮濕，或開封後未密封，海苔中的油脂會氧化並吸水，導致軟化、變色甚至產生油耗味。"
+          },
+          {
+            title: "平時保存法",
+            text: "✅ 密封保存：開封後將海苔放入密封袋中，可加放乾燥劑。 \n ✅ 冷藏或冷凍：若一次購買大量海苔，可分裝後冷藏保存，取出時先回溫再食用。\n ✅ 避免日光直射：光線會加速油脂氧化，影響香氣與顏色。\n✅ 盡快食用：開封後建議於 1～2 週內食用完畢。"
           }
         ]
       }
     },
     {
-      id: "dashi-selection",
-      title: "다시마와 멸치육수의 차이점",
+      id: "chopped-garlic",
+      title: "如何保管蒜末",
       hero: "https://images.unsplash.com/photo-1604908176997-43162b16832d?q=80&w=1600&auto=format&fit=crop",
-      shortDescription: "일본식 다시마 vs 한국식 멸치육수, 언제 어떤 걸 써야 할까?",
+      shortDescription: "韓式料理必備的蒜末，要怎麼保存？",
       content: {
         sections: [
           {
-            title: "다시마 육수의 특징",
-            text: "다시마 육수는 깔끔하고 담백한 맛이 특징입니다. 일본 요리나 깔끔한 국물 요리에 사용하면 좋습니다. 채식주의자도 사용할 수 있는 장점이 있습니다.",
+            title: "總結",
+            text: "蒜末是韓式料理中不可或缺的靈魂調味料，從泡菜、燒肉到湯品都少不了它的香氣。 \n但剁好的蒜如果保存不當，容易出水、變綠、甚至發酸。\n其實，只要用「冷凍分裝法」，就能輕鬆解決這些問題！",
             image: "https://images.unsplash.com/photo-1604908176997-43162b16832d?q=80&w=800&auto=format&fit=crop"
           },
           {
-            title: "멸치 육수의 특징",
-            text: "멸치 육수는 깊고 진한 맛이 특징입니다. 한국 요리나 구수한 국물 요리에 사용하면 좋습니다. 칼슘과 단백질이 풍부한 영양상의 장점도 있습니다."
+            title: "保存方法：冷凍分裝法",
+            text: "1️⃣ 壓蒜／打碎：將蒜頭壓成蒜泥（可用壓蒜器或攪拌機）。\n2️⃣ 分裝：用湯匙將蒜泥分裝入矽膠冰格模具中，一格約一匙量。\n3️⃣ 冷凍保存：放入冷凍庫凍硬後取出，再裝入密封袋中保存，避免吸附冰箱異味。\n4️⃣ 使用時：烹調時直接放入鍋中加熱即可，無需解凍。"
           },
           {
-            title: "요리별 육수 선택법",
-            text: "김치찌개나 된장찌개에는 멸치 육수를, 미소시루나 우동에는 다시마 육수를 사용하는 것이 일반적입니다. 하지만 개인의 취향에 따라 조합해 사용해도 됩니다."
+            title: "為什麼要冷凍分裝？",
+            text: "因為蒜中含有豐富的水分與硫化物，若直接冷藏，容易氧化變綠或發酸。\n冷凍能中止氧化反應，同時防止細菌滋生。\n分裝能避免每次開封造成受潮與氣味流失。",
+            image: "https://images.unsplash.com/photo-1604908176997-43162b16832d?q=80&w=800&auto=format&fit=crop"
+          },
+          {
+            title: "推薦工具與保存容器",
+            text: "想讓蒜末保持最佳狀態，容器也很關鍵👇 \n304不鏽鋼壓蒜器（點此購買）🔗（쿠팡 링크）\n迷你電動碎蒜機（點此購買）🔗（쿠팡 링크）\n矽膠冰格模具（附蓋）：可重複使用、取用方便（點此購買）🔗（쿠팡 링크）\n真空密封袋：防潮防味，適合長期保存（點此購買）🔗（쿠팡 링크）\n玻璃保鮮盒：短期冷藏使用最佳（點此購買）🔗（쿠팡 링크）",
+            image: "https://images.unsplash.com/photo-1604908176997-43162b16832d?q=80&w=800&auto=format&fit=crop"
           }
         ]
       }
     }
     ,
     {
-      id: "rice-water-tip",
-      title: "洗米水的妙用",
+      id: "ramen-egg-master",
+      title: "如何成為煮泡麵雞蛋達人？",
       hero: "https://images.unsplash.com/photo-1512058564366-18510be2db19?q=80&w=1600&auto=format&fit=crop",
-      shortDescription: "洗米水拿來煮湯或燉煮，味道更溫潤。",
+      shortDescription: "泡麵跟蛋的組合，怎麼煮最好吃？！",
       content: {
         sections: [
-          { title: "為什麼有效？", text: "洗米水含少量澱粉，使湯頭更有身、口感更圓。" },
-          { title: "怎麼用？", text: "煮蘿蔔湯、海帶湯、燉肉時以洗米水替代部分清水。" }
+          { title: "各種煮法", text: "打散:時間點\n全熟:時間點\n半熟:時間點\n糖心蛋:另外煮6分半" },
+          { title: "為什麼要加蛋", text: "泡麵營養成分不夠，加蛋可以補充蛋白質。\ntips:也可以加入一些青菜、湯不要喝完" },
+          {
+            title: "推薦工具",
+            text: "想讓蛋煮得剛剛好👇 \n煮蛋神器：掌握煮蛋最佳時機（點此購買）🔗（쿠팡 링크）",
+            image: "https://images.unsplash.com/photo-1604908176997-43162b16832d?q=80&w=800&auto=format&fit=crop"
+          }          
         ]
       }
     },
@@ -334,46 +350,114 @@ export type SimplePost = {
   title: string;
   shortDescription: string;
   hero: string;
+  content?: {
+    sections: {
+      title: string;
+      text: string;
+      image?: string;
+    }[];
+  };
 };
 
 export const STORIES: SimplePost[] = [
   {
-    id: "grandma-kimchi-memory",
-    title: "外婆與泡菜的記憶",
-    shortDescription: "每一罐泡菜，都是季節、家與耐心的味道。",
+    id: "korean-chuseok",
+    title: "韓國中秋也吃烤肉嗎？",
+    shortDescription: "韓國人中秋節吃什麼？！",
     hero: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1600&auto=format&fit=crop",
+    content: {
+      sections: [
+        { title: "韓國的中秋節", text: "會祭祖，跟中華文化的過年一樣大的節日" },
+        { title: "吃什麼？", text: "介紹산적, 잡채, 송편 등등", image: "/images/stories/kimchi_jar.jpg" },
+        { title: "那一口記憶", text: "酸香中帶著微甜，是家人一起的味道。" }
+      ]
+    }
   },
   {
     id: "street-food-seoul",
-    title: "首爾夜市的味道",
+    title: "為什麼韓國會有中華料理？",
     shortDescription: "從魚板湯到糖餅，小吃攤位背後的溫度。",
     hero: "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600&auto=format&fit=crop",
+    content: {
+      sections: [
+        { title: "韓國的中秋節", text: "會祭祖，跟中華文化的過年一樣大的節日" },
+        { title: "吃什麼？", text: "介紹산적, 잡채, 송편 등등", image: "/images/stories/kimchi_jar.jpg" },
+        { title: "那一口記憶", text: "酸香中帶著微甜，是家人一起的味道。" }
+      ]
+    }
   },
   {
     id: "first-bibimbap",
-    title: "第一碗石鍋拌飯",
+    title: "部隊鍋的由來",
     shortDescription: "滋滋作響的瞬間，香氣讓時間慢了下來。",
     hero: "https://images.unsplash.com/photo-1604908554007-9a5e6dc49e45?q=80&w=1600&auto=format&fit=crop",
+    content: {
+      sections: [
+        { title: "部隊鍋的由來", text: "部隊鍋的由來" },
+        { title: "部隊鍋的特點", text: "部隊鍋的特點" },
+        { title: "部隊鍋的用途", text: "部隊鍋的用途" }
+      ]
+    }
+  },
+  {
+    id: "first-bibimbap",
+    title: "韓國人真的吃狗肉嗎？",
+    shortDescription: "滋滋作響的瞬間，香氣讓時間慢了下來。",
+    hero: "https://images.unsplash.com/photo-1604908554007-9a5e6dc49e45?q=80&w=1600&auto=format&fit=crop",
+    content: {
+      sections: [
+        { title: "部隊鍋的由來", text: "部隊鍋的由來" },
+        { title: "部隊鍋的特點", text: "部隊鍋的特點" },
+        { title: "部隊鍋的用途", text: "部隊鍋的用途" }
+      ]
+    }
   },
 ];
 
 export const LABS: SimplePost[] = [
   {
-    id: "umami-boost",
-    title: "鮮味增強術：醬油 vs 魚露 vs 蘑菇粉",
-    shortDescription: "不同增鮮路線對湯與炒飯的影響實驗。",
+    id: "allulose",
+    title: "什麼是阿洛酮糖(Allulose)？",
+    shortDescription: "低熱量、低GI、低血糖反應的甜味劑。",
     hero: "https://images.unsplash.com/photo-1512058564366-18510be2db19?q=80&w=1600&auto=format&fit=crop",
+    content: {
+      sections: [
+        { title: "什麼是阿洛酮糖(Allulose)？", text: "阿洛酮糖是一種天然的甜味劑，由葡萄糖和果糖組成，具有低熱量、低GI、低血糖反應等特點。" },
+        { title: "阿洛酮糖的特點", text: "阿洛酮糖是一種天然的甜味劑，由葡萄糖和果糖組成，具有低熱量、低GI、低血糖反應等特點。" },
+        { title: "阿洛酮糖的用途", text: "阿洛酮糖的用途" }
+      ]
+    }
   },
   {
     id: "marinate-science",
-    title: "醃製科學：鹽糖比例與浸漬時間",
+    title: "煮泡麵要先放麵還是先放湯包？",
     shortDescription: "雞腿排多汁的關鍵參數，逐一檢測。",
     hero: "https://images.unsplash.com/photo-1526318472351-c75fcf070305?q=80&w=1600&auto=format&fit=crop",
   },
   {
     id: "starch-thickening",
-    title: "勾芡流變學：太白粉與馬鈴薯粉",
-    shortDescription: "同樣 1 茶匙，濃稠度與口感差異有多大？",
+    title: "韓式料理必勝公式-醬糖蔥蒜椒麻油",
+    shortDescription: "韓式料理竟然有公式？",
     hero: "https://images.unsplash.com/photo-1514511547113-bff0191bcfd4?q=80&w=1600&auto=format&fit=crop",
+    content: {
+      sections: [
+        { title: "韓式料理必勝公式-醬糖蔥蒜椒麻油", text: "韓式料理竟然有公式？" },
+        { title: "醬糖蔥蒜椒麻油的特點", text: "醬糖蔥蒜椒麻油的特點" },
+        { title: "醬糖蔥蒜椒麻油的用途", text: "醬糖蔥蒜椒麻油的用途" }
+      ]
+    }
+  },
+  {
+    id: "starch-thickening",
+    title: "大醬與味噌的差別",
+    shortDescription: "韓式料理竟然有公式？",
+    hero: "https://images.unsplash.com/photo-1514511547113-bff0191bcfd4?q=80&w=1600&auto=format&fit=crop",
+    content: {
+      sections: [
+        { title: "韓式料理必勝公式-醬糖蔥蒜椒麻油", text: "韓式料理竟然有公式？" },
+        { title: "醬糖蔥蒜椒麻油的特點", text: "醬糖蔥蒜椒麻油的特點" },
+        { title: "醬糖蔥蒜椒麻油的用途", text: "醬糖蔥蒜椒麻油的用途" }
+      ]
+    }
   },
 ];
