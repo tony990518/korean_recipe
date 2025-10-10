@@ -29,7 +29,7 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
       title: "黑白大廚 料理狂人 辣油炸醬泡麵",
       hero: "/images/recipes/yoon-nam-no/thumbnail.png",
       minutes: 10,
-      difficulty: "初",
+      difficulty: "易",
       servings: 1,
       flavor: { spicy: 4, salty: 4, sweet: 1, fermented: 2 },
       shortDescription: "最近剛好在看韓綜叢林飯的第二季，看到料理狂人伊男老主廚用炸醬泡麵做的辣油炸醬麵，就馬上做來吃吃看了，推薦給喜歡吃辣的朋友一起來做～ 那就趕快開始吧！",
@@ -65,7 +65,7 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
       title: "前男友吐司（奶油乳酪藍莓吐司）",
       hero: "/images/recipes/ex-bf-toast/thumbnail.png",
       minutes: 5,
-      difficulty: "初",
+      difficulty: "易",
       servings: 1,
       flavor: { spicy: 0, salty: 1, sweet: 4, fermented: 0 },
       shortDescription: "這款吐司因為一則網路小故事而爆紅：有人忍不住去問前男友常做的點心食譜，結果就是這個神組合！外酥內軟的吐司，抹上奶油乳酪與藍莓果醬，酸酸甜甜，保證一吃就愛上～",
@@ -118,7 +118,7 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
       title: "咖哩浣熊麵-Kaguri",
       hero: "/images/recipes/Kaguri/Thumbnail.png",
       minutes: 10,
-      difficulty: "初",
+      difficulty: "易",
       servings: 1,
       flavor: { spicy: 2, salty: 2, sweet: 2, fermented: 2 },
       shortDescription: "Kaguri是韓國很有名的一種泡麵吃法，做法很簡單，就是在浣熊泡麵裡加入咖哩塊一起煮。這個吃法最早在韓國的網咖（PC房）裡很流行，因為方便又好吃，後來透過網友口耳相傳變得越來越受歡迎。甚至因為人氣太高，農心還真的推出了官方版的Kaguri產品呢！懶得自己做的朋友也可以直接買官方產品來吃喔！",
@@ -132,7 +132,7 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
       ],
       steps: [
         { title: "溶解咖哩", text: "在鍋中加入水 550 ml，並放入泡麵的乾燥蔬菜包以及咖哩塊，加熱慢慢讓咖哩塊溶解，期間輕拌防沾底。", heat: "med", image:"/images/recipes/Kaguri/s1.png" },
-        { title: "煮麵", text: "水滾後，加入麵條以及半包湯包，將麵煮至喜歡的口感。", heat: "med", time: "5 分" ,tip: "官方說明書建議煮5分鐘",image:"/images/recipes/Kaguri/s2.png"},
+        { title: "煮麵", text: "水滾後，加入麵條以及半包湯包，將麵煮至喜歡的口感。", heat: "med", time: "5 分" ,tip: "官方建議煮5分鐘",image:"/images/recipes/Kaguri/s2.png"},
         { title: "加入配料", text: "根據個人喜好加入雞蛋、青蔥、辣椒粉等可選食材，完成！",image:"/images/recipes/Kaguri/s3.png" }
       ],
     },
@@ -141,7 +141,7 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
       title: "Red Velvet瑟琪的減肥食譜 - 金針菇豆腐",
       hero: "https://images.unsplash.com/photo-1505577058444-a3dab90d4253?q=80&w=1600&auto=format&fit=crop",
       minutes: 10,
-      difficulty: "初",
+      difficulty: "易",
       servings: 1,
       flavor: { spicy: 0, salty: 3, sweet: 1, fermented: 3 },
       shortDescription: "Red Velvet 瑟琪在 YouTube 上分享過她回歸期常吃的身材管理食譜之一 - 金針菇豆腐! 不只做法簡單，熱量低，還能吃得很有飽足感。想要控制體重、又不想吃得太單調的朋友，可以一起來試試看～ 🍴",
@@ -170,7 +170,7 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
       title: "醬油溏心蛋（마약계란장）",
       hero: "https://images.unsplash.com/photo-1581447109200-1cfd5f2bfae4?q=80&w=1600&auto=format&fit=crop",
       minutes: 30,
-      difficulty: "初",
+      difficulty: "易",
       servings: 4,
       flavor: { spicy: 0, salty: 3, sweet: 2, fermented: 1 },
       shortDescription: "提前做起來的萬用配飯神器。",
@@ -192,7 +192,7 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
       title: "투움바（투움바）",
       hero: "https://images.unsplash.com/photo-1592417817034-3f1c2c90b9b5?q=80&w=1600&auto=format&fit=crop",
       minutes: 25,
-      difficulty: "初",
+      difficulty: "易",
       servings: 2,
       flavor: { spicy: 0, salty: 2, sweet: 1, fermented: 1 },
       shortDescription: "生日必喝，清爽營養的經典韓式湯品。",
@@ -217,7 +217,7 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
       id: "gochugaru-smell",
       title: "辣椒粉有陳味怎麼辦？！",
       hero: "/images/tips/redpepper/thumbnail.png",
-      shortDescription: "辣椒粉有怪味？別擔心，簡單幾招就能解決！",
+      shortDescription: "辣椒粉放久了有味道？別擔心，簡單幾招就能解決！",
       content: {
         sections: [
           {
@@ -225,16 +225,21 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
             text: "辣椒粉存放過久或保存不當會因濕氣、氧化與異味吸附導致風味下降，雖非腐敗但品質受損。\n辣椒粉的陳味主要由濕氣與氧氣暴露引起，可用微波或乾炒去除，但若發霉則必須丟棄。\n密封冷藏、小包分裝並及時食用，可保持新鮮，發現霉味立即丟棄。"
           },
           {
-            title: "怎麼去除陳味？",
-            text: "微波爐加熱：將辣椒粉放入耐熱容器，微波加熱20~30秒，注意避免過熱燒焦。\n 乾鍋炒製：用小火快炒1~2分鐘，去除濕氣與異味。\n 打散結塊：加熱或炒製後，用湯匙或篩網輕輕打散辣椒粉的結塊。\n發霉注意：若發現霉點或異常氣味，絕對不可食用！霉菌毒素即使煮沸也無法去除，務必丟棄。"
-          },
-          {
             title: "陳味從哪裡來",
             text: "濕氣：辣椒粉吸收濕氣後，易滋生霉菌或品質下降，產生陳味。\n氧化：長時間暴露於空氣中，香氣與辣度因氧化而減弱，生成陳舊氣味。\n 異味吸附：辣椒粉表面積大，容易吸附周圍異味（如冰箱內其他食物氣味）。"
           },
           {
+            title: "怎麼去除陳味？",
+            text: "微波爐加熱：將辣椒粉放入耐熱容器，微波加熱20~30秒，注意避免過熱燒焦。\n 乾鍋炒製：用小火快炒1~2分鐘，去除濕氣與異味。\n 打散結塊：加熱或炒製後，用湯匙或篩網輕輕打散辣椒粉的結塊。\n發霉注意：若發現霉點或異常氣味，絕對不可食用！霉菌毒素即使煮沸也無法去除，務必丟棄。"
+          },
+          {
             title: "正確保存方式",
             text: "陰涼乾燥：避免陽光直射與潮濕環境，存放於乾燥涼爽處。\n冷藏保存：長期保存時放冰藏，防止結塊與發霉。\n密封保存：開封後使用玻璃或塑膠密封容器，或雙層密封袋，減少受潮與異味污染。\n小包分裝：將辣椒粉分裝成小份，盡快用完以保持新鮮。\n檢查狀態：輕微結塊但無異味仍可食用；若有霉斑或霉味，立即丟棄。\n💡 小秘訣：在容器上標記購買日期，優先使用較舊的辣椒粉。"
+          },
+          {
+            title: "Studio.K推薦",
+            text: "辣椒粉、密封容器👇 \n說明🔗（쿠팡 링크）",
+            image: "https://images.unsplash.com/photo-1604908176997-43162b16832d?q=80&w=800&auto=format&fit=crop"
           }
         ]
       }
@@ -242,73 +247,92 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
 
     {
       id: "seeweed-moistened",
-      title: "海苔受潮怎麼辦？！",
-      hero: "https://images.unsplash.com/photo-1625944529265-9a8bd2bb0182?q=80&w=1600&auto=format&fit=crop",
-      shortDescription: "海苔受潮怎麼辦？！",
+      title: "海苔放久變軟了要怎麼辦？！",
+      hero: "/images/tips/seeweed/thumbnail.png",
+      shortDescription: "海苔是韓國餐桌上常見的配菜，不論是搭配白飯或是包飯卷都少不了它。但如果放久變軟了該怎麼辦？一起來看看解決方法吧！",
       content: {
         sections: [
           {
             title: "總結",
-            text: "海苔最怕受潮，一旦失去酥脆口感，就會影響風味。只要保存得當，就能讓海苔長時間保持香氣和脆度。",
-            image: "https://images.unsplash.com/photo-1625944529265-9a8bd2bb0182?q=80&w=800&auto=format&fit=crop"
+            text: "• 海苔容易受潮變軟，開封後應儘速食用，沒吃完需密封冷凍保存。\n• 受潮變軟的海苔可以透過微波爐或平底鍋加熱恢復脆度。\n• 若海苔已有明顯油耗味或變色，代表已經變質，應避免食用。",
           },
           {
-            title: "海苔受潮怎麼辦？",
-            text: "若海苔已經受潮，不必急著丟掉！ \n👉 可以用 烤箱或平底鍋小火乾烘 1～2 分鐘，讓水分蒸發後重新變脆。\n👉 也可放入 微波爐加熱 10～15 秒，效果相同。\n加熱後，放涼再密封保存，避免再次吸濕。",
-            image: "https://images.unsplash.com/photo-1625944529265-9a8bd2bb0182?q=80&w=800&auto=format&fit=crop"
+            title: "海苔變軟的原因",
+            text: "韓國海苔通常以紫菜烘烤製成，本身容易吸濕氣，一旦開封後未密封好，或放在高濕度的地方，就會快速軟化。"
           },
           {
-            title: "海苔受潮原因",
-            text: "海苔本身含油且薄，接觸空氣後容易吸收濕氣。\n保存環境若太潮濕，或開封後未密封，海苔中的油脂會氧化並吸水，導致軟化、變色甚至產生油耗味。"
+            title: "解決方法",
+            text: "• 微波爐加熱： 將受潮的海苔放入微波爐中，加熱 10～20 秒。如果還是有點軟的話可以再加熱。\n• 平底鍋加熱：用乾鍋小火快速翻烤約 10 秒，記得火不要太大，有可能會焦掉！"
           },
           {
-            title: "平時保存法",
-            text: "✅ 密封保存：開封後將海苔放入密封袋中，可加放乾燥劑。 \n ✅ 冷藏或冷凍：若一次購買大量海苔，可分裝後冷藏保存，取出時先回溫再食用。\n ✅ 避免日光直射：光線會加速油脂氧化，影響香氣與顏色。\n✅ 盡快食用：開封後建議於 1～2 週內食用完畢。"
+            title: "開封後保存方法",
+            text: "• 密封保存：海苔開封後應盡速吃完，如果真的吃不完，建議在密封容器或密封袋裡先墊一張廚房紙巾再將海苔放入，並放入海苔裡附的乾燥劑冷凍保存。\n• 調味海苔要平放：一般我們在臺灣見到的韓國海苔都是各別包裝的調味海苔，有加入鹽巴跟芝麻油調味，建議平放保存，油才不會往下沈積在底部。\n• 海苔有明顯油耗味或顏色變暗，表示油脂氧化，此時不僅風味變差，也可能對身體有害，應立即丟棄"
+          },
+          {
+            title: "如何利用軟掉的海苔",
+            text: "海苔變軟後雖然少了脆度，但仍可運用在多種料理中。若海苔已有明顯油耗味或異味，請不要食用，以免影響健康。\n• 拌飯或飯糰：將軟海苔撕碎後拌入白飯或做成飯糰，增加香氣與鹹味。\n• 泡麵或湯品：灑在熱湯或泡麵上，增添鮮味。\n• 涼拌或煎蛋料理：可加入紅蘿菠、醬油、蔥、蒜、香油、糖等食材做成涼拌菜，或加入蛋液中做成海苔煎蛋捲。"
+          },
+          {
+            title: "Studio.K推薦",
+            text: "海苔、海苔大小的密封容器👇 \n說明（點此購買）🔗（쿠팡 링크）",
+            image: "https://images.unsplash.com/photo-1604908176997-43162b16832d?q=80&w=800&auto=format&fit=crop"
           }
         ]
       }
     },
     {
       id: "chopped-garlic",
-      title: "如何保管蒜末",
+      title: "韓式料理的必備食材--蒜末，如何大量製作與保存？",
       hero: "https://images.unsplash.com/photo-1604908176997-43162b16832d?q=80&w=1600&auto=format&fit=crop",
-      shortDescription: "韓式料理必備的蒜末，要怎麼保存？",
+      shortDescription: "在韓國料理中，蒜末是絕對不可或缺的食材！從醃泡菜、煮湯到炒菜，幾乎無處不在。但每次都要剝蒜、切蒜實在是太麻煩了，手上還會沾滿蒜味。現在，讓我們來學習如何一次大量處理及保存蒜末！",
       content: {
         sections: [
           {
             title: "總結",
-            text: "蒜末是韓式料理中不可或缺的靈魂調味料，從泡菜、燒肉到湯品都少不了它的香氣。 \n但剁好的蒜如果保存不當，容易出水、變綠、甚至發酸。\n其實，只要用「冷凍分裝法」，就能輕鬆解決這些問題！",
+            text: "想一次處理大量蒜頭，可先用浸水或微波法輕鬆去皮。\n蒜頭去除根部後用刀、攪拌機或袋子搗碎，並用密封袋或分格容器冷凍保存。\n處理完可用檸檬水或不鏽鋼去除手上蒜味，蒜皮也能再利用熬湯或煮茶，健康又環保。",
             image: "https://images.unsplash.com/photo-1604908176997-43162b16832d?q=80&w=800&auto=format&fit=crop"
           },
           {
-            title: "保存方法：冷凍分裝法",
-            text: "1️⃣ 壓蒜／打碎：將蒜頭壓成蒜泥（可用壓蒜器或攪拌機）。\n2️⃣ 分裝：用湯匙將蒜泥分裝入矽膠冰格模具中，一格約一匙量。\n3️⃣ 冷凍保存：放入冷凍庫凍硬後取出，再裝入密封袋中保存，避免吸附冰箱異味。\n4️⃣ 使用時：烹調時直接放入鍋中加熱即可，無需解凍。"
+            title: "處理蒜頭",
+            text: "剝皮 - 浸水法: 將蒜浸泡在水中30~60分鐘，蒜皮會變軟，輕鬆剝落，泡越久會越好剝。用手輕搓或用刀輕壓，蒜皮就能輕易分離。\n剝皮 - 微波爐加熱法: 將蒜放入微波爐適用容器，以500~600W加熱20~30秒，蒜皮會微微張開，更容易剝除。注意不要加熱過久，以免蒜頭熟了。\n去除根部與壞掉部分: 用刀切除蒜的硬根部及變色的褐色部分，僅保留新鮮部分。"
           },
           {
-            title: "為什麼要冷凍分裝？",
-            text: "因為蒜中含有豐富的水分與硫化物，若直接冷藏，容易氧化變綠或發酸。\n冷凍能中止氧化反應，同時防止細菌滋生。\n分裝能避免每次開封造成受潮與氣味流失。",
+            title: "製作蒜末",
+            text: "用刀切碎：將蒜用刀背壓扁後，細細切碎，是一般家庭最常用的傳統方法。\n用攪拌機：大量處理時，使用攪拌機能快速且均勻地打碎蒜頭。但要注意不要過度攪拌，以免蒜末變得太碎，可分次短時間攪打。\n用塑膠袋搗碎：將蒜放入堅固的塑膠袋或夾鍊袋中，用擀麵棍或重物敲打搗碎，這樣手不會黏上太多蒜末。",
             image: "https://images.unsplash.com/photo-1604908176997-43162b16832d?q=80&w=800&auto=format&fit=crop"
           },
           {
-            title: "推薦工具與保存容器",
-            text: "想讓蒜末保持最佳狀態，容器也很關鍵👇 \n304不鏽鋼壓蒜器（點此購買）🔗（쿠팡 링크）\n迷你電動碎蒜機（點此購買）🔗（쿠팡 링크）\n矽膠冰格模具（附蓋）：可重複使用、取用方便（點此購買）🔗（쿠팡 링크）\n真空密封袋：防潮防味，適合長期保存（點此購買）🔗（쿠팡 링크）\n玻璃保鮮盒：短期冷藏使用最佳（點此購買）🔗（쿠팡 링크）",
+            title: "保存方法",
+            text: "使用密封袋並劃分小格：將蒜末放入密封袋中，封口後壓平，用刀背輕輕劃出格線，冷凍後就會分成一格一格的。需要時可直接取出一格使用。\n 使用分格容器：將蒜末放入有分格的矽膠密封模具冷凍保管。每次只取出一小塊即可。\n冷凍保存：將密封袋或容器放冷凍，使用時無需解凍，直接加入料理即可！",
+            image: "https://images.unsplash.com/photo-1604908176997-43162b16832d?q=80&w=800&auto=format&fit=crop"
+          },
+          {
+            title: "延伸應用",
+            text: "去除蒜味：處理蒜頭後，可用檸檬水、醋水或鹽水與肥皂一起洗手來去除手上的味道。若仍有氣味殘留，也可以拿不鏽鋼湯匙或任何不銹鋼製品在手上摩擦幾下，效果會更好。\n蒜皮再利用：將蒜皮放入蔬菜湯料袋中，可為高湯增添自然鮮味。若將蒜皮洗淨晾乾後煮茶，也可以加入洋蔥皮一起煮，不僅可增強免疫力、促進血液循環，還有助於體脂肪代謝。",
+            image: "https://images.unsplash.com/photo-1604908176997-43162b16832d?q=80&w=800&auto=format&fit=crop"
+          },
+          {
+            title: "Studio.K推薦",
+            text: "攪拌機、分格容器、熬湯袋👇 \n說明（點此購買）🔗（쿠팡 링크）",
             image: "https://images.unsplash.com/photo-1604908176997-43162b16832d?q=80&w=800&auto=format&fit=crop"
           }
+          
         ]
       }
     }
     ,
     {
       id: "ramen-egg-master",
-      title: "如何成為煮泡麵雞蛋達人？",
+      title: "如何成為煮泡麵雞蛋達人!",
       hero: "https://images.unsplash.com/photo-1512058564366-18510be2db19?q=80&w=1600&auto=format&fit=crop",
       shortDescription: "泡麵跟蛋的組合，怎麼煮最好吃？！",
       content: {
         sections: [
-          { title: "各種煮法", text: "打散:時間點\n全熟:時間點\n半熟:時間點\n糖心蛋:另外煮6分半" },
+          { title: "總結", text: "總結\n全熟:時間點\n半熟:時間點\n糖心蛋:另外煮6分半" },
+          { title: "各種煮法", text: "打散:時間點\n全熟:時間點\n半熟:時間點\n溏心蛋:另外煮6分半" },
           { title: "為什麼要加蛋", text: "泡麵營養成分不夠，加蛋可以補充蛋白質。\ntips:也可以加入一些青菜、湯不要喝完" },
           {
-            title: "推薦工具",
+            title: "Studio.K推薦",
             text: "想讓蛋煮得剛剛好👇 \n煮蛋神器：掌握煮蛋最佳時機（點此購買）🔗（쿠팡 링크）",
             image: "https://images.unsplash.com/photo-1604908176997-43162b16832d?q=80&w=800&auto=format&fit=crop"
           }          

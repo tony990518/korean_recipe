@@ -205,7 +205,7 @@ const StepBlock = ({ step, index }: { step: Step; index: number }) => {
 
         {step.tip ? (
           <p className="mt-2 text-xs sm:text-sm text-amber-700 bg-amber-50 border border-amber-200 rounded px-2 py-1 inline-block">
-            雷點：{step.tip}
+            Tips：{step.tip}
           </p>
         ) : null}
 
