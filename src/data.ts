@@ -283,7 +283,7 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
     {
       id: "chopped-garlic",
       title: "韓式料理的必備食材--蒜末，如何大量製作與保存？",
-      hero: "https://images.unsplash.com/photo-1604908176997-43162b16832d?q=80&w=1600&auto=format&fit=crop",
+      hero: "/images/tips/garlic/thumbnail.png",
       shortDescription: "在韓國料理中，蒜末是絕對不可或缺的食材！從醃泡菜、煮湯到炒菜，幾乎無處不在。但每次都要剝蒜、切蒜實在是太麻煩了，手上還會沾滿蒜味。現在，讓我們來學習如何一次大量處理及保存蒜末！",
       content: {
         sections: [
@@ -385,6 +385,20 @@ export type SimplePost = {
 
 export const STORIES: SimplePost[] = [
   {
+    id: "army soup",
+    title: "韓國經典料理故事：部隊鍋的誕生",
+    shortDescription: "你知道為什麼部隊鍋被稱為「部隊鍋」嗎？部隊鍋的誕生其實蘊含了韓國一段悲傷的歷史。現在，就讓我們一起揭開這道料理背後的故事吧！",
+    hero: "/images/stories/army soup/thumbnail.png",
+    content: {
+      sections: [
+        { title: "部隊鍋的起源", text: "在韓戰（1950–1953）結束後，韓國正處於物資極度匱乏的時期。當時駐韓美軍基地附近，偶爾能取得美軍為士兵從美國運來的食材，像是罐頭火腿、香腸、培根等。這些原本只供給美軍的食材，被人們稱作「部隊肉」。\n起初，人們會利用這些補給品或是美軍吃剩的食材，拿來炒著吃。後來加入辣椒醬、泡菜與高湯煮成鍋物，這道結合了美式與韓式元素的料理因此被稱為「部隊鍋（부대찌개）」。\n美軍基地所在的松炭、議政府、坡州等地，也各自發展出不同的部隊鍋風格，大致可分為議政府式和松炭式。議政府式部隊鍋以泡菜為基底，口味清爽，比較接近傳統韓式的口味；松炭式部隊鍋則以牛骨高湯和起司為代表，味道濃郁也更為濃稠。至於哪一種才是最早的「正統」部隊鍋，至今仍有不同的說法。" },
+        { title: "部議政府式部隊鍋的起源", text: "其中，最廣為人知的部隊鍋起源說法是，1960年代，京畿道議政府的一位攤販許基淑（허기숙）奶奶率先利用西式食材，創作了最初的部隊鍋。\n1968 年，她以「魚板食堂（오뎅식당）」的名字正式登記營業，這家店也成為議政府最有名的「元祖部隊鍋」店。隨著「魚板食堂」的名氣越來越大，附近陸續出現了許多部隊鍋專門店，最終形成了如今的「議政府部隊鍋一條街」。\n如今，「魚板食堂」也開設了多家分店，在金浦機場與仁川機場都能找到它的蹤影。如果有機會去韓國玩，不妨親自去品嚐一下正宗的原味。" },
+        { title: "Studio.K 推薦", text: "쿠팡 부대찌개 밀키트\n코스트코 밀키트" },
+        { title: "參考資料", text: "https://encykorea.aks.ac.kr/Article/E0079968 \nhttps://namu.wiki/w/%EB%B6%80%EB%8C%80%EC%B0%8C%EA%B0%9C \nhttps://ko.wikipedia.org/wiki/%EB%B6%80%EB%8C%80%EC%B0%8C%EA%B0%9C \nhttps://odengsikdang.com/28 "}
+      ]
+    }
+  },
+  {
     id: "korean-chuseok",
     title: "韓國中秋也吃烤肉嗎？",
     shortDescription: "韓國人中秋節吃什麼？！",
@@ -407,19 +421,6 @@ export const STORIES: SimplePost[] = [
         { title: "韓國的中秋節", text: "會祭祖，跟中華文化的過年一樣大的節日" },
         { title: "吃什麼？", text: "介紹산적, 잡채, 송편 등등", image: "/images/stories/kimchi_jar.jpg" },
         { title: "那一口記憶", text: "酸香中帶著微甜，是家人一起的味道。" }
-      ]
-    }
-  },
-  {
-    id: "first-bibimbap",
-    title: "部隊鍋的由來",
-    shortDescription: "滋滋作響的瞬間，香氣讓時間慢了下來。",
-    hero: "https://images.unsplash.com/photo-1604908554007-9a5e6dc49e45?q=80&w=1600&auto=format&fit=crop",
-    content: {
-      sections: [
-        { title: "部隊鍋的由來", text: "部隊鍋的由來" },
-        { title: "部隊鍋的特點", text: "部隊鍋的特點" },
-        { title: "部隊鍋的用途", text: "部隊鍋的用途" }
       ]
     }
   },
