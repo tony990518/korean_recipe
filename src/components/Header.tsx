@@ -33,7 +33,7 @@ const Header = () => {
           className="flex items-center gap-3 font-extrabold tracking-tight text-2xl md:text-3xl text-slate-900"
         >
           <img
-            src="/images/logo_noText.png"
+            src="images/logo_noText.png"
             alt="Studio.K Logo"
             className="w-12 h-12 md:w-14 md:h-14 object-contain"
           />
