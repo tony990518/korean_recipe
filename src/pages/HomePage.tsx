@@ -20,8 +20,8 @@ const HomePage = () => {
   // ----- 슬라이드 데이터 -----
   const firstRecipe = DB.recipes?.[0];
   const firstTip = DB.tips?.[0];
-  const firstStory = STORIES?.[0];
-  const firstLab = LABS?.[0];
+  // const firstStory = STORIES?.[0];
+  // const firstLab = LABS?.[0];
 
   const slides = [
     {
