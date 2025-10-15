@@ -103,7 +103,7 @@ const Header = () => {
             </div>
           </a>
 
-          <a href="/#stories" onClick={() => setOpen(false)} className="w-full group rounded-lg px-2 py-2 hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500/40">
+          {/* <a href="/#stories" onClick={() => setOpen(false)} className="w-full group rounded-lg px-2 py-2 hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500/40">
             <div className="flex items-center justify-between gap-3">
               <div className="flex-1 flex flex-col items-end text-right">
                 <span className="font-medium leading-tight">料理小故事</span>
@@ -111,9 +111,9 @@ const Header = () => {
               </div>
               <div className="shrink-0 text-lg">📖</div>
             </div>
-          </a>
+          </a> */}
 
-          <a href="/#labs" onClick={() => setOpen(false)} className="w-full group rounded-lg px-2 py-2 hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500/40">
+          {/* <a href="/#labs" onClick={() => setOpen(false)} className="w-full group rounded-lg px-2 py-2 hover:bg-slate-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500/40">
             <div className="flex items-center justify-between gap-3">
               <div className="flex-1 flex flex-col items-end text-right">
                 <span className="font-medium leading-tight">料理研究室</span>
@@ -121,7 +121,7 @@ const Header = () => {
               </div>
               <div className="shrink-0 text-lg">🧪</div>
             </div>
-          </a>
+          </a> */}
         </nav>
       </div>
     </header>

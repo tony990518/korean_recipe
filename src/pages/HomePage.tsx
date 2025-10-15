@@ -61,28 +61,28 @@ const HomePage = () => {
       ],
       type: "text" as const,
     },
-    firstStory && {
+    /* firstStory && {
       key: "story",
       title: "料理小故事",
       subtitle: firstStory.title,
       desc: firstStory.shortDescription,
       buttons: [
-        <a key="stories" href="#stories" className="px-4 py-2 rounded-lg bg-slate-900 text-white text-sm">前往故事</a>,
-        <Link key="all" to="/stories" className="px-4 py-2 rounded-lg border text-sm">全部查看</Link>,
+        <a key=\"stories\" href=\"#stories\" className=\"px-4 py-2 rounded-lg bg-slate-900 text-white text-sm\">前往故事</a>,
+        <Link key=\"all\" to=\"/stories\" className=\"px-4 py-2 rounded-lg border text-sm\">全部查看</Link>,
       ],
       type: "text" as const,
-    },
-    firstLab && {
+    }, */
+    /* firstLab && {
       key: "lab",
       title: "料理研究室",
       subtitle: firstLab.title,
       desc: firstLab.shortDescription,
       buttons: [
-        <a key="labs" href="#labs" className="px-4 py-2 rounded-lg bg-slate-900 text-white text-sm">查看研究</a>,
-        <Link key="all" to="/labs" className="px-4 py-2 rounded-lg border text-sm">全部查看</Link>,
+        <a key=\"labs\" href=\"#labs\" className=\"px-4 py-2 rounded-lg bg-slate-900 text-white text-sm\">查看研究</a>,
+        <Link key=\"all\" to=\"/labs\" className=\"px-4 py-2 rounded-lg border text-sm\">全部查看</Link>,
       ],
       type: "text" as const,
-    },
+    }, */
   ].filter(Boolean) as Array<{
     key: string;
     title: string;
@@ -367,7 +367,7 @@ const HomePage = () => {
       </section>
 
       {/* Stories */}
-      <section id="stories" className="mb-10 scroll-mt-24 md:scroll-mt-28">
+      {/* <section id="stories" className="mb-10 scroll-mt-24 md:scroll-mt-28">
         <div className="flex items-end justify-between mb-3">
           <h2 className="text-xl font-bold text-slate-900">料理小故事</h2>
           <Link to="/stories" className="text-sm text-red-600">全部查看 →</Link>
@@ -386,10 +386,10 @@ const HomePage = () => {
             </Link>
           ))}
         </div>
-      </section>
+      </section> */}
 
       {/* Labs */}
-      <section id="labs" className="mb-10 scroll-mt-24 md:scroll-mt-28">
+      {/* <section id="labs" className="mb-10 scroll-mt-24 md:scroll-mt-28">
         <div className="flex items-end justify-between mb-3">
           <h2 className="text-xl font-bold text-slate-900">料理研究室</h2>
           <Link to="/labs" className="text-sm text-red-600">全部查看 →</Link>
@@ -408,7 +408,7 @@ const HomePage = () => {
             </Link>
           ))}
         </div>
-      </section>
+      </section> */}
 
       <TipModal tip={selectedTip} onClose={handleCloseModal} />
     </main>
