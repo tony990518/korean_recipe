@@ -388,7 +388,7 @@ export const STORIES: SimplePost[] = [
     id: "army soup",
     title: "韓國經典料理故事：部隊鍋的誕生",
     shortDescription: "你知道為什麼部隊鍋被稱為「部隊鍋」嗎？部隊鍋的誕生其實蘊含了韓國一段悲傷的歷史。現在，就讓我們一起揭開這道料理背後的故事吧！",
-    hero: "/images/stories/army soup/thumbnail.png",
+    hero: "/images/stories/army-soup/thumbnail.png",
     content: {
       sections: [
         { title: "部隊鍋的起源", text: "在韓戰（1950–1953）結束後，韓國正處於物資極度匱乏的時期。當時駐韓美軍基地附近，偶爾能取得美軍為士兵從美國運來的食材，像是罐頭火腿、香腸、培根等。這些原本只供給美軍的食材，被人們稱作「部隊肉」。\n起初，人們會利用這些補給品或是美軍吃剩的食材，拿來炒著吃。後來加入辣椒醬、泡菜與高湯煮成鍋物，這道結合了美式與韓式元素的料理因此被稱為「部隊鍋（부대찌개）」。\n美軍基地所在的松炭、議政府、坡州等地，也各自發展出不同的部隊鍋風格，大致可分為議政府式和松炭式。議政府式部隊鍋以泡菜為基底，口味清爽，比較接近傳統韓式的口味；松炭式部隊鍋則以牛骨高湯和起司為代表，味道濃郁也更為濃稠。至於哪一種才是最早的「正統」部隊鍋，至今仍有不同的說法。" },
@@ -406,7 +406,7 @@ export const STORIES: SimplePost[] = [
     content: {
       sections: [
         { title: "韓國的中秋節", text: "會祭祖，跟中華文化的過年一樣大的節日" },
-        { title: "吃什麼？", text: "介紹산적, 잡채, 송편 등등", image: "/images/stories/kimchi_jar.jpg" },
+        { title: "吃什麼？", text: "介紹산적, 잡채, 송편 등등", image: "https://images.unsplash.com/photo-1582450871972-ab24278726e3?q=80&w=800&auto=format&fit=crop" },
         { title: "那一口記憶", text: "酸香中帶著微甜，是家人一起的味道。" }
       ]
     }
@@ -419,7 +419,7 @@ export const STORIES: SimplePost[] = [
     content: {
       sections: [
         { title: "韓國的中秋節", text: "會祭祖，跟中華文化的過年一樣大的節日" },
-        { title: "吃什麼？", text: "介紹산적, 잡채, 송편 등등", image: "/images/stories/kimchi_jar.jpg" },
+        { title: "吃什麼？", text: "介紹산적, 잡채, 송편 등등", image: "https://images.unsplash.com/photo-1582450871972-ab24278726e3?q=80&w=800&auto=format&fit=crop" },
         { title: "那一口記憶", text: "酸香中帶著微甜，是家人一起的味道。" }
       ]
     }
