@@ -166,28 +166,6 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
       tips: ["如果家裡沒有阿洛酮糖，也可以用砂糖代替，大約放 阿洛酮糖用量的 70% 就可以了。例如：食譜裡如果用到 1 大匙阿洛酮糖，改成砂糖的話只要 2/3 大匙 就差不多。不過阿洛酮糖熱量更低、對身材管理更友善，正在控制飲食的朋友還是推薦試試看～"]
     },
     {
-      id: "soy-sauce-eggs",
-      title: "醬油溏心蛋（마약계란장）",
-      hero: "https://images.unsplash.com/photo-1581447109200-1cfd5f2bfae4?q=80&w=1600&auto=format&fit=crop",
-      minutes: 30,
-      difficulty: "易",
-      servings: 4,
-      flavor: { spicy: 0, salty: 3, sweet: 2, fermented: 1 },
-      shortDescription: "提前做起來的萬用配飯神器。",
-      ingredients: [
-        { label: "雞蛋", amount: "6 顆" },
-        { label: "醬油", amount: "150 ml" },
-        { label: "水", amount: "150 ml" },
-        { label: "糖", amount: "1 大匙" },
-        { label: "蒜末", amount: "1 小匙" },
-        { label: "蔥花", amount: "適量" }
-      ],
-      steps: [
-        { text: "蛋入滾水煮 6 分鐘成半熟，冰水冷卻剝殼。", heat: "high", time: "6 分" },
-        { text: "醬油、水、糖、蒜混合，加入蛋浸泡至少 2 小時。", heat: "low" }
-      ]
-    },
-    {
       id: "seaweed-soup",
       title: "투움바（투움바）",
       hero: "https://images.unsplash.com/photo-1592417817034-3f1c2c90b9b5?q=80&w=1600&auto=format&fit=crop",
@@ -208,6 +186,28 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
         { text: "海帶泡軟切段，牛肉用醬油略醃。" },
         { text: "鍋中香油爆香蒜，入牛肉拌炒後加海帶。", heat: "med" },
         { text: "倒入水煮 15 分調味即可。", heat: "high", time: "15 分" }
+      ]
+    },
+    {
+      id: "soy-sauce-eggs",
+      title: "醬油溏心蛋（마약계란장）",
+      hero: "https://images.unsplash.com/photo-1581447109200-1cfd5f2bfae4?q=80&w=1600&auto=format&fit=crop",
+      minutes: 30,
+      difficulty: "易",
+      servings: 4,
+      flavor: { spicy: 0, salty: 3, sweet: 2, fermented: 1 },
+      shortDescription: "提前做起來的萬用配飯神器。",
+      ingredients: [
+        { label: "雞蛋", amount: "6 顆" },
+        { label: "醬油", amount: "150 ml" },
+        { label: "水", amount: "150 ml" },
+        { label: "糖", amount: "1 大匙" },
+        { label: "蒜末", amount: "1 小匙" },
+        { label: "蔥花", amount: "適量" }
+      ],
+      steps: [
+        { text: "蛋入滾水煮 6 分鐘成半熟，冰水冷卻剝殼。", heat: "high", time: "6 分" },
+        { text: "醬油、水、糖、蒜混合，加入蛋浸泡至少 2 小時。", heat: "low" }
       ]
     },
   ],
@@ -248,7 +248,7 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
     {
       id: "seeweed-moistened",
       title: "海苔放久變軟了要怎麼辦？！",
-      hero: "/images/tips/seeweed/thumbnail.png",
+      hero: "/images/tips/seeweed/thumbnail1.png",
       shortDescription: "海苔是韓國餐桌上常見的配菜，不論是搭配白飯或是包飯卷都少不了它。但如果放久變軟了該怎麼辦？一起來看看解決方法吧！",
       content: {
         sections: [
@@ -392,7 +392,7 @@ export const STORIES: SimplePost[] = [
     content: {
       sections: [
         { title: "部隊鍋的起源", text: "在韓戰（1950–1953）結束後，韓國正處於物資極度匱乏的時期。當時駐韓美軍基地附近，偶爾能取得美軍為士兵從美國運來的食材，像是罐頭火腿、香腸、培根等。這些原本只供給美軍的食材，被人們稱作「部隊肉」。\n起初，人們會利用這些補給品或是美軍吃剩的食材，拿來炒著吃。後來加入辣椒醬、泡菜與高湯煮成鍋物，這道結合了美式與韓式元素的料理因此被稱為「部隊鍋（부대찌개）」。\n美軍基地所在的松炭、議政府、坡州等地，也各自發展出不同的部隊鍋風格，大致可分為議政府式和松炭式。議政府式部隊鍋以泡菜為基底，口味清爽，比較接近傳統韓式的口味；松炭式部隊鍋則以牛骨高湯和起司為代表，味道濃郁也更為濃稠。至於哪一種才是最早的「正統」部隊鍋，至今仍有不同的說法。" },
-        { title: "部議政府式部隊鍋的起源", text: "其中，最廣為人知的部隊鍋起源說法是，1960年代，京畿道議政府的一位攤販許基淑（허기숙）奶奶率先利用西式食材，創作了最初的部隊鍋。\n1968 年，她以「魚板食堂（오뎅식당）」的名字正式登記營業，這家店也成為議政府最有名的「元祖部隊鍋」店。隨著「魚板食堂」的名氣越來越大，附近陸續出現了許多部隊鍋專門店，最終形成了如今的「議政府部隊鍋一條街」。\n如今，「魚板食堂」也開設了多家分店，在金浦機場與仁川機場都能找到它的蹤影。如果有機會去韓國玩，不妨親自去品嚐一下正宗的原味。" },
+        { title: "議政府式部隊鍋的起源", text: "其中，最廣為人知的部隊鍋起源說法是，1960年代，京畿道議政府的一位攤販許基淑（허기숙）奶奶率先利用西式食材，創作了最初的部隊鍋。\n1968 年，她以「魚板食堂（오뎅식당）」的名字正式登記營業，這家店也成為議政府最有名的「元祖部隊鍋」店。隨著「魚板食堂」的名氣越來越大，附近陸續出現了許多部隊鍋專門店，最終形成了如今的「議政府部隊鍋一條街」。\n如今，「魚板食堂」也開設了多家分店，在金浦機場與仁川機場都能找到它的蹤影。如果有機會去韓國玩，不妨親自去品嚐一下正宗的原味。" },
         { title: "Studio.K 推薦", text: "쿠팡 부대찌개 밀키트\n코스트코 밀키트" },
         { title: "參考資料", text: "https://encykorea.aks.ac.kr/Article/E0079968 \nhttps://namu.wiki/w/%EB%B6%80%EB%8C%80%EC%B0%8C%EA%B0%9C \nhttps://ko.wikipedia.org/wiki/%EB%B6%80%EB%8C%80%EC%B0%8C%EA%B0%9C \nhttps://odengsikdang.com/28 "}
       ]
