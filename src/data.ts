@@ -136,80 +136,80 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
         { title: "加入配料", text: "根據個人喜好加入雞蛋、青蔥、辣椒粉等可選食材，完成！",image:"images/recipes/Kaguri/s3.png" }
       ],
     },
-    {
-      id: "Seul Gi-enoki",
-      title: "Red Velvet瑟琪的減肥食譜 - 金針菇豆腐",
-      hero: "https://images.unsplash.com/photo-1505577058444-a3dab90d4253?q=80&w=1600&auto=format&fit=crop",
-      minutes: 10,
-      difficulty: "初",
-      servings: 1,
-      flavor: { spicy: 0, salty: 3, sweet: 1, fermented: 3 },
-      shortDescription: "Red Velvet 瑟琪在 YouTube 上分享過她回歸期常吃的身材管理食譜之一 - 金針菇豆腐! 不只做法簡單，熱量低，還能吃得很有飽足感。想要控制體重、又不想吃得太單調的朋友，可以一起來試試看～ 🍴",
-      ingredients: [
-        { label: "板豆腐", amount: "1 盒" , image: "images/recipes/Seulgi/i1.jpg"},
-        { label: "金針菇", amount: "半 包", image: "images/recipes/Seulgi/i2.jpg" },
-        { label: "醬油", amount: "1 大匙" , image: "images/recipes/Seulgi/i3.png"},
-        { label: "阿洛酮糖", amount: "1 大匙" , image: "images/recipes/Seulgi/i4.jpg"},
-        { label: "蠔油", amount: "1/2 大匙" , image: "images/recipes/Seulgi/i5.jpg"},
-        { label: "蒜泥", amount: "些許" , image: "images/recipes/Seulgi/i6.jpg"},
-        { label: "水", amount: "2 大匙" , image: "images/recipes/yoon-nam-no/i6.png"},
-        { label: "芝麻(可選)", amount: "些許" , image: "images/recipes/Seulgi/i7.jpeg"},
-        { label: "芝麻油(可選)", amount: "1 小匙" , image: "images/recipes/Seulgi/i8.jpg"}
-      ],
-      steps: [
-        { title: "製作醬汁", text: "將醬油、阿洛酮糖、蠔油、蒜末(各1大匙)和水(2大匙)混合，調成醬汁", heat: "med", image:"images/recipes/Seulgi/s2.png" },
-        { title: "煎豆腐", text: "在平底鍋加入一點油，並將豆腐放入煎至金黃色，先盛出放在盤中",image:"images/recipes/Seulgi/s3.png" },
-        { title: "煎金針菇", text: "將金針菇下鍋煎炒", heat: "med", image:"images/recipes/Seulgi/s4.png" },
-        { title: "加入醬汁", text: "倒入剛剛調好的醬汁，將醬汁收乾入味後，淋在豆腐上即可", heat: "med", time: "5 分", image:"images/recipes/Seulgi/s5.png"},
-        { title: "擺盤完成", text: "根據個人喜好加入芝麻、芝麻油等可選食材，完成！", image:"images/recipes/Seulgi/s6.png" }
-      ],
-      tips: ["如果家裡沒有阿洛酮糖，也可以用砂糖代替，大約放 阿洛酮糖用量的 70% 就可以了。例如：食譜裡如果用到 1 大匙阿洛酮糖，改成砂糖的話只要 2/3 大匙 就差不多。不過阿洛酮糖熱量更低、對身材管理更友善，正在控制飲食的朋友還是推薦試試看～"]
-    },
-    {
-      id: "seaweed-soup",
-      title: "투움바（투움바）",
-      hero: "https://images.unsplash.com/photo-1592417817034-3f1c2c90b9b5?q=80&w=1600&auto=format&fit=crop",
-      minutes: 25,
-      difficulty: "初",
-      servings: 2,
-      flavor: { spicy: 0, salty: 2, sweet: 1, fermented: 1 },
-      shortDescription: "生日必喝，清爽營養的經典韓式湯品。",
-      ingredients: [
-        { label: "乾海帶", amount: "一小把", note: "泡水還原" },
-        { label: "牛肉片", amount: "100 g" },
-        { label: "蒜末", amount: "1 小匙" },
-        { label: "醬油", amount: "1 大匙" },
-        { label: "香油", amount: "1 小匙" },
-        { label: "水/高湯", amount: "700 ml" }
-      ],
-      steps: [
-        { text: "海帶泡軟切段，牛肉用醬油略醃。" },
-        { text: "鍋中香油爆香蒜，入牛肉拌炒後加海帶。", heat: "med" },
-        { text: "倒入水煮 15 分調味即可。", heat: "high", time: "15 分" }
-      ]
-    },
-    {
-      id: "soy-sauce-eggs",
-      title: "醬油溏心蛋（마약계란장）",
-      hero: "https://images.unsplash.com/photo-1581447109200-1cfd5f2bfae4?q=80&w=1600&auto=format&fit=crop",
-      minutes: 30,
-      difficulty: "初",
-      servings: 4,
-      flavor: { spicy: 0, salty: 3, sweet: 2, fermented: 1 },
-      shortDescription: "提前做起來的萬用配飯神器。",
-      ingredients: [
-        { label: "雞蛋", amount: "6 顆" },
-        { label: "醬油", amount: "150 ml" },
-        { label: "水", amount: "150 ml" },
-        { label: "糖", amount: "1 大匙" },
-        { label: "蒜末", amount: "1 小匙" },
-        { label: "蔥花", amount: "適量" }
-      ],
-      steps: [
-        { text: "蛋入滾水煮 6 分鐘成半熟，冰水冷卻剝殼。", heat: "high", time: "6 分" },
-        { text: "醬油、水、糖、蒜混合，加入蛋浸泡至少 2 小時。", heat: "low" }
-      ]
-    },
+    // {
+    //   id: "Seul Gi-enoki",
+    //   title: "Red Velvet瑟琪的減肥食譜 - 金針菇豆腐",
+    //   hero: "https://images.unsplash.com/photo-1505577058444-a3dab90d4253?q=80&w=1600&auto=format&fit=crop",
+    //   minutes: 10,
+    //   difficulty: "初",
+    //   servings: 1,
+    //   flavor: { spicy: 0, salty: 3, sweet: 1, fermented: 3 },
+    //   shortDescription: "Red Velvet 瑟琪在 YouTube 上分享過她回歸期常吃的身材管理食譜之一 - 金針菇豆腐! 不只做法簡單，熱量低，還能吃得很有飽足感。想要控制體重、又不想吃得太單調的朋友，可以一起來試試看～ 🍴",
+    //   ingredients: [
+    //     { label: "板豆腐", amount: "1 盒" , image: "images/recipes/Seulgi/i1.jpg"},
+    //     { label: "金針菇", amount: "半 包", image: "images/recipes/Seulgi/i2.jpg" },
+    //     { label: "醬油", amount: "1 大匙" , image: "images/recipes/Seulgi/i3.png"},
+    //     { label: "阿洛酮糖", amount: "1 大匙" , image: "images/recipes/Seulgi/i4.jpg"},
+    //     { label: "蠔油", amount: "1/2 大匙" , image: "images/recipes/Seulgi/i5.jpg"},
+    //     { label: "蒜泥", amount: "些許" , image: "images/recipes/Seulgi/i6.jpg"},
+    //     { label: "水", amount: "2 大匙" , image: "images/recipes/yoon-nam-no/i6.png"},
+    //     { label: "芝麻(可選)", amount: "些許" , image: "images/recipes/Seulgi/i7.jpeg"},
+    //     { label: "芝麻油(可選)", amount: "1 小匙" , image: "images/recipes/Seulgi/i8.jpg"}
+    //   ],
+    //   steps: [
+    //     { title: "製作醬汁", text: "將醬油、阿洛酮糖、蠔油、蒜末(各1大匙)和水(2大匙)混合，調成醬汁", heat: "med", image:"images/recipes/Seulgi/s2.png" },
+    //     { title: "煎豆腐", text: "在平底鍋加入一點油，並將豆腐放入煎至金黃色，先盛出放在盤中",image:"images/recipes/Seulgi/s3.png" },
+    //     { title: "煎金針菇", text: "將金針菇下鍋煎炒", heat: "med", image:"images/recipes/Seulgi/s4.png" },
+    //     { title: "加入醬汁", text: "倒入剛剛調好的醬汁，將醬汁收乾入味後，淋在豆腐上即可", heat: "med", time: "5 分", image:"images/recipes/Seulgi/s5.png"},
+    //     { title: "擺盤完成", text: "根據個人喜好加入芝麻、芝麻油等可選食材，完成！", image:"images/recipes/Seulgi/s6.png" }
+    //   ],
+    //   tips: ["如果家裡沒有阿洛酮糖，也可以用砂糖代替，大約放 阿洛酮糖用量的 70% 就可以了。例如：食譜裡如果用到 1 大匙阿洛酮糖，改成砂糖的話只要 2/3 大匙 就差不多。不過阿洛酮糖熱量更低、對身材管理更友善，正在控制飲食的朋友還是推薦試試看～"]
+    // },
+    // {
+    //   id: "seaweed-soup",
+    //   title: "투움바（투움바）",
+    //   hero: "https://images.unsplash.com/photo-1592417817034-3f1c2c90b9b5?q=80&w=1600&auto=format&fit=crop",
+    //   minutes: 25,
+    //   difficulty: "初",
+    //   servings: 2,
+    //   flavor: { spicy: 0, salty: 2, sweet: 1, fermented: 1 },
+    //   shortDescription: "生日必喝，清爽營養的經典韓式湯品。",
+    //   ingredients: [
+    //     { label: "乾海帶", amount: "一小把", note: "泡水還原" },
+    //     { label: "牛肉片", amount: "100 g" },
+    //     { label: "蒜末", amount: "1 小匙" },
+    //     { label: "醬油", amount: "1 大匙" },
+    //     { label: "香油", amount: "1 小匙" },
+    //     { label: "水/高湯", amount: "700 ml" }
+    //   ],
+    //   steps: [
+    //     { text: "海帶泡軟切段，牛肉用醬油略醃。" },
+    //     { text: "鍋中香油爆香蒜，入牛肉拌炒後加海帶。", heat: "med" },
+    //     { text: "倒入水煮 15 分調味即可。", heat: "high", time: "15 分" }
+    //   ]
+    // },
+    // {
+    //   id: "soy-sauce-eggs",
+    //   title: "醬油溏心蛋（마약계란장）",
+    //   hero: "https://images.unsplash.com/photo-1581447109200-1cfd5f2bfae4?q=80&w=1600&auto=format&fit=crop",
+    //   minutes: 30,
+    //   difficulty: "初",
+    //   servings: 4,
+    //   flavor: { spicy: 0, salty: 3, sweet: 2, fermented: 1 },
+    //   shortDescription: "提前做起來的萬用配飯神器。",
+    //   ingredients: [
+    //     { label: "雞蛋", amount: "6 顆" },
+    //     { label: "醬油", amount: "150 ml" },
+    //     { label: "水", amount: "150 ml" },
+    //     { label: "糖", amount: "1 大匙" },
+    //     { label: "蒜末", amount: "1 小匙" },
+    //     { label: "蔥花", amount: "適量" }
+    //   ],
+    //   steps: [
+    //     { text: "蛋入滾水煮 6 分鐘成半熟，冰水冷卻剝殼。", heat: "high", time: "6 分" },
+    //     { text: "醬油、水、糖、蒜混合，加入蛋浸泡至少 2 小時。", heat: "low" }
+    //   ]
+    // },
   ],
 
   tips: [
@@ -321,48 +321,48 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
       }
     }
     ,
-    {
-      id: "ramen-egg-master",
-      title: "如何成為煮泡麵雞蛋達人!",
-      hero: "https://images.unsplash.com/photo-1512058564366-18510be2db19?q=80&w=1600&auto=format&fit=crop",
-      shortDescription: "泡麵跟蛋的組合，怎麼煮最好吃？！",
-      content: {
-        sections: [
-          { title: "總結", text: "總結\n全熟:時間點\n半熟:時間點\n糖心蛋:另外煮6分半" },
-          { title: "各種煮法", text: "打散:時間點\n全熟:時間點\n半熟:時間點\n溏心蛋:另外煮6分半" },
-          { title: "為什麼要加蛋", text: "泡麵營養成分不夠，加蛋可以補充蛋白質。\ntips:也可以加入一些青菜、湯不要喝完" },
-          {
-            title: "Studio.K推薦",
-            text: "想讓蛋煮得剛剛好👇 \n煮蛋神器：掌握煮蛋最佳時機（點此購買）🔗（쿠팡 링크）",
-            image: "https://images.unsplash.com/photo-1604908176997-43162b16832d?q=80&w=800&auto=format&fit=crop"
-          }          
-        ]
-      }
-    },
-    {
-      id: "egg-fluffy-omelet",
-      title: "鬆軟蛋捲的關鍵",
-      hero: "https://images.unsplash.com/photo-1544377193-33dcf5f2a3c1?q=80&w=1600&auto=format&fit=crop",
-      shortDescription: "加一點水或牛奶，小火慢煎不過度攪拌。",
-      content: {
-        sections: [
-          { title: "比例", text: "每顆蛋加 1 小匙水或牛奶，口感更嫩。" },
-          { title: "火候", text: "小火慢煎，表面略濕就捲起，餘溫熟成。" }
-        ]
-      }
-    },
-    {
-      id: "pan-preheat",
-      title: "鍋子預熱的重要性",
-      hero: "https://images.unsplash.com/photo-1558030110-2321e6d66a83?q=80&w=1600&auto=format&fit=crop",
-      shortDescription: "食材不黏鍋、上色更漂亮的簡單訣竅。",
-      content: {
-        sections: [
-          { title: "判斷方法", text: "水滴成珠在鍋面跳動，表示預熱到位。" },
-          { title: "注意事項", text: "加入油後稍等 5–10 秒再下食材，避免燒焦。" }
-        ]
-      }
-    }
+    // {
+    //   id: "ramen-egg-master",
+    //   title: "如何成為煮泡麵雞蛋達人!",
+    //   hero: "https://images.unsplash.com/photo-1512058564366-18510be2db19?q=80&w=1600&auto=format&fit=crop",
+    //   shortDescription: "泡麵跟蛋的組合，怎麼煮最好吃？！",
+    //   content: {
+    //     sections: [
+    //       { title: "總結", text: "總結\n全熟:時間點\n半熟:時間點\n糖心蛋:另外煮6分半" },
+    //       { title: "各種煮法", text: "打散:時間點\n全熟:時間點\n半熟:時間點\n溏心蛋:另外煮6分半" },
+    //       { title: "為什麼要加蛋", text: "泡麵營養成分不夠，加蛋可以補充蛋白質。\ntips:也可以加入一些青菜、湯不要喝完" },
+    //       {
+    //         title: "Studio.K推薦",
+    //         text: "想讓蛋煮得剛剛好👇 \n煮蛋神器：掌握煮蛋最佳時機（點此購買）🔗（쿠팡 링크）",
+    //         image: "https://images.unsplash.com/photo-1604908176997-43162b16832d?q=80&w=800&auto=format&fit=crop"
+    //       }          
+    //     ]
+    //   }
+    // },
+    // {
+    //   id: "egg-fluffy-omelet",
+    //   title: "鬆軟蛋捲的關鍵",
+    //   hero: "https://images.unsplash.com/photo-1544377193-33dcf5f2a3c1?q=80&w=1600&auto=format&fit=crop",
+    //   shortDescription: "加一點水或牛奶，小火慢煎不過度攪拌。",
+    //   content: {
+    //     sections: [
+    //       { title: "比例", text: "每顆蛋加 1 小匙水或牛奶，口感更嫩。" },
+    //       { title: "火候", text: "小火慢煎，表面略濕就捲起，餘溫熟成。" }
+    //     ]
+    //   }
+    // },
+    // {
+    //   id: "pan-preheat",
+    //   title: "鍋子預熱的重要性",
+    //   hero: "https://images.unsplash.com/photo-1558030110-2321e6d66a83?q=80&w=1600&auto=format&fit=crop",
+    //   shortDescription: "食材不黏鍋、上色更漂亮的簡單訣竅。",
+    //   content: {
+    //     sections: [
+    //       { title: "判斷方法", text: "水滴成珠在鍋面跳動，表示預熱到位。" },
+    //       { title: "注意事項", text: "加入油後稍等 5–10 秒再下食材，避免燒焦。" }
+    //     ]
+    //   }
+    // }
   ]
 };
 
