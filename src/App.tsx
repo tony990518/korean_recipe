@@ -8,8 +8,8 @@ import RecipesPage from "./pages/Recipes";
 import TipsPage from "./pages/Tips";
 import RecipeRoute from "./pages/RecipeDetail";
 import TipDetail from "./pages/TipDetail";
-import Terms from "./pages/Terms";
-import Privacy from "./pages/Privacy";
+import Terms from "./pages/terms";
+import Privacy from "./pages/privacy";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
