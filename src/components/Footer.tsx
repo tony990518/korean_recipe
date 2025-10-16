@@ -30,7 +30,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="https://docs.google.com/forms/d/1c3XpXHViYZv3syOjbwOltzPt61zm81aNIdjJvhcFCDk/edit">
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLScwR6vBH5xbeVTmtq6YVNQ27HLKQ32yC0ECfFQtoBEu8NCheQ/viewform?usp=dialog">
                   <span>📋</span><span>意見回饋表單</span>
                 </a>
               </li>
@@ -60,7 +60,7 @@ const Footer = () => {
           <div className="space-y-3">
             <h3 className="text-lg font-semibold text-white">社群 & 訂閱</h3>
             <ul className="space-y-2">
-              <li><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition">📸<span>Instagram</span></a></li>
+              <li><a href="https://www.instagram.com/everyday_studiok/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition">📸<span>Instagram</span></a></li>
               <li><a href="https://www.instagram.com/everyday_studiok/" className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition">▶️<span>其他社群</span></a></li>
             </ul>
             <form onSubmit={handleSubscribe} className="mt-2 flex items-center gap-2">
