@@ -8,11 +8,11 @@ const Footer = () => {
     const formData = new FormData(e.currentTarget);
     const email = String(formData.get("email") || "").trim();
     if (!email) {
-      alert("이메일을 입력해주세요.");
+      alert("請輸入email.");
       return;
     }
     // TODO: Connect to real email service. For now, just a friendly confirmation.
-    alert(`구독해 주셔서 감사합니다!\n${email}`);
+    alert(`感謝您的訂閱！\n${email}`);
     e.currentTarget.reset();
   };
 
@@ -30,7 +30,7 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="https://docs.google.com/forms/u/0/d/13cjeVIwt4BuhVeOU-dSfYNosS9lmgrIMW0U_p460-Og/viewform?edit_requested=true" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition">
+                <a href="https://docs.google.com/forms/d/1c3XpXHViYZv3syOjbwOltzPt61zm81aNIdjJvhcFCDk/edit">
                   <span>📋</span><span>意見回饋表單</span>
                 </a>
               </li>
@@ -73,7 +73,7 @@ const Footer = () => {
               />
               <button type="submit" className="shrink-0 px-3 py-2 rounded-md bg-red-500 hover:bg-red-400 text-white text-sm transition">訂閱</button>
             </form>
-            <p className="text-xs text-slate-400">訂閱後我們會將最新食譜與文章透過電子郵件寄給您</p>
+            <p className="text-xs text-slate-400">訂閱後我們會將最新食譜與文章透過電子郵件寄送給您</p>
           </div>
         </div>
 
