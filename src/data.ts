@@ -26,20 +26,20 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
   recipes: [
     {
       id: "yoon-nam-no-jjapaghetti",
-      title: "黑白大廚 料理狂人 辣油炸醬泡麵",
+      title: "黑白大廚料理狂人 - 辣油炸醬泡麵",
       hero: "images/recipes/yoon-nam-no/thumbnail.png",
       minutes: 10,
-      difficulty: "初",
+      difficulty: "易",
       servings: 1,
       flavor: { spicy: 4, salty: 4, sweet: 1, fermented: 2 },
-      shortDescription: "最近剛好在看韓綜叢林飯的第二季，看到料理狂人伊男老主廚用炸醬泡麵做的辣油炸醬麵，就馬上做來吃吃看了，推薦給喜歡吃辣的朋友一起來做～ 那就趕快開始吧！",
+      shortDescription: "最近剛好在看韓綜叢林飯的第二季，看到料理狂人伊男老主廚用炸醬泡麵做的辣油炸醬麵，就馬上做來吃吃看了，推薦給喜歡吃辣的朋友一起來試試～ 那就趕快開始吧！",
       ingredients: [
-        { label: "韓式炸醬泡麵", amount: "1 包", image: "images/recipes/yoon-nam-no/i1.webp", link: "https://shorturl.at/2lvmb" },
-        { label: "青陽辣椒", amount: "1 根", image: "images/recipes/yoon-nam-no/i2.webp", link: "https://shorturl.at/2lvmb" },
-        { label: "辣椒粉", amount: "1 大匙", image: "images/recipes/yoon-nam-no/i3.jpg", link: "https://shorturl.at/2lvmb" },
-        { label: "鹽巴", amount: "一小撮", image: "images/recipes/yoon-nam-no/i4.jpg", link: "https://shorturl.at/2lvmb" },
-        { label: "橄欖油", amount: "3 大匙", image: "images/recipes/yoon-nam-no/i5.webp", link: "https://shorturl.at/2lvmb" },
-        { label: "水", amount: "600 毫升", image: "images/recipes/yoon-nam-no/i6.png", link: "https://shorturl.at/2lvmb" }
+        { label: "韓式炸醬泡麵", amount: "1 包", image: "images/recipes/yoon-nam-no/i1.webp", link: "https://afflink.one/s/c3MlH" },
+        { label: "青陽辣椒", amount: "1 根", image: "images/recipes/yoon-nam-no/i2.webp", link: "https://afflink.one/s/4N5pR" },
+        { label: "辣椒粉", amount: "1 大匙", image: "images/recipes/yoon-nam-no/i3.jpg", link: "https://linkgo.one/s/wXL8W" },
+        { label: "鹽巴", amount: "一小撮", image: "images/recipes/yoon-nam-no/i4.jpg", link: "https://linkgo.one/s/Bagk8" },
+        { label: "橄欖油", amount: "3 大匙", image: "images/recipes/yoon-nam-no/i5.webp", link: "https://onelink.one/s/WECJr" },
+        { label: "水", amount: "600 毫升", image: "images/recipes/yoon-nam-no/i6.png", link: "https://afflink.one/s/TQrX0" }
       ],
       steps: [
         { title: "準備青陽辣椒", text: "將 1 根青陽辣椒切成小塊備用。", image: "images/recipes/yoon-nam-no/s1.jpg" },
@@ -62,18 +62,18 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
 
     {
       id: "ex-bf-toast",
-      title: "前男友吐司（奶油乳酪藍莓吐司）",
+      title: "前男友吐 - 奶油乳酪藍莓吐司",
       hero: "images/recipes/ex-bf-toast/thumbnail.png",
       minutes: 5,
-      difficulty: "初",
+      difficulty: "易",
       servings: 1,
       flavor: { spicy: 0, salty: 1, sweet: 4, fermented: 0 },
       shortDescription: "這款吐司因為一則網路小故事而爆紅：有人忍不住去問前男友常做的點心食譜，結果就是這個神組合！外酥內軟的吐司，抹上奶油乳酪與藍莓果醬，酸酸甜甜，保證一吃就愛上～",
       ingredients: [
-        { label: "吐司", amount: "2 片", image: "images/recipes/ex-bf-toast/i1.png" },
+        { label: "吐司", amount: "2 片", image: "images/recipes/ex-bf-toast/i1.png" ,},
         { label: "奶油乳酪", amount: "2-3 大匙", image: "images/recipes/ex-bf-toast/i2.png" },
-        { label: "藍莓果醬", amount: "1-2 大匙", image: "images/recipes/ex-bf-toast/i3.png" },
-        { label: "奶油", amount: "少許（可選）", image: "images/recipes/ex-bf-toast/i4.png" }
+        { label: "藍莓果醬", amount: "1-2 大匙", image: "images/recipes/ex-bf-toast/i3.png" , link:"https://afflink.one/s/Nb1w1"},
+        { label: "奶油", amount: "少許（可選）", image: "images/recipes/ex-bf-toast/i4.png", link:"https://linkgo.one/s/EGXVq" }
       ],
       steps: [
         {
@@ -115,10 +115,10 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
     },
     {
       id: "Kaguri",
-      title: "咖哩浣熊麵-Kaguri",
+      title: "咖哩浣熊麵 - Kaguri",
       hero: "images/recipes/Kaguri/Thumbnail.png",
       minutes: 10,
-      difficulty: "初",
+      difficulty: "易",
       servings: 1,
       flavor: { spicy: 2, salty: 2, sweet: 2, fermented: 2 },
       shortDescription: "Kaguri是韓國很有名的一種泡麵吃法，做法很簡單，就是在浣熊泡麵裡加入咖哩塊一起煮。這個吃法最早在韓國的網咖（PC房）裡很流行，因為方便又好吃，後來透過網友口耳相傳變得越來越受歡迎。甚至因為人氣太高，農心還真的推出了官方版的Kaguri產品呢！懶得自己做的朋友也可以直接買官方產品來吃喔！",
