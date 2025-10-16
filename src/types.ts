@@ -36,7 +36,7 @@ export type Recipe = {
   /** 카드 썸네일 이미지 맞춤 방식 (기본: cover) */
   cardImageFit?: "cover" | "contain";
   minutes: number;
-  difficulty: "初" | "中" | "高";
+  difficulty: "易" | "中" | "難";
   servings: number;
   flavor: FlavorProfile;
 
