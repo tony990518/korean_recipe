@@ -1,4 +1,4 @@
-
+// src/App.tsx
 import { useEffect } from "react";
 import { HashRouter, Routes, Route, Link, useLocation } from "react-router-dom";
 import Header from "./components/Header";
@@ -6,14 +6,10 @@ import Footer from "./components/Footer";
 import HomePage from "./pages/HomePage";
 import RecipesPage from "./pages/Recipes";
 import TipsPage from "./pages/Tips";
-// import StoriesPage from "./pages/Stories";
-// import LabsPage from "./pages/Labs";
 import RecipeRoute from "./pages/RecipeDetail";
-// import StoryDetail from "./pages/StoryDetail";
-// import LabDetail from "./pages/LabDetail";
 import TipDetail from "./pages/TipDetail";
-import Terms from "./pages/terms";
-import Privacy from "./pages/privacy";
+import Terms from "./pages/Terms";
+import Privacy from "./pages/Privacy";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -29,15 +25,18 @@ const AppShell = () => (
       <Route path="/" element={<HomePage />} />
       <Route path="/recipes" element={<RecipesPage />} />
       <Route path="/tips" element={<TipsPage />} />
-      {/* <Route path="/stories" element={<StoriesPage />} /> */}
-      {/* <Route path="/labs" element={<LabsPage />} /> */}
       <Route path="/recipe/:id" element={<RecipeRoute />} />
-      {/* <Route path="/story/:id" element={<StoryDetail />} /> */}
-      {/* <Route path="/lab/:id" element={<LabDetail />} /> */}
       <Route path="/tip/:id" element={<TipDetail />} />
       <Route path="/terms" element={<Terms />} />
       <Route path="/privacy" element={<Privacy />} />
-      <Route path="*" element={<main className="max-w-3xl mx-auto px-4 py-20 text-center"><h1 className="text-2xl font-bold">頁面不存在</h1><div className="mt-6"><Link className="text-red--600 underline" to="/">返回首頁</Link></div></main>} />
+      <Route path="*" element={
+        <main className="max-w-3xl mx-auto px-4 py-20 text-center">
+          <h1 className="text-2xl font-bold">頁面不存在</h1>
+          <div className="mt-6">
+            <Link className="text-red-600 underline" to="/">返回首頁</Link>
+          </div>
+        </main>
+      } />
     </Routes>
     <Footer />
   </div>

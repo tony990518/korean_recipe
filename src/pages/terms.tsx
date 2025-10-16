@@ -5,16 +5,17 @@ export default function Terms() {
   const h1Ref = useRef<HTMLHeadingElement>(null);
 
   useEffect(() => {
-    // 접근성: 페이지 진입 시 제목에 포커스
     h1Ref.current?.focus();
-    // 해시(#) 스크롤 지원
+
     if (window.location.hash) {
-      const el = document.querySelector(window.location.hash);
+      const hashParts = window.location.hash.split("#").slice(1);
+      const targetId = hashParts[1] || hashParts[0];
+      const el = document.getElementById(targetId);
       el?.scrollIntoView({ block: "start" });
     }
   }, []);
 
-  const updated = "2025-09-01"; // 마지막 업데이트일 필요 시 갱신
+  const updated = "2025-09-01"; // 필요 시 갱신
 
   return (
     <main className="max-w-3xl mx-auto px-4 py-12 text-slate-800">
@@ -27,7 +28,6 @@ export default function Terms() {
       </h1>
       <p className="text-sm text-slate-500 mb-8">最後更新：{updated}</p>
 
-      {/* 본문 */}
       <section id="purpose" className="mb-6 scroll-mt-24">
         <h2 className="text-xl font-semibold mb-2">1. 目的</h2>
         <p>本條款旨在規範本網站（以下稱「本網站」）之使用者權利與義務。</p>
@@ -72,3 +72,4 @@ export default function Terms() {
     </main>
   );
 }
+

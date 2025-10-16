@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import AffiliateNotice from "./AffiliateNotice";
+// import AffiliateNotice from "./AffiliateNotice";
 import { FormEvent } from "react";
 
 const Footer = () => {
@@ -30,7 +30,12 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLScwR6vBH5xbeVTmtq6YVNQ27HLKQ32yC0ECfFQtoBEu8NCheQ/viewform?usp=dialog">
+                <a
+                  href="https://docs.google.com/forms/d/e/1FAIpQLScwR6vBH5xbeVTmtq6YVNQ27HLKQ32yC0ECfFQtoBEu8NCheQ/viewform?usp=dialog"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition"
+                >
                   <span>📋</span><span>意見回饋表單</span>
                 </a>
               </li>
@@ -42,8 +47,8 @@ const Footer = () => {
             <h3 className="text-lg font-semibold text-white">快速連結</h3>
             <ul className="space-y-2">
               <li><Link to="/" className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition">🏠<span>首頁</span></Link></li>
-              <li><Link to="/#recipes" className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition">🍲<span>食譜總覽</span></Link></li>
-              <li><Link to="/#tips" className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition">💡<span>料理小撇步</span></Link></li>
+              <li><a href="#recipes" className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition">🍲<span>食譜總覽</span></a></li>
+              <li><a href="#tips" className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition">💡<span>料理小撇步</span></a></li>
             </ul>
           </div>
 
@@ -61,7 +66,7 @@ const Footer = () => {
             <h3 className="text-lg font-semibold text-white">社群 & 訂閱</h3>
             <ul className="space-y-2">
               <li><a href="https://www.instagram.com/everyday_studiok/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition">📸<span>Instagram</span></a></li>
-              <li><a href="https://www.instagram.com/everyday_studiok/" className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition">▶️<span>其他社群</span></a></li>
+              {/* <li><a href="https://www.instagram.com/everyday_studiok/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition">▶️<span>其他社群</span></a></li> */}
             </ul>
             <form onSubmit={handleSubscribe} className="mt-2 flex items-center gap-2">
               <input
@@ -80,10 +85,10 @@ const Footer = () => {
         {/* 版權資訊 */}
         <div className="border-t border-slate-700 mt-8 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="text-sm text-slate-400">
+            {/* <div className="text-sm text-slate-400">
               <AffiliateNotice />
-            </div>
-            <div className="text-sm text-slate-400">© {new Date().getFullYear()} Studio.K 韓味研究所. All rights reserved.</div>
+            </div> */}
+            <div className="text-sm text-slate-400 ml-auto w-full text-right md:w-auto">© {new Date().getFullYear()} Studio.K 韓味研究所. All rights reserved.</div>
           </div>
         </div>
       </div>

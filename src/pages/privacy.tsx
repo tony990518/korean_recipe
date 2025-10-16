@@ -6,8 +6,12 @@ export default function Privacy() {
 
   useEffect(() => {
     h1Ref.current?.focus();
+
     if (window.location.hash) {
-      const el = document.querySelector(window.location.hash);
+      // HashRouter에서 hash가 "#/privacy#collect" 형태로 올 수 있음
+      const hashParts = window.location.hash.split("#").slice(1); // ["privacy", "collect"]
+      const targetId = hashParts[1] || hashParts[0]; // section id 선택
+      const el = document.getElementById(targetId);
       el?.scrollIntoView({ block: "start" });
     }
   }, []);
