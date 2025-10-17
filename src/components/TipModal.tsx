@@ -1,7 +1,7 @@
 // src/components/TipModal.tsx
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { Tip } from "../data";
+import { Tip } from "../types";
 
 const FOCUSABLE_SELECTOR = [
   'a[href]',

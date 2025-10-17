@@ -1,6 +1,6 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { STORIES } from "../data";
-import ProductRecommendation from "../components/ProductRecommendation";
+// import ProductRecommendation from "../components/ProductRecommendation";
 
 const StoryDetail = () => {
   const { id } = useParams();

@@ -1,7 +1,8 @@
 // src/pages/TipsPage.tsx
 import { useState, useCallback } from "react";
 import { Link } from "react-router-dom";
-import { DB, Tip } from "../data";
+import { DB } from "../data";
+import { Tip } from "../types";
 import TipCard from "../components/TipCard";
 import TipModal from "../components/TipModal";
 

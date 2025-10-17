@@ -1,6 +1,6 @@
 // src/components/TipCard.tsx
 // 홈 화면에 보이는 팁 카드 디자인
-import { Tip } from "../data";
+import { Tip } from "../types";
 
 type Props = {
   data: Tip;

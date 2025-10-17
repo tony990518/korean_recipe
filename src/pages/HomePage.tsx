@@ -2,7 +2,8 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 // import { DB, Tip, STORIES, LABS } from "../data";  //만약에 stories와 labs를 사용하지 않는다면 주석처리
-import { DB, Tip } from "../data"; // stories와 labs를 사용하지 않는다면 주석처리
+import { DB } from "../data";
+import { Tip } from "../types";
 import RecipeCard from "../components/RecipeCard";
 import TipCard from "../components/TipCard";
 import TipModal from "../components/TipModal";

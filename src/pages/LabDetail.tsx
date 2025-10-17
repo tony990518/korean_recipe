@@ -1,6 +1,6 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { LABS } from "../data";
-import ProductRecommendation from "../components/ProductRecommendation";
+// import ProductRecommendation from "../components/ProductRecommendation";
 
 const LabDetail = () => {
   const { id } = useParams();
