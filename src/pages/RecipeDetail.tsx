@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { DB } from "../data";
 import { Recipe } from "../types";
 import AffiliateNotice from "../components/AffiliateNotice";
@@ -41,12 +42,17 @@ const RecipeDetail = ({ recipe }: { recipe: Recipe }) => {
   const nav = useNavigate();
 
   return (
-    <main
-      className="
+    <>
+      <Helmet>
+        <title>{`${recipe.title} | K-Food Studio`}</title>
+        <meta name="description" content={recipe.shortDescription} />
+      </Helmet>
+      <main
+        className="
         max-w-5xl mx-auto px-4 pb-20
         max-[360px]:px-3 max-[360px]:pb-16
       "
-    >
+      >
       {/* back */}
       <button
         onClick={() => nav(-1)}
@@ -176,6 +182,7 @@ const RecipeDetail = ({ recipe }: { recipe: Recipe }) => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
     </main>
+  </>
   );
 };
 
