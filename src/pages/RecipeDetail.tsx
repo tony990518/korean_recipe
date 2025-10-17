@@ -9,6 +9,7 @@ import TipsBlock from "../components/TipsBlock";
 import ConclusionBlock from "../components/ConclusionBlock";
 import ShareIcons from "../components/ShareIcons";
 import MetaRow from "../components/metaraw";
+import ProductRecommendation from "../components/ProductRecommendation";
 // import TipButton from "../components/TipButton";
 
 import { HowToStep } from "schema-dts";
@@ -77,7 +78,7 @@ const RecipeDetail = ({ recipe }: { recipe: Recipe }) => {
               flex-1 space-y-4 max-[360px]:space-y-3
               text-[15px] sm:text-base md:text-[17px]
             ">
-            {/* Title */}
+            {/* ===== Block: Title ===== */}
             <h1
               className="
                 font-extrabold text-slate-900 leading-snug
@@ -89,19 +90,7 @@ const RecipeDetail = ({ recipe }: { recipe: Recipe }) => {
               {recipe.title}
             </h1>
 
-            {/* Meta badges */}
-            {/* <div
-              className="
-                flex items-center flex-wrap gap-2 text-slate-600
-                text-xs sm:text-sm
-              "
-            >
-              <span className="px-2 py-0.5 rounded-full bg-slate-100">⏱ {recipe.minutes} 分</span>
-              <span className="px-2 py-0.5 rounded-full bg-slate-100">難度 {recipe.difficulty}</span>
-              <span className="px-2 py-0.5 rounded-full bg-slate-100">{recipe.servings} 人份</span>
-            </div> */}
-
-            {/* Short description */}
+            {/* ===== Block: Short Description ===== */}
             {recipe.shortDescription ? (
               <p
                 className="
@@ -114,23 +103,10 @@ const RecipeDetail = ({ recipe }: { recipe: Recipe }) => {
               </p>
             ) : null}
 
-            {/* START of MetaRaw */}
+            {/* ===== Block: Meta Info (Time, Difficulty, etc.) ===== */}
             <MetaRow servings={recipe.servings} minutes={recipe.minutes} difficulty={recipe.difficulty} spicy={recipe.flavor.spicy} />
 
-            {/* Flavor */}
-            {/* <div className="rounded-2xl border p-4 max-[360px]:p-3">
-              <h3
-                className="
-                  font-semibold mb-3 text-slate-900
-                  text-lg sm:text-xl md:text-2xl
-                "
-              >
-                味道指標
-              </h3>
-              <FlavorMeter profile={recipe.flavor} />
-            </div> */}
-
-            {/* Ingredients */}
+            {/* ===== Block: Ingredients ===== */}
             <div className="rounded-2xl border p-4 max-[360px]:p-3">
               <h3
                 className="
@@ -143,7 +119,6 @@ const RecipeDetail = ({ recipe }: { recipe: Recipe }) => {
                 <em className="ml-2 text-xs sm:text-sm italic text-slate-500">Ingredient</em>
               </h3>
 
-              {/* 안내문 */}
               <div className="text-xs sm:text-sm text-slate-600">
                 <AffiliateNotice />
               </div>
@@ -152,7 +127,7 @@ const RecipeDetail = ({ recipe }: { recipe: Recipe }) => {
               </div>
             </div>
 
-            {/* Steps */}
+            {/* ===== Block: Steps ===== */}
             <div className="rounded-2xl border p-4 max-[360px]:p-3">
               <h3
                 className="
@@ -165,7 +140,6 @@ const RecipeDetail = ({ recipe }: { recipe: Recipe }) => {
                 <em className="ml-2 text-xs sm:text-sm italic text-slate-500">Steps</em>
               </h3>
 
-              {/* ⬇️ StepBlock 전반 폰트 업: 내부에 text-* 강제 없으면 전부 상속 */}
               <div className="
                   space-y-3 max-[360px]:space-y-2
                   text-[15px] sm:text-base md:text-lg
@@ -176,17 +150,23 @@ const RecipeDetail = ({ recipe }: { recipe: Recipe }) => {
               </div>
             </div>
 
-            {/* Tips */}
+            {/* ===== Block: Extra Tips ===== */}
             {Array.isArray(recipe.tips) && recipe.tips.length > 0 ? (
               <TipsBlock items={recipe.tips} />
             ) : null}
 
-            {/* Conclusion */}
+            {/* ===== Block: Conclusion ===== */}
             {recipe.conclusion ? (
               <ConclusionBlock text={recipe.conclusion} />
             ) : null}
 
+            {/* ===== Block: Share Icons ===== */}
             <ShareIcons recipe={recipe} />
+
+            {/* ===== Block: Recommended Products ===== */}
+            {recipe.recommendedProducts && recipe.recommendedProducts.length > 0 && (
+              <ProductRecommendation products={recipe.recommendedProducts} />
+            )}
           </div>
         </div>
       </article>

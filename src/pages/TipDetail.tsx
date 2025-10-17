@@ -1,6 +1,7 @@
 // src/pages/TipDetail.tsx
 import { useParams, Link } from "react-router-dom";
 import { DB } from "../data";
+import ProductRecommendation from "../components/ProductRecommendation";
 
 const TipDetail = () => {
   const { id } = useParams();
@@ -22,14 +23,20 @@ const TipDetail = () => {
   return (
     <main className="max-w-4xl mx-auto px-4 py-8">
       <article>
+        {/* ===== Block: Hero Image ===== */}
         <img
           src={tip.hero}
           alt={tip.title}
           className="w-full max-h-[460px] object-cover rounded-2xl mb-6"
         />
+
+        {/* ===== Block: Title ===== */}
         <h1 className="text-3xl font-bold text-slate-900">{tip.title}</h1>
+
+        {/* ===== Block: Short Description ===== */}
         <p className="mt-2 text-lg text-slate-600">{tip.shortDescription}</p>
 
+        {/* ===== Block: Content Sections ===== */}
         <div className="mt-12 space-y-6">
           {tip.modalData ? (
             // modalData가 있는 경우 (현재는 사용되지 않지만 호환성을 위해 유지)
@@ -78,6 +85,14 @@ const TipDetail = () => {
           )}
         </div>
 
+        {/* ===== Block: Recommended Products ===== */}
+        {tip.recommendedProducts && tip.recommendedProducts.length > 0 && (
+          <div className="mt-12">
+            <ProductRecommendation products={tip.recommendedProducts} />
+          </div>
+        )}
+
+        {/* ===== Block: Back Link ===== */}
         <div className="mt-12">
           <Link to="/tips" className="text-red-600 hover:underline">
             ← 모든 팁 보기

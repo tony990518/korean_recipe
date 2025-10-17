@@ -1,5 +1,6 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { STORIES } from "../data";
+import ProductRecommendation from "../components/ProductRecommendation";
 
 const StoryDetail = () => {
   const { id } = useParams();
@@ -29,7 +30,7 @@ const StoryDetail = () => {
       </button>
 
       <article className="mt-4">
-        {/* Hero */}
+        {/* ===== Block: Hero Image ===== */}
         <div className="rounded-2xl overflow-hidden border bg-white">
           <img
             src={story.hero}
@@ -42,7 +43,7 @@ const StoryDetail = () => {
 
         {/* Content */}
         <div className="mt-4 flex flex-col gap-6">
-          {/* Title + summary (no border) */}
+          {/* ===== Block: Title & Summary ===== */}
           <div>
             <h1 className="font-extrabold text-slate-900 leading-snug text-2xl sm:text-3xl md:text-4xl">
               {story.title}
@@ -52,7 +53,7 @@ const StoryDetail = () => {
             </p>
           </div>
 
-          {/* Section blocks (like Tips) */}
+          {/* ===== Block: Content Sections ===== */}
           {story.content?.sections?.map((section, index) => (
             <section key={index} className="bg-slate-50 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
               <h2 className="text-xl sm:text-2xl font-bold text-slate-800 mb-3">
@@ -71,7 +72,14 @@ const StoryDetail = () => {
             </section>
           ))}
 
-          {/* Back to list */}
+          {/* ===== Block: Recommended Products (Future Use) ===== */}
+          {/*
+          {story.recommendedProducts && story.recommendedProducts.length > 0 && (
+            <ProductRecommendation products={story.recommendedProducts} />
+          )}
+          */}
+
+          {/* ===== Block: Back Link ===== */}
           <div className="flex">
             <Link to="/stories" className="text-red-600 hover:underline text-sm sm:text-base">
               ← 返回故事列表

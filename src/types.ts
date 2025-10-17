@@ -28,6 +28,13 @@ export type FlavorProfile = {
   fermented: number;
 };
 
+export type Product = {
+  name: string;
+  description: string;
+  image: string;
+  link: string;
+};
+
 /* ========== Aggregates ========== */
 export type Recipe = {
   id: string;
@@ -48,4 +55,26 @@ export type Recipe = {
   tips?: string[];
   /** 結語/마무리 한 문단(선택) */
   conclusion?: string;
+  recommendedProducts?: Product[];
+};
+
+export type Tip = {
+  id: string;
+  title: string;
+  hero: string;
+  shortDescription: string;
+  content: {
+    sections: {
+      title: string;
+      text: string;
+      image?: string;
+    }[];
+  };
+  // 모바일 모달용 추가 데이터
+  modalData?: {
+    reason: string;
+    solution: string;
+    example?: string;
+  };
+  recommendedProducts?: Product[];
 };
