@@ -6,32 +6,32 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
     {
       id: "yoon-nam-no-jjapaghetti",
       title: "黑白大廚料理狂人 - 辣油炸醬泡麵",
-      hero: "images/recipes/yoon-nam-no/thumbnail.png",
+      hero: "/images/recipes/yoon-nam-no/thumbnail.png",
       minutes: 10,
       difficulty: "易",
       servings: 1,
       flavor: { spicy: 4, salty: 4, sweet: 1, fermented: 2 },
       shortDescription: "最近剛好在看韓綜叢林飯的第二季，看到料理狂人伊男老主廚用炸醬泡麵做的辣油炸醬麵，就馬上做來吃吃看了，推薦給喜歡吃辣的朋友一起來試試～ 那就趕快開始吧！",
       ingredients: [
-        { label: "韓式炸醬泡麵", amount: "1 包", image: "images/recipes/yoon-nam-no/i1.webp", link: "https://afflink.one/s/c3MlH" },
-        { label: "青陽辣椒", amount: "1 根", image: "images/recipes/yoon-nam-no/i2.webp", link: "https://afflink.one/s/4N5pR" },
-        { label: "辣椒粉", amount: "1 大匙", image: "images/recipes/yoon-nam-no/i3.jpg", link: "https://linkgo.one/s/wXL8W" },
-        { label: "鹽巴", amount: "一小撮", image: "images/recipes/yoon-nam-no/i4.jpg", link: "https://linkgo.one/s/Bagk8" },
-        { label: "橄欖油", amount: "3 大匙", image: "images/recipes/yoon-nam-no/i5.webp", link: "https://onelink.one/s/WECJr" },
-        { label: "水", amount: "600 毫升", image: "images/recipes/yoon-nam-no/i6.png", link: "https://afflink.one/s/TQrX0" }
+        { label: "韓式炸醬泡麵", amount: "1 包", image: "/images/recipes/yoon-nam-no/i1.webp", link: "https://afflink.one/s/c3MlH" },
+        { label: "青陽辣椒", amount: "1 根", image: "/images/recipes/yoon-nam-no/i2.webp", link: "https://afflink.one/s/4N5pR" },
+        { label: "辣椒粉", amount: "1 大匙", image: "/images/recipes/yoon-nam-no/i3.jpg", link: "https://linkgo.one/s/wXL8W" },
+        { label: "鹽巴", amount: "一小撮", image: "/images/recipes/yoon-nam-no/i4.jpg", link: "https://linkgo.one/s/Bagk8" },
+        { label: "橄欖油", amount: "3 大匙", image: "/images/recipes/yoon-nam-no/i5.webp", link: "https://onelink.one/s/WECJr" },
+        { label: "水", amount: "600 毫升", image: "/images/recipes/yoon-nam-no/i6.png", link: "https://afflink.one/s/TQrX0" }
       ],
       steps: [
-        { title: "準備青陽辣椒", text: "將 1 根青陽辣椒切成小塊備用。", image: "images/recipes/yoon-nam-no/s1.jpg" },
-        { title: "製作辣椒油醬", text: "在碗中放入1大匙辣椒粉、切好的青陽辣椒、1小撮鹽和炸醬麵附贈的調味油包。", image: "images/recipes/yoon-nam-no/s2.jpeg" },
-        { title: "加熱橄欖油", text: "在小鍋中倒入3大匙橄欖油，用中小火加熱，注意不要燒焦。油量不多，很快就會熱。當看到油面出現波紋，表示油已經夠熱了。", heat: "med", image: "images/recipes/yoon-nam-no/s3.jpg" },
-        { title: "完成辣椒油", text: "將燒熱的橄欖油立即倒入裝有調味料的碗中。熱油會讓辣椒粉均勻散開。接著，加入乾燥蔬菜包，攪拌均勻，讓蔬菜塊也能吸附辣椒油的香味。", image: "images/recipes/yoon-nam-no/s4.jpg" },
+        { title: "準備青陽辣椒", text: "將 1 根青陽辣椒切成小塊備用。", image: "/images/recipes/yoon-nam-no/s1.jpg" },
+        { title: "製作辣椒油醬", text: "在碗中放入1大匙辣椒粉、切好的青陽辣椒、1小撮鹽和炸醬麵附贈的調味油包。", image: "/images/recipes/yoon-nam-no/s2.jpeg" },
+        { title: "加熱橄欖油", text: "在小鍋中倒入3大匙橄欖油，用中小火加熱，注意不要燒焦。油量不多，很快就會熱。當看到油面出現波紋，表示油已經夠熱了。", heat: "med", image: "/images/recipes/yoon-nam-no/s3.jpg" },
+        { title: "完成辣椒油", text: "將燒熱的橄欖油立即倒入裝有調味料的碗中。熱油會讓辣椒粉均勻散開。接著，加入乾燥蔬菜包，攪拌均勻，讓蔬菜塊也能吸附辣椒油的香味。", image: "/images/recipes/yoon-nam-no/s4.jpg" },
         {
           title: "煮麵並留麵水", text: "鍋中倒入 600 毫升的水煮滾，放入麵條以中火煮約 2 分鐘至彈牙；撈起麵條後，鍋內保留約 1/3 的麵水，其餘 2/3 盛出備用。",
-          heat: "med", time: "2分", image: "images/recipes/yoon-nam-no/s5.jpg"
+          heat: "med", time: "2分", image: "/images/recipes/yoon-nam-no/s5.jpg"
         },
-        { title: "調味與拌炒", text: "將炸醬粉包倒入鍋中，與剩下的麵水和麵條拌炒，讓麵條均勻裹上醬汁。", heat: "med", image: "images/recipes/yoon-nam-no/s7.jpg" },
-        { title: "加入辣椒油", text: "當炸醬粉溶解後，加入步驟5做好的辣椒油醬，徹底攪拌均勻。", image: "images/recipes/yoon-nam-no/s8.jpg" },
-        { title: "調整濃稠度", text: "如果覺得麵條太乾，可以慢慢加入預留的麵水，調整到你喜歡的濕潤或濃稠度。這樣，一份美味的韓式辣味炸醬麵就完成了！", image: "images/recipes/yoon-nam-no/s9.jpeg" }
+        { title: "調味與拌炒", text: "將炸醬粉包倒入鍋中，與剩下的麵水和麵條拌炒，讓麵條均勻裹上醬汁。", heat: "med", image: "/images/recipes/yoon-nam-no/s7.jpg" },
+        { title: "加入辣椒油", text: "當炸醬粉溶解後，加入步驟5做好的辣椒油醬，徹底攪拌均勻。", image: "/images/recipes/yoon-nam-no/s8.jpg" },
+        { title: "調整濃稠度", text: "如果覺得麵條太乾，可以慢慢加入預留的麵水，調整到你喜歡的濕潤或濃稠度。這樣，一份美味的韓式辣味炸醬麵就完成了！", image: "/images/recipes/yoon-nam-no/s9.jpeg" }
       ],
       tips: [
         "辣椒的量可以根據喜好增加或減少，沒有青陽辣椒的話可以用糯米椒試試看，不過辣度可能會有點不夠。",
@@ -42,17 +42,17 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
     {
       id: "ex-bf-toast",
       title: "前男友吐司 - 奶油乳酪藍莓吐司",
-      hero: "images/recipes/ex-bf-toast/thumbnail.png",
+      hero: "/images/recipes/ex-bf-toast/thumbnail.png",
       minutes: 5,
       difficulty: "易",
       servings: 1,
       flavor: { spicy: 0, salty: 1, sweet: 4, fermented: 0 },
       shortDescription: "這款吐司因為一則網路小故事而爆紅：有人忍不住去問前男友常做的點心食譜，結果就是這個神組合！外酥內軟的吐司，抹上奶油乳酪與藍莓果醬，酸酸甜甜，保證一吃就愛上～",
       ingredients: [
-        { label: "吐司", amount: "2 片", image: "images/recipes/ex-bf-toast/i1.png" , link:"https://linkgo.one/s/qJuCG"},
-        { label: "奶油乳酪", amount: "2-3 大匙", image: "images/recipes/ex-bf-toast/i2.png" , link:"https://linkgo.one/s/kmhZ8"},
-        { label: "藍莓果醬", amount: "1-2 大匙", image: "images/recipes/ex-bf-toast/i3.png" , link:"https://afflink.one/s/Nb1w1"},
-        { label: "奶油", amount: "少許（可選）", image: "images/recipes/ex-bf-toast/i4.png", link:"https://linkgo.one/s/EGXVq" }
+        { label: "吐司", amount: "2 片", image: "/images/recipes/ex-bf-toast/i1.png" , link:"https://linkgo.one/s/qJuCG"},
+        { label: "奶油乳酪", amount: "2-3 大匙", image: "/images/recipes/ex-bf-toast/i2.png" , link:"https://linkgo.one/s/kmhZ8"},
+        { label: "藍莓果醬", amount: "1-2 大匙", image: "/images/recipes/ex-bf-toast/i3.png" , link:"https://afflink.one/s/Nb1w1"},
+        { label: "奶油", amount: "少許（可選）", image: "/images/recipes/ex-bf-toast/i4.png", link:"https://linkgo.one/s/EGXVq" }
       ],
       steps: [
         {
@@ -60,29 +60,29 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
           text: "將平底鍋放在爐上，以小火預熱約 30 秒。加入 1/2 小匙奶油，讓它完全融化並出現細小氣泡與香氣即可。不要等到變褐或冒煙。若用烤麵包機，可直接放吐司，不必加奶油。",
           heat: "low",
           time: "30秒",
-          image: "images/recipes/ex-bf-toast/s1.png"
+          image: "/images/recipes/ex-bf-toast/s1.png"
         },
         {
           title: "烤吐司兩面",
           text: "把吐司放入鍋中，以中小火每面各烤 1 分半～2 分鐘，直到兩面都呈現金黃色、邊緣酥脆。火不要太大，避免外焦內冷。",
           heat: "med",
           time: "3-4分",
-          image: "images/recipes/ex-bf-toast/s2.png"
+          image: "/images/recipes/ex-bf-toast/s2.png"
         },
         {
           title: "塗抹奶油乳酪",
           text: "將烤好的吐司移到盤子上，趁熱在其中一片均勻抹上 2-3 大匙奶油乳酪，建議抹到邊緣，吃起來每口都有味道。",
-          image: "images/recipes/ex-bf-toast/s3.png"
+          image: "/images/recipes/ex-bf-toast/s3.png"
         },
         {
           title: "加入藍莓果醬",
           text: "在乳酪上放 1-2 大匙藍莓果醬，用湯匙背面輕輕抹開，避免太用力把乳酪攪散。",
-          image: "images/recipes/ex-bf-toast/s4.png"
+          image: "/images/recipes/ex-bf-toast/s4.png"
         },
         {
           title: "完成享用",
           text: "想拍照漂亮就做開放式吐司；想要方便就蓋上另一片吐司，對半切開變三明治。最後放進微波爐加熱 10 秒，讓乳酪微微融化、果醬更融合，馬上就能享用啦！",
-          image: "images/recipes/ex-bf-toast/s5.png"
+          image: "/images/recipes/ex-bf-toast/s5.png"
         }
       ],
       tips: [
@@ -95,24 +95,24 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
     {
       id: "Kaguri",
       title: "咖哩浣熊麵 - Kaguri",
-      hero: "images/recipes/Kaguri/Thumbnail.png",
+      hero: "/images/recipes/Kaguri/Thumbnail.png",
       minutes: 10,
       difficulty: "易",
       servings: 1,
       flavor: { spicy: 2, salty: 2, sweet: 2, fermented: 2 },
       shortDescription: "Kaguri是韓國很有名的一種泡麵吃法，做法很簡單，就是在浣熊泡麵裡加入咖哩塊一起煮。這個吃法最早在韓國的網咖（PC房）裡很流行，因為方便又好吃，後來透過網友口耳相傳變得越來越受歡迎。甚至因為人氣太高，農心還真的推出了官方版的Kaguri產品呢！懶得自己做的朋友也可以直接買官方產品來吃喔！",
       ingredients: [
-        { label: "浣熊海鮮烏龍麵", amount: "1 包", link: "https://linkgo.one/s/TXGQS", image: "images/recipes/Kaguri/i1.jpeg" },
-        { label: "咖哩塊", amount: "1 塊", link: "https://afflink.one/s/njiDQ", image: "images/recipes/Kaguri/i2.jpg" },
-        { label: "雞蛋(可省略)", amount: "1 顆", link: "https://onelink.one/s/5ZTEX", image: "images/recipes/Kaguri/i3.png" },
-        { label: "青蔥(可省略)", amount: "少許", link: "https://onelink.one/s/QB3LO", image: "images/recipes/Kaguri/i4.jpeg" },
-        { label: "辣椒粉(可省略)", amount: "1 大匙" ,link: "https://linkgo.one/s/5QvZA", image: "images/recipes/Kaguri/i5.png"},
-        { label: "水", amount: "550 ml", link: "https://afflink.one/s/fKBi4", image: "images/recipes/yoon-nam-no/i6.png", imageFit: "contain" },
+        { label: "浣熊海鮮烏龍麵", amount: "1 包", link: "https://linkgo.one/s/TXGQS", image: "/images/recipes/Kaguri/i1.jpeg" },
+        { label: "咖哩塊", amount: "1 塊", link: "https://afflink.one/s/njiDQ", image: "/images/recipes/Kaguri/i2.jpg" },
+        { label: "雞蛋(可省略)", amount: "1 顆", link: "https://onelink.one/s/5ZTEX", image: "/images/recipes/Kaguri/i3.png" },
+        { label: "青蔥(可省略)", amount: "少許", link: "https://onelink.one/s/QB3LO", image: "/images/recipes/Kaguri/i4.jpeg" },
+        { label: "辣椒粉(可省略)", amount: "1 大匙" ,link: "https://linkgo.one/s/5QvZA", image: "/images/recipes/Kaguri/i5.png"},
+        { label: "水", amount: "550 ml", link: "https://afflink.one/s/fKBi4", image: "/images/recipes/yoon-nam-no/i6.png", imageFit: "contain" },
       ],
       steps: [
-        { title: "溶解咖哩", text: "在鍋中加入水 550 ml，並放入泡麵的乾燥蔬菜包以及咖哩塊，加熱慢慢讓咖哩塊溶解，期間輕拌防沾底。", heat: "med", image:"images/recipes/Kaguri/s1.png" },
-        { title: "煮麵", text: "水滾後，加入麵條以及半包湯包，將麵煮至喜歡的口感。", heat: "med", time: "5 分" ,tip: "官方建議煮5分鐘",image:"images/recipes/Kaguri/s2.png"},
-        { title: "加入配料", text: "根據個人喜好加入雞蛋、青蔥、辣椒粉等可選食材，完成！",image:"images/recipes/Kaguri/s3.png" }
+        { title: "溶解咖哩", text: "在鍋中加入水 550 ml，並放入泡麵的乾燥蔬菜包以及咖哩塊，加熱慢慢讓咖哩塊溶解，期間輕拌防沾底。", heat: "med", image:"/images/recipes/Kaguri/s1.png" },
+        { title: "煮麵", text: "水滾後，加入麵條以及半包湯包，將麵煮至喜歡的口感。", heat: "med", time: "5 分" ,tip: "官方建議煮5分鐘",image:"/images/recipes/Kaguri/s2.png"},
+        { title: "加入配料", text: "根據個人喜好加入雞蛋、青蔥、辣椒粉等可選食材，完成！",image:"/images/recipes/Kaguri/s3.png" }
       ],
     },
     // {
@@ -125,22 +125,22 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
     //   flavor: { spicy: 0, salty: 3, sweet: 1, fermented: 3 },
     //   shortDescription: "Red Velvet 瑟琪在 YouTube 上分享過她回歸期常吃的身材管理食譜之一 - 金針菇豆腐! 不只做法簡單，熱量低，還能吃得很有飽足感。想要控制體重、又不想吃得太單調的朋友，可以一起來試試看～ 🍴",
     //   ingredients: [
-    //     { label: "板豆腐", amount: "1 盒" , image: "images/recipes/Seulgi/i1.jpg"},
-    //     { label: "金針菇", amount: "半 包", image: "images/recipes/Seulgi/i2.jpg" },
-    //     { label: "醬油", amount: "1 大匙" , image: "images/recipes/Seulgi/i3.png"},
-    //     { label: "阿洛酮糖", amount: "1 大匙" , image: "images/recipes/Seulgi/i4.jpg"},
-    //     { label: "蠔油", amount: "1/2 大匙" , image: "images/recipes/Seulgi/i5.jpg"},
-    //     { label: "蒜泥", amount: "些許" , image: "images/recipes/Seulgi/i6.jpg"},
-    //     { label: "水", amount: "2 大匙" , image: "images/recipes/yoon-nam-no/i6.png"},
-    //     { label: "芝麻(可選)", amount: "些許" , image: "images/recipes/Seulgi/i7.jpeg"},
-    //     { label: "芝麻油(可選)", amount: "1 小匙" , image: "images/recipes/Seulgi/i8.jpg"}
+    //     { label: "板豆腐", amount: "1 盒" , image: "/images/recipes/Seulgi/i1.jpg"},
+    //     { label: "金針菇", amount: "半 包", image: "/images/recipes/Seulgi/i2.jpg" },
+    //     { label: "醬油", amount: "1 大匙" , image: "/images/recipes/Seulgi/i3.png"},
+    //     { label: "阿洛酮糖", amount: "1 大匙" , image: "/images/recipes/Seulgi/i4.jpg"},
+    //     { label: "蠔油", amount: "1/2 大匙" , image: "/images/recipes/Seulgi/i5.jpg"},
+    //     { label: "蒜泥", amount: "些許" , image: "/images/recipes/Seulgi/i6.jpg"},
+    //     { label: "水", amount: "2 大匙" , image: "/images/recipes/yoon-nam-no/i6.png"},
+    //     { label: "芝麻(可選)", amount: "些許" , image: "/images/recipes/Seulgi/i7.jpeg"},
+    //     { label: "芝麻油(可選)", amount: "1 小匙" , image: "/images/recipes/Seulgi/i8.jpg"}
     //   ],
     //   steps: [
-    //     { title: "製作醬汁", text: "將醬油、阿洛酮糖、蠔油、蒜末(各1大匙)和水(2大匙)混合，調成醬汁", heat: "med", image:"images/recipes/Seulgi/s2.png" },
-    //     { title: "煎豆腐", text: "在平底鍋加入一點油，並將豆腐放入煎至金黃色，先盛出放在盤中",image:"images/recipes/Seulgi/s3.png" },
-    //     { title: "煎金針菇", text: "將金針菇下鍋煎炒", heat: "med", image:"images/recipes/Seulgi/s4.png" },
-    //     { title: "加入醬汁", text: "倒入剛剛調好的醬汁，將醬汁收乾入味後，淋在豆腐上即可", heat: "med", time: "5 分", image:"images/recipes/Seulgi/s5.png"},
-    //     { title: "擺盤完成", text: "根據個人喜好加入芝麻、芝麻油等可選食材，完成！", image:"images/recipes/Seulgi/s6.png" }
+    //     { title: "製作醬汁", text: "將醬油、阿洛酮糖、蠔油、蒜末(各1大匙)和水(2大匙)混合，調成醬汁", heat: "med", image:"/images/recipes/Seulgi/s2.png" },
+    //     { title: "煎豆腐", text: "在平底鍋加入一點油，並將豆腐放入煎至金黃色，先盛出放在盤中",image:"/images/recipes/Seulgi/s3.png" },
+    //     { title: "煎金針菇", text: "將金針菇下鍋煎炒", heat: "med", image:"/images/recipes/Seulgi/s4.png" },
+    //     { title: "加入醬汁", text: "倒入剛剛調好的醬汁，將醬汁收乾入味後，淋在豆腐上即可", heat: "med", time: "5 分", image:"/images/recipes/Seulgi/s5.png"},
+    //     { title: "擺盤完成", text: "根據個人喜好加入芝麻、芝麻油等可選食材，完成！", image:"/images/recipes/Seulgi/s6.png" }
     //   ],
     //   tips: ["如果家裡沒有阿洛酮糖，也可以用砂糖代替，大約放 阿洛酮糖用量的 70% 就可以了。例如：食譜裡如果用到 1 大匙阿洛酮糖，改成砂糖的話只要 2/3 大匙 就差不多。不過阿洛酮糖熱量更低、對身材管理更友善，正在控制飲食的朋友還是推薦試試看～"]
     // },
@@ -195,7 +195,7 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
     {
       id: "gochugaru-smell",
       title: "辣椒粉有陳味怎麼辦？！",
-      hero: "images/tips/redpepper/thumbnail.png",
+      hero: "/images/tips/redpepper/thumbnail.png",
       shortDescription: "辣椒粉放久了有味道？別擔心，簡單幾招就能解決！",
       content: {
         sections: [
@@ -236,7 +236,7 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
     {
       id: "seeweed-moistened",
       title: "海苔放久變軟了要怎麼辦？！",
-      hero: "images/tips/seeweed/thumbnail1.png",
+      hero: "/images/tips/seeweed/thumbnail1.png",
       shortDescription: "海苔是韓國餐桌上常見的配菜，不論是搭配白飯或是包飯卷都少不了它。但如果放久變軟了該怎麼辦？一起來看看解決方法吧！",
       content: {
         sections: [
@@ -274,7 +274,7 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
     {
       id: "chopped-garlic",
       title: "韓式料理的必備食材--蒜末，如何大量製作與保存？",
-      hero: "images/tips/garlic/thumbnail.png",
+      hero: "/images/tips/garlic/thumbnail.png",
       shortDescription: "在韓國料理中，蒜末是絕對不可或缺的食材！從醃泡菜、煮湯到炒菜，幾乎無處不在。但每次都要剝蒜、切蒜實在是太麻煩了，手上還會沾滿蒜味。現在，讓我們來學習如何一次大量處理及保存蒜末！",
       content: {
         sections: [
@@ -332,8 +332,7 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
     //   hero: "https://images.unsplash.com/photo-1512058564366-18510be2db19?q=80&w=1600&auto=format&fit=crop",
     //   shortDescription: "泡麵跟蛋的組合，怎麼煮最好吃？！",
     //   content: {
-    //     sections: [
-    //       { title: "總結", text: "總結\n全熟:時間點\n半熟:時間點\n糖心蛋:另外煮6分半" },
+    //     sections: [ { title: "總結", text: "總結\n全熟:時間點\n半熟:時間點\n糖心蛋:另外煮6分半" },
     //       { title: "各種煮法", text: "打散:時間點\n全熟:時間點\n半熟:時間點\n溏心蛋:另外煮6分半" },
     //       { title: "為什麼要加蛋", text: "泡麵營養成分不夠，加蛋可以補充蛋白質。\ntips:也可以加入一些青菜、湯不要喝完" },
     //       {
@@ -350,8 +349,7 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
     //   hero: "https://images.unsplash.com/photo-1544377193-33dcf5f2a3c1?q=80&w=1600&auto=format&fit=crop",
     //   shortDescription: "加一點水或牛奶，小火慢煎不過度攪拌。",
     //   content: {
-    //     sections: [
-    //       { title: "比例", text: "每顆蛋加 1 小匙水或牛奶，口感更嫩。" },
+    //     sections: [ { title: "比例", text: "每顆蛋加 1 小匙水或牛奶，口感更嫩。" },
     //       { title: "火候", text: "小火慢煎，表面略濕就捲起，餘溫熟成。" }
     //     ]
     //   }
@@ -362,8 +360,7 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
     //   hero: "https://images.unsplash.com/photo-1558030110-2321e6d66a83?q=80&w=1600&auto=format&fit=crop",
     //   shortDescription: "食材不黏鍋、上色更漂亮的簡單訣竅。",
     //   content: {
-    //     sections: [
-    //       { title: "判斷方法", text: "水滴成珠在鍋面跳動，表示預熱到位。" },
+    //     sections: [ { title: "判斷方法", text: "水滴成珠在鍋面跳動，表示預熱到位。" },
     //       { title: "注意事項", text: "加入油後稍等 5–10 秒再下食材，避免燒焦。" }
     //     ]
     //   }
@@ -394,13 +391,13 @@ export const STORIES: SimplePost[] = [
     id: "army soup",
     title: "韓國經典料理故事：部隊鍋的誕生",
     shortDescription: "你知道為什麼部隊鍋被稱為「部隊鍋」嗎？部隊鍋的誕生其實蘊含了韓國一段悲傷的歷史。現在，就讓我們一起揭開這道料理背後的故事吧！",
-    hero: "images/stories/army-soup/thumbnail.png",
+    hero: "/images/stories/army-soup/thumbnail.png",
     content: {
       sections: [
         { title: "部隊鍋的起源", text: "在韓戰（1950–1953）結束後，韓國正處於物資極度匱乏的時期。當時駐韓美軍基地附近，偶爾能取得美軍為士兵從美國運來的食材，像是罐頭火腿、香腸、培根等。這些原本只供給美軍的食材，被人們稱作「部隊肉」。\n起初，人們會利用這些補給品或是美軍吃剩的食材，拿來炒著吃。後來加入辣椒醬、泡菜與高湯煮成鍋物，這道結合了美式與韓式元素的料理因此被稱為「部隊鍋（부대찌개）」。\n美軍基地所在的松炭、議政府、坡州等地，也各自發展出不同的部隊鍋風格，大致可分為議政府式和松炭式。議政府式部隊鍋以泡菜為基底，口味清爽，比較接近傳統韓式的口味；松炭式部隊鍋則以牛骨高湯和起司為代表，味道濃郁也更為濃稠。至於哪一種才是最早的「正統」部隊鍋，至今仍有不同的說法。" },
         { title: "議政府式部隊鍋的起源", text: "其中，最廣為人知的部隊鍋起源說法是，1960年代，京畿道議政府的一位攤販許基淑（허기숙）奶奶率先利用西式食材，創作了最初的部隊鍋。\n1968 年，她以「魚板食堂（오뎅식당）」的名字正式登記營業，這家店也成為議政府最有名的「元祖部隊鍋」店。隨著「魚板食堂」的名氣越來越大，附近陸續出現了許多部隊鍋專門店，最終形成了如今的「議政府部隊鍋一條街」。\n如今，「魚板食堂」也開設了多家分店，在金浦機場與仁川機場都能找到它的蹤影。如果有機會去韓國玩，不妨親自去品嚐一下正宗的原味。" },
         { title: "Studio.K 推薦", text: "쿠팡 부대찌개 밀키트\n코스트코 밀키트" },
-        { title: "參考資料", text: "https://encykorea.aks.ac.kr/Article/E0079968 \nhttps://namu.wiki/w/%EB%B6%80%EB%8C%80%EC%B0%8C%EA%B0%9C \nhttps://ko.wikipedia.org/wiki/%EB%B6%80%EB%8C%80%EC%B0%8C%EA%B0%9C \nhttps://odengsikdang.com/28 "}
+        { title: "參考資料", text: "https://encykorea.aks.ac.kr/Article/E0079968 \nhttps://namu.wiki/w/%EB%B6%80%EB%8C%80%EC%B0%8C%EA%B0%9C \nhttps://ko.wikipedia.org/wiki/%EB%B6%80%EB%8C%80%EC%B0%8C%EA%B0%9C \nhttps://odengsikdang.com/28 " }
       ]
     }
   },
