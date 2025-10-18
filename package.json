@@ -13,6 +13,7 @@
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@formspree/react": "^3.0.0",
     "@types/react-helmet-async": "^1.0.1",
     "lucide-react": "^0.544.0",
     "react": "^18.2.0",

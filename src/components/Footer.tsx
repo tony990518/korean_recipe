@@ -1,23 +1,41 @@
-import { Link } from "react-router-dom";
-// import AffiliateNotice from "./AffiliateNotice";
-import { FormEvent } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { useForm } from "@formspree/react";
+import { useState, useEffect, useRef } from "react";
 
 const Footer = () => {
-  const handleSubscribe = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const formData = new FormData(e.currentTarget);
-    const email = String(formData.get("email") || "").trim();
-    if (!email) {
-      alert("請輸入email.");
-      return;
+  const [formState, handleSubmit] = useForm("xgvnqwly");
+  const [showSuccess, setShowSuccess] = useState(false);
+  const footerRef = useRef<HTMLElement>(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (formState.succeeded) {
+      setShowSuccess(true);
     }
-    // TODO: Connect to real email service. For now, just a friendly confirmation.
-    alert(`感謝您的訂閱！\n${email}`);
-    e.currentTarget.reset();
-  };
+  }, [formState.succeeded]);
+
+  // Reset on click outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (footerRef.current && !footerRef.current.contains(event.target as Node)) {
+        setShowSuccess(false);
+      }
+    };
+    if (showSuccess) {
+      document.addEventListener("mousedown", handleClickOutside);
+    }
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [showSuccess]);
+
+  // Reset on route change
+  useEffect(() => {
+    setShowSuccess(false);
+  }, [location.pathname]);
 
   return (
-    <footer className="bg-slate-900 text-white">
+    <footer ref={footerRef} className="bg-slate-900 text-white">
       <div className="max-w-6xl mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* 열1: 의견 & 연락 & 제휴광고 */}
@@ -66,28 +84,33 @@ const Footer = () => {
             <h3 className="text-lg font-semibold text-white">社群 & 訂閱</h3>
             <ul className="space-y-2">
               <li><a href="https://www.instagram.com/everyday_studiok/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition">📸<span>Instagram</span></a></li>
-              {/* <li><a href="https://www.instagram.com/everyday_studiok/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition">▶️<span>其他社群</span></a></li> */}
             </ul>
-            <form onSubmit={handleSubscribe} className="mt-2 flex items-center gap-2">
-              <input
-                type="email"
-                name="email"
-                placeholder="輸入 e-mail"
-                className="w-full rounded-md bg-white/10 placeholder-slate-400 text-white text-sm px-3 py-2 outline-none ring-1 ring-white/15 focus:ring-2 focus:ring-red-400"
-                required
-              />
-              <button type="submit" className="shrink-0 px-3 py-2 rounded-md bg-red-500 hover:bg-red-400 text-white text-sm transition">訂閱</button>
-            </form>
-            <p className="text-xs text-slate-400">訂閱後我們會將最新食譜與文章透過電子郵件寄送給您</p>
+            {showSuccess ? (
+              <div className="mt-2">
+                <h4 className="font-semibold text-white">感謝您的訂閱！</h4>
+                <p className="text-xs text-slate-400 mt-1">我們會將最新食譜與文章透過電子郵件寄送給您</p>
+              </div>
+            ) : (
+              <>
+                <form onSubmit={handleSubmit} className="mt-2 flex items-center gap-2">
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="輸入 e-mail"
+                    className="w-full rounded-md bg-white/10 placeholder-slate-400 text-white text-sm px-3 py-2 outline-none ring-1 ring-white/15 focus:ring-2 focus:ring-red-400"
+                    required
+                  />
+                  <button type="submit" disabled={formState.submitting} className="shrink-0 px-3 py-2 rounded-md bg-red-500 hover:bg-red-400 text-white text-sm transition disabled:bg-slate-500">訂閱</button>
+                </form>
+                <p className="text-xs text-slate-400">訂閱後我們會將最新食譜與文章透過電子郵件寄送給您</p>
+              </>
+            )}
           </div>
         </div>
 
         {/* 版權資訊 */}
         <div className="border-t border-slate-700 mt-8 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            {/* <div className="text-sm text-slate-400">
-              <AffiliateNotice />
-            </div> */}
             <div className="text-sm text-slate-400 ml-auto w-full text-right md:w-auto">© {new Date().getFullYear()} Studio.K 韓味研究所. All rights reserved.</div>
           </div>
         </div>
