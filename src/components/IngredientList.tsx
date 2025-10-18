@@ -94,7 +94,7 @@ const IngredientList = ({ ingredients }: { ingredients: Ingredient[] }) => (
             {/* Right: 수량 + 버튼 (줄어들지 않게 shrink-0; SE에선 세로 스택) */}
             <div
               className="
-                text-slate-700 flex items-center gap-3 md:gap-4
+                text-slate-700 flex items-baseline gap-3 md:gap-4
                 text-sm sm:text-base md:text-lg
                 shrink-0
                 max-[360px]:flex-col max-[360px]:items-end max-[360px]:gap-2
@@ -106,28 +106,38 @@ const IngredientList = ({ ingredients }: { ingredients: Ingredient[] }) => (
                 </span>
               ) : null}
 
-              {it.link ? (
-                <a
-                  href={it.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="
-                    inline-flex items-center gap-2 rounded-full border
-                    px-3.5 py-2 font-semibold
-                    text-sm sm:text-base md:text-lg
-                    bg-red-600 text-white border-red-600
-                    hover:bg-red-700 hover:border-red-700
-                    focus:outline-none focus:ring-2 focus:ring-red-500/40 transition
-                    max-[360px]:px-2.5 max-[360px]:py-1.5
-                  "
-                  aria-label={`${it.label} 購物連結（新視窗開啟）`}
-                  title="購買連結"
-                >
-                  <IconCart className="shrink-0" />
-                  {/* 초소형에서는 텍스트 숨김 → 아이콘만 */}
-                  <span className="hidden sm:inline max-[360px]:hidden">購買連結</span>
-                </a>
-              ) : null}
+              {it.link &&
+                <div className="
+                  flex flex-col md:flex-row w-[200px] rounded-full overflow-hidden 
+                  border border-red-600
+                  md:divide-x md:divide-red-500
+                ">
+                  {(Array.isArray(it.link) ? it.link : [it.link]).map((link, index, arr) => (
+                    <a
+                      key={index}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`
+                        inline-flex items-center justify-center gap-2 
+                        w-full px-3.5 py-2 font-semibold
+                        text-sm sm:text-base
+                        bg-red-600 text-white
+                        hover:bg-red-700
+                        focus:outline-none focus:ring-2 focus:ring-red-500/40 transition
+                        ${arr.length > 1 ? 'md:w-1/2' : 'md:w-full'}
+                      `}
+                      aria-label={`${it.label} ${link.label}（新視窗開啟）`}
+                      title={`${it.label} ${link.label}`}
+                    >
+                      {(index === 0) && <IconCart className="shrink-0" />}
+                      <span className="hidden md:inline max-[360px]:hidden">
+                        {link.label}
+                      </span>
+                    </a>
+                  ))}
+                </div>
+              }
             </div>
           </li>
         );

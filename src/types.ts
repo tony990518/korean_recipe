@@ -1,12 +1,17 @@
 // types.ts — 단일 소스의 진실(Single Source of Truth)
 
 /* ========== Atomic types ========== */
+export type PurchaseLink = {
+  url: string;
+  label: string;
+};
+
 export type Ingredient = {
   label: string;
   amount?: string;
   note?: string;
   brand?: string;
-  link?: string;
+  link?: PurchaseLink | PurchaseLink[];
   image?: string;
   /** 썸네일 이미지 맞춤 방식 (기본: cover) */
   imageFit?: "cover" | "contain";
