@@ -69,7 +69,7 @@ const ShareIcons = ({ recipe }: { recipe: Recipe }) => {
     },
     {
       key: "threads",
-      onClick: () => onCopyTemplate("threads"),
+      onClick: () => open(`https://www.threads.net/intent/post?url=${encodeURIComponent(urlCopyThreads)}&text=${encodeURIComponent(title + (text ? `\n${text}` : ''))}`),
       icon: <Icon.threads className="w-8 h-8 md:w-10 md:h-10" />,
       aria: "Threads",
     },
