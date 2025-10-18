@@ -94,7 +94,7 @@ const IngredientList = ({ ingredients }: { ingredients: Ingredient[] }) => (
             {/* Right: 수량 + 버튼 (줄어들지 않게 shrink-0; SE에선 세로 스택) */}
             <div
               className="
-                text-slate-700 flex items-baseline gap-3 md:gap-4
+                text-slate-700 flex items-center gap-3 md:gap-4
                 text-sm sm:text-base md:text-lg
                 shrink-0
                 max-[360px]:flex-col max-[360px]:items-end max-[360px]:gap-2
@@ -107,36 +107,37 @@ const IngredientList = ({ ingredients }: { ingredients: Ingredient[] }) => (
               ) : null}
 
               {it.link &&
-                <div className="
-                  flex flex-col md:flex-row w-[200px] rounded-full overflow-hidden 
-                  border border-red-600
-                  md:divide-x md:divide-red-500
-                ">
-                  {(Array.isArray(it.link) ? it.link : [it.link]).map((link, index, arr) => (
-                    <a
-                      key={index}
-                      href={link.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={`
-                        inline-flex items-center justify-center gap-2 
-                        w-full px-3.5 py-2 font-semibold
-                        text-sm sm:text-base
-                        bg-red-600 text-white
-                        hover:bg-red-700
-                        focus:outline-none focus:ring-2 focus:ring-red-500/40 transition
-                        ${arr.length > 1 ? 'md:w-1/2' : 'md:w-full'}
-                      `}
-                      aria-label={`${it.label} ${link.label}（新視窗開啟）`}
-                      title={`${it.label} ${link.label}`}
-                    >
-                      {(index === 0) && <IconCart className="shrink-0" />}
-                      <span className="hidden md:inline max-[360px]:hidden">
-                        {link.label}
-                      </span>
-                    </a>
-                  ))}
-                </div>
+                (() => {
+                  const links = Array.isArray(it.link) ? it.link : [it.link];
+                  return (
+                    <div className="flex flex-col sm:flex-row sm:w-[190px] gap-2 sm:gap-0 sm:rounded-full sm:overflow-hidden sm:border sm:border-red-600 sm:divide-x sm:divide-red-500">
+                      {links.map((link, index, arr) => (
+                        <a
+                          key={index}
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={`
+                            inline-flex items-center justify-center 
+                            bg-red-600 text-white hover:bg-red-700
+                            focus:outline-none focus:ring-2 focus:ring-red-500/40 transition
+                            w-10 h-10 rounded-full
+                            sm:w-auto sm:h-auto sm:rounded-none sm:px-3.5 sm:py-2 sm:font-semibold
+                            ${arr.length > 1 ? 'sm:flex-1' : 'sm:w-full'}
+                          `}
+                          aria-label={`${it.label} ${link.label}（新視窗開啟）`}
+                          title={`${it.label} ${link.label}`}
+                        >
+                          {/* 큰 화면 + 버튼 여러개일 때 두 번째 버튼부터 아이콘 숨김 */}
+                          <IconCart className={`shrink-0 ${arr.length > 1 && index > 0 ? 'sm:hidden' : ''}`} />
+                          <span className={`hidden sm:inline ${arr.length > 1 && index > 0 ? 'sm:ml-0' : 'sm:ml-2'}`}>
+                            {link.label}
+                          </span>
+                        </a>
+                      ))}
+                    </div>
+                  );
+                })()
               }
             </div>
           </li>
