@@ -1,10 +1,15 @@
 import { Link } from "react-router-dom";
 import RecipeCard from "../components/RecipeCard";
 import { DB } from "../data";
+import SEOHelmet from "../components/SEOHelmet";
+import { getRecipesMeta } from "../seo";
 
 const RecipesPage = () => {
+  const meta = getRecipesMeta();
+
   return (
     <main className="max-w-6xl mx-auto px-4 py-8">
+      <SEOHelmet meta={meta} />
       <div className="flex items-end justify-between mb-6">
         <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900">全部食譜</h1>
         <Link to="/" className="text-sm text-red-600">返回首頁 →</Link>

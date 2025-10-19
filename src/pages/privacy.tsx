@@ -1,5 +1,7 @@
 // src/pages/Privacy.tsx
 import { useEffect, useRef } from "react";
+import SEOHelmet from "../components/SEOHelmet";
+import { getPrivacyMeta } from "../seo";
 
 export default function Privacy() {
   const h1Ref = useRef<HTMLHeadingElement>(null);
@@ -16,10 +18,13 @@ export default function Privacy() {
     }
   }, []);
 
+  const meta = getPrivacyMeta();
+
   const updated = "2025-09-01"; // 필요 시 갱신
 
   return (
     <main className="max-w-3xl mx-auto px-4 py-12 text-slate-800">
+      <SEOHelmet meta={meta} />
       <h1
         ref={h1Ref}
         tabIndex={-1}

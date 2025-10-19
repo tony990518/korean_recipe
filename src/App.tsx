@@ -10,6 +10,8 @@ import RecipeRoute from "./pages/RecipeDetail";
 import TipDetail from "./pages/TipDetail";
 import Terms from "./pages/terms";
 import Privacy from "./pages/privacy";
+import SEOHelmet from "./components/SEOHelmet";
+import { getNotFoundMeta } from "./seo";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -31,6 +33,7 @@ const AppShell = () => (
       <Route path="/privacy" element={<Privacy />} />
       <Route path="*" element={
         <main className="max-w-3xl mx-auto px-4 py-20 text-center">
+          <SEOHelmet meta={getNotFoundMeta()} />
           <h1 className="text-2xl font-bold">頁面不存在</h1>
           <div className="mt-6">
             <Link className="text-red-600 underline" to="/">返回首頁</Link>

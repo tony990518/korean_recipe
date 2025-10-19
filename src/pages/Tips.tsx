@@ -5,6 +5,8 @@ import { DB } from "../data";
 import { Tip } from "../types";
 import TipCard from "../components/TipCard";
 import TipModal from "../components/TipModal";
+import SEOHelmet from "../components/SEOHelmet";
+import { getTipsMeta } from "../seo";
 
 const TipsPage = () => {
   const [selectedTip, setSelectedTip] = useState<Tip | null>(null);
@@ -17,8 +19,11 @@ const TipsPage = () => {
     setSelectedTip(null);
   }, []);
 
+  const meta = getTipsMeta();
+
   return (
     <main className="max-w-6xl mx-auto px-4 py-8">
+      <SEOHelmet meta={meta} />
       <div className="flex items-end justify-between mb-6">
         <h1 className="text-2xl md:text-3xl font-extrabold tracking-tight text-slate-900">
           全部料理小撇步

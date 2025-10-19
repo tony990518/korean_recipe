@@ -1,6 +1,5 @@
 import { useMemo } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
 import { DB } from "../data";
 import { Recipe } from "../types";
 import AffiliateNotice from "../components/AffiliateNotice";
@@ -11,42 +10,17 @@ import ConclusionBlock from "../components/ConclusionBlock";
 import ShareIcons from "../components/ShareIcons";
 import MetaRow from "../components/metaraw";
 import ProductRecommendation from "../components/ProductRecommendation";
-// import TipButton from "../components/TipButton";
-
-import { HowToStep } from "schema-dts";
+import SEOHelmet from "../components/SEOHelmet";
+import { getRecipeMeta, getNotFoundMeta } from "../seo";
 
 const RecipeDetail = ({ recipe }: { recipe: Recipe }) => {
-  const jsonLd = useMemo(
-    () => ({
-      "@context": "https://schema.org",
-      "@type": "Recipe",
-      name: recipe.title,
-      recipeYield: `${recipe.servings} 份`,
-      totalTime: `PT${recipe.minutes}M`,
-      recipeIngredient: recipe.ingredients.map(
-        (i) => `${i.label}${i.amount ? ` ${i.amount}` : ""}`
-      ),
-      recipeInstructions: recipe.steps.map((s, idx) => {
-        const stepObj: HowToStep = {
-          "@type": "HowToStep",
-          text: `${idx + 1}. ${s.text}`,
-        };
-        if (s.title) stepObj.name = s.title;
-        return stepObj;
-      }),
-      image: recipe.hero,
-    }),
-    [recipe]
-  );
+  const meta = useMemo(() => getRecipeMeta(recipe), [recipe]);
 
   const nav = useNavigate();
 
   return (
     <>
-      <Helmet>
-        <title>{`${recipe.title} | K-Food Studio`}</title>
-        <meta name="description" content={recipe.shortDescription} />
-      </Helmet>
+      <SEOHelmet meta={meta} />
       <main
         className="
         max-w-5xl mx-auto px-4 pb-20
@@ -176,11 +150,6 @@ const RecipeDetail = ({ recipe }: { recipe: Recipe }) => {
           </div>
         </div>
       </article>
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
     </main>
   </>
   );
@@ -191,8 +160,10 @@ const RecipeRoute = () => {
   const recipe = DB.recipes.find((r) => r.id === id);
 
   if (!recipe) {
+    const notFoundMeta = getNotFoundMeta();
     return (
       <main className="max-w-3xl mx-auto px-4 py-20 text-center max-[360px]:px-3 max-[360px]:py-16">
+        <SEOHelmet meta={notFoundMeta} />
         <h1 className="text-2xl sm:text-3xl font-bold text-slate-900 leading-snug">找不到這道食譜</h1>
         <p className="text-slate-600 mt-2 text-sm sm:text-base">請返回首頁查看其他內容。</p>
         <div className="mt-6">

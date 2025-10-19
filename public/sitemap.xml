@@ -1,41 +1,58 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://k-foodstudio.com/</loc>
+    <loc>https://www.k-foodstudio.com/</loc>
+    <lastmod>2025-10-19</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://k-foodstudio.com/recipes</loc>
+    <loc>https://www.k-foodstudio.com/recipes/</loc>
+    <lastmod>2025-10-19</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://k-foodstudio.com/tips</loc>
+    <loc>https://www.k-foodstudio.com/tips/</loc>
+    <lastmod>2025-10-19</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://k-foodstudio.com/terms</loc>
-    <priority>0.5</priority>
+    <loc>https://www.k-foodstudio.com/terms/</loc>
+    <lastmod>2025-10-19</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://k-foodstudio.com/privacy</loc>
-    <priority>0.5</priority>
+    <loc>https://www.k-foodstudio.com/privacy/</loc>
+    <lastmod>2025-10-19</lastmod>
+    <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://k-foodstudio.com/recipe/yoon-nam-no-jjapaghetti</loc>
+    <loc>https://www.k-foodstudio.com/recipe/yoon-nam-no-jjapaghetti/</loc>
+    <lastmod>2025-10-19</lastmod>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://k-foodstudio.com/recipe/ex-bf-toast</loc>
+    <loc>https://www.k-foodstudio.com/recipe/ex-bf-toast/</loc>
+    <lastmod>2025-10-19</lastmod>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://k-foodstudio.com/recipe/Kaguri</loc>
+    <loc>https://www.k-foodstudio.com/recipe/Kaguri/</loc>
+    <lastmod>2025-10-19</lastmod>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://k-foodstudio.com/tip/gochugaru-smell</loc>
+    <loc>https://www.k-foodstudio.com/tip/gochugaru-smell/</loc>
+    <lastmod>2025-10-19</lastmod>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://k-foodstudio.com/tip/seeweed-moistened</loc>
+    <loc>https://www.k-foodstudio.com/tip/seeweed-moistened/</loc>
+    <lastmod>2025-10-19</lastmod>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://k-foodstudio.com/tip/chopped-garlic</loc>
+    <loc>https://www.k-foodstudio.com/tip/chopped-garlic/</loc>
+    <lastmod>2025-10-19</lastmod>
+    <priority>0.6</priority>
   </url>
 </urlset>

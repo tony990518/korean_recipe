@@ -1,5 +1,7 @@
 // src/pages/Terms.tsx
 import { useEffect, useRef } from "react";
+import SEOHelmet from "../components/SEOHelmet";
+import { getTermsMeta } from "../seo";
 
 export default function Terms() {
   const h1Ref = useRef<HTMLHeadingElement>(null);
@@ -15,10 +17,13 @@ export default function Terms() {
     }
   }, []);
 
+  const meta = getTermsMeta();
+
   const updated = "2025-09-01"; // 필요 시 갱신
 
   return (
     <main className="max-w-3xl mx-auto px-4 py-12 text-slate-800">
+      <SEOHelmet meta={meta} />
       <h1
         ref={h1Ref}
         tabIndex={-1}
@@ -72,4 +77,3 @@ export default function Terms() {
     </main>
   );
 }
-

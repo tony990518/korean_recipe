@@ -2,14 +2,18 @@
 import { useParams, Link } from "react-router-dom";
 import { DB } from "../data";
 import ProductRecommendation from "../components/ProductRecommendation";
+import SEOHelmet from "../components/SEOHelmet";
+import { getTipMeta, getNotFoundMeta } from "../seo";
 
 const TipDetail = () => {
   const { id } = useParams();
   const tip = DB.tips.find((t) => t.id === id);
 
   if (!tip) {
+    const notFoundMeta = getNotFoundMeta();
     return (
       <main className="max-w-3xl mx-auto px-4 py-20 text-center">
+        <SEOHelmet meta={notFoundMeta} />
         <h1 className="text-2xl font-bold">팁을 찾을 수 없습니다.</h1>
         <div className="mt-6">
           <Link className="text-red-600 underline" to="/tips">
@@ -20,8 +24,11 @@ const TipDetail = () => {
     );
   }
 
+  const meta = getTipMeta(tip);
+
   return (
     <main className="max-w-4xl mx-auto px-4 py-8">
+      <SEOHelmet meta={meta} />
       <article>
         {/* ===== Block: Hero Image ===== */}
         <img

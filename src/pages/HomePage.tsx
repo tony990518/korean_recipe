@@ -7,6 +7,8 @@ import { Tip } from "../types";
 import RecipeCard from "../components/RecipeCard";
 import TipCard from "../components/TipCard";
 import TipModal from "../components/TipModal";
+import SEOHelmet from "../components/SEOHelmet";
+import { getHomeMeta } from "../seo";
 
 const DRAG_ACTIVATE_PX = 6;     // 드래그로 간주할 최소 이동
 const SWIPE_THRESHOLD_PX = 60;  // 이전/다음으로 넘길 임계치
@@ -18,6 +20,7 @@ const HomePage = () => {
   const [selectedTip, setSelectedTip] = useState<Tip | null>(null);
   const handleTipClick = (tip: Tip) => setSelectedTip(tip);
   const handleCloseModal = () => setSelectedTip(null);
+  const meta = getHomeMeta();
 
   // ----- 슬라이드 데이터 -----
   const firstRecipe = DB.recipes?.[0];
@@ -266,6 +269,7 @@ const HomePage = () => {
 
   return (
     <main className="max-w-6xl mx-auto px-4 py-8">
+      <SEOHelmet meta={meta} />
       {/* Hero Carousel */}
       <section id="hero" className="mb-8 relative">
         <div
