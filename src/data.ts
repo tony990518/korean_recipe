@@ -222,13 +222,13 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
         {
           name: "gomgom 韓國產辣椒粉 中辣",
           description: "嚴選韓國產辣椒粉，為您的料理增添道地風味，讓您在家也能輕鬆享受韓式美味",
-          image: "",
+          image: "/images/tips/redpepper/recommend_redpepper.png",
           link: "https://onelink.one/s/FD4Vu"
         },
         {
           name: "couselect 廚房二合一定量調味罐/密封調料瓶/防潮玻璃罐/佐料罐",
           description: "結合了定量取用與密封防潮功能，讓您的調味料保持新鮮，也可輕鬆拆卸，方便清洗",
-          image: "",
+          image: "/images/tips/redpepper/recommend_container.png",
           link: "https://linkgo.one/s/l3Aqb"
         },
       ]
@@ -267,7 +267,7 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
         {
           name: "海苔用密封保鮮盒+乾燥劑組",
           description: "密封保鮮盒搭配乾燥劑，有效隔絕濕氣，讓海苔、餅乾等食品隨時保持最佳的酥脆口感!",
-          image: "",
+          image: "/images/tips/seeweed/recommend_container.jpg",
           link: "https://linkgo.one/s/6ydgP"
         },
       ]
@@ -309,19 +309,19 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
         {
           name: "無線電動攪蒜器",
           description: "無線設計讓您擺脫電線束縛，隨時隨地輕鬆製作蒜蓉及各式佐料，讓下廚變得更加簡單方便",
-          image: "",
+          image: "/images/tips/garlic/recommend_grinder.png",
           link: "https://afflink.one/s/qaTna"
         },
         {
           name: "Comet Kitchen 大蒜分格保鮮盒",
           description: "獨立分裝，每次取用適量蒜泥，方便料理，節省備料時間",
-          image: "",
+          image: "/images/tips/garlic/recommend_container.jpeg",
           link: "https://linkgo.one/s/MtJV3"
         },
         {
-          name: "快樂農夫 麻布鯷魚昆布高湯濾袋",
-          description: "採用麻布材質，過濾高湯時能有效去除雜質，讓湯頭更加清澈美味",
-          image: "",
+          name: "Cotton labo 食物滷包袋 日本製造 超大容量, 20 x 20cm",
+          description: "棉質滷包袋，觸感柔軟細緻，適用於多種烹飪方式，讓烹調更方便",
+          image: "/images/tips/garlic/recommend_bag.png",
           link: "https://onelink.one/s/PobaN"
         },
       ]

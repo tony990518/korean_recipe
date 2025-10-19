@@ -17,7 +17,7 @@ const ProductRecommendation: React.FC<ProductRecommendationProps> = ({ products 
         {products.map((product, index) => (
           <div key={index} className="border rounded-lg p-4 text-center">
             <a href={product.link} target="_blank" rel="noopener noreferrer" className="group">
-              <img src={product.image} alt={product.name} className="w-full h-32 object-cover mb-2" />
+              <img src={product.image} alt={product.name} className="w-full h-32 object-contain mb-2" />
               <h4 className="font-semibold group-hover:underline">{product.name}</h4>
               <p className="text-sm text-gray-600 group-hover:underline">{product.description}</p>
             </a>
