@@ -1,5 +1,5 @@
 // src/components/TipModal.tsx
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { Tip } from "../types";
 
@@ -28,6 +28,19 @@ const TipModal = ({ tip, onClose }: { tip: Tip | null; onClose: () => void }) =>
     return nodes.filter((el) => !el.hasAttribute("inert") && el.offsetParent !== null);
   };
 
+  const handleClose = useCallback(() => {
+    setShow(false);
+    setTimeout(() => {
+      onClose();
+      if (closeByKeyboardRef.current) {
+        lastFocusedRef.current?.focus?.();
+      } else {
+        lastFocusedRef.current?.blur?.();
+      }
+      closeByKeyboardRef.current = false;
+    }, 300);
+  }, [onClose]);
+
   useEffect(() => {
     if (!tip) {
       setShow(false);
@@ -50,6 +63,9 @@ const TipModal = ({ tip, onClose }: { tip: Tip | null; onClose: () => void }) =>
     body.style.width = "100%";
 
     const rafId = requestAnimationFrame(() => setShow(true));
+
+    const overlayEl = overlayRef.current;
+    const contentEl = contentRef.current;
 
     const focusFirst = () => {
       const f = getFocusable();
@@ -82,7 +98,7 @@ const TipModal = ({ tip, onClose }: { tip: Tip | null; onClose: () => void }) =>
     // iOS rubber-band 차단: overlay에서의 터치 이동 전파 방지
     let startY = 0;
     const canScrollMore = (deltaY: number) => {
-      const s = contentRef.current;
+      const s = contentEl;
       if (!s) return false;
       if (deltaY > 0) return s.scrollTop > 0; // 아래로 끌기(위로 스크롤)
       if (deltaY < 0) return s.scrollTop + s.clientHeight < s.scrollHeight; // 위로 밀기
@@ -92,15 +108,15 @@ const TipModal = ({ tip, onClose }: { tip: Tip | null; onClose: () => void }) =>
     const onTouchMove = (e: TouchEvent) => {
       const currentY = e.touches[0].clientY;
       const deltaY = currentY - startY;
-      const insideContent = contentRef.current?.contains(e.target as Node) ?? false;
+      const insideContent = contentEl?.contains(e.target as Node) ?? false;
       if (!insideContent || !canScrollMore(deltaY)) {
         e.preventDefault(); // 뷰포트로 전파 차단
       }
     };
 
     document.addEventListener("keydown", onKey);
-    overlayRef.current?.addEventListener("touchstart", onTouchStart, { passive: false });
-    overlayRef.current?.addEventListener("touchmove", onTouchMove, { passive: false });
+    overlayEl?.addEventListener("touchstart", onTouchStart, { passive: false });
+    overlayEl?.addEventListener("touchmove", onTouchMove, { passive: false });
 
     const t = setTimeout(focusFirst, 30);
 
@@ -108,8 +124,8 @@ const TipModal = ({ tip, onClose }: { tip: Tip | null; onClose: () => void }) =>
       cancelAnimationFrame(rafId);
       clearTimeout(t);
       document.removeEventListener("keydown", onKey);
-      overlayRef.current?.removeEventListener("touchstart", onTouchStart);
-      overlayRef.current?.removeEventListener("touchmove", onTouchMove);
+      overlayEl?.removeEventListener("touchstart", onTouchStart);
+      overlayEl?.removeEventListener("touchmove", onTouchMove);
 
       // 바디 원복 + 기존 스크롤 위치 복귀
       body.style.overflow = prev.overflow;
@@ -118,17 +134,7 @@ const TipModal = ({ tip, onClose }: { tip: Tip | null; onClose: () => void }) =>
       body.style.width = prev.width;
       window.scrollTo({ top: scrollY });
     };
-  }, [tip]);
-
-  const handleClose = () => {
-    setShow(false);
-    setTimeout(() => {
-      onClose();
-      if (closeByKeyboardRef.current) lastFocusedRef.current?.focus?.();
-      else lastFocusedRef.current?.blur?.();
-      closeByKeyboardRef.current = false;
-    }, 300);
-  };
+  }, [tip, handleClose]);
 
   const handleShare = async () => {
     if (!tip) return;

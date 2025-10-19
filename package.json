@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build && cp dist/index.html dist/404.html",
+    "build": "tsc && vite build",
     "preview": "vite preview",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "predeploy": "npm run build",
@@ -15,7 +15,6 @@
   "dependencies": {
     "@formspree/react": "^3.0.0",
     "@types/react-helmet-async": "^1.0.1",
-    "lucide-react": "^0.544.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-helmet-async": "^2.0.5",
@@ -26,7 +25,6 @@
     "@tailwindcss/line-clamp": "^0.4.4",
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
-    "@types/react-router-dom": "^5.3.3",
     "@typescript-eslint/eslint-plugin": "^6.14.0",
     "@typescript-eslint/parser": "^6.14.0",
     "@vitejs/plugin-react": "^4.2.1",

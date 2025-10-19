@@ -477,15 +477,15 @@ export const LABS: SimplePost[] = [
     }
   },
   {
-    id: "starch-thickening",
+    id: "doenjang-vs-miso",
     title: "大醬與味噌的差別",
-    shortDescription: "韓式料理竟然有公式？",
-    hero: "https://images.unsplash.com/photo-1514511547113-bff0191bcfd4?q=80&w=1600&auto=format&fit=crop",
+    shortDescription: "韓式大醬和日式味噌到底哪裡不同？風味與用法一次看懂。",
+    hero: "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?q=80&w=1600&auto=format&fit=crop",
     content: {
       sections: [
-        { title: "韓式料理必勝公式-醬糖蔥蒜椒麻油", text: "韓式料理竟然有公式？" },
-        { title: "醬糖蔥蒜椒麻油的特點", text: "醬糖蔥蒜椒麻油的特點" },
-        { title: "醬糖蔥蒜椒麻油的用途", text: "醬糖蔥蒜椒麻油的用途" }
+        { title: "原料與發酵方式", text: "韓式大醬以整顆大豆與麥麩發酵，日式味噌則常加入米麴、麥麴，甜度與香氣更柔和。" },
+        { title: "風味比較", text: "大醬鹹香厚實、豆味濃烈，味噌則帶甜味、口感滑順。料理時可依風味調整鹽與糖的比例。" },
+        { title: "料理應用", text: "大醬適合湯品、醬燒、醃菜，味噌常用於湯、沾醬與調味醬。調和使用能創造新的風味層次。" }
       ]
     }
   },

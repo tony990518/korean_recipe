@@ -31,7 +31,7 @@ const RecipeDetail = ({ recipe }: { recipe: Recipe }) => {
           "@type": "HowToStep",
           text: `${idx + 1}. ${s.text}`,
         };
-        if ((s as any).title) stepObj.name = (s as any).title;
+        if (s.title) stepObj.name = s.title;
         return stepObj;
       }),
       image: recipe.hero,

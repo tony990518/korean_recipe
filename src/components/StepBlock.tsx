@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Step } from "../types";
 import HeatBadge from "./HeatBadge";
 
@@ -19,7 +19,7 @@ function parseDurationSeconds(input?: string | number): { seconds: number; label
   if (!isFinite(n)) return { seconds: 0, label: "⏱" };
   const hasSec  = /(秒|second|seconds|sec|secs|\bs\b)/i.test(raw);
   const hasHour = /(小時|小时|hour|hours|hr|hrs|\bh\b)/i.test(raw);
-  let seconds = hasSec ? Math.round(n) : hasHour ? Math.round(n*3600) : Math.round(n*60);
+  const seconds = hasSec ? Math.round(n) : hasHour ? Math.round(n * 3600) : Math.round(n * 60);
   const label  = hasSec ? `${Math.round(n)} 秒` : hasHour ? `${n} 小時` : `${n} 分`;
   return { seconds: Math.max(0, seconds), label };
 }
@@ -46,10 +46,10 @@ function TimerBadge({
   const rafRef = useRef<number | null>(null);
   const lastSecRef = useRef<number>(initial);
 
-  const emit = (r: number, run: boolean) => {
+  const emit = useCallback((r: number, run: boolean) => {
     const isDone = r <= 0 && initial > 0;
     onChange?.({ remaining: r, running: run, initial, isDone });
-  };
+  }, [initial, onChange]);
 
   const start = () => {
     if (remaining <= 0) setRemaining(initial);
@@ -78,15 +78,22 @@ function TimerBadge({
       if (next <= 0) {
         setRunning(false);
         startRef.current = null;
-        try { (navigator as any).vibrate?.(160); } catch {}
+
+        const nav = navigator as Navigator & { vibrate?: (pattern: number | number[]) => boolean };
+        if (typeof nav.vibrate === "function") {
+          try {
+            nav.vibrate(160);
+          } catch (error) {
+            // 일부 환경에서는 진동이 차단될 수 있으므로 조용히 무시합니다.
+          }
+        }
         return;
       }
       rafRef.current = requestAnimationFrame(tick);
     };
     rafRef.current = requestAnimationFrame(tick);
     return () => { if (rafRef.current) cancelAnimationFrame(rafRef.current); };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [running, initial]);
+  }, [running, initial, emit]);
 
   useEffect(() => {
     const onVis = () => {
@@ -102,7 +109,7 @@ function TimerBadge({
     };
     document.addEventListener("visibilitychange", onVis);
     return () => document.removeEventListener("visibilitychange", onVis);
-  }, [running, initial]);
+  }, [running, initial, emit]);
 
   const isDone = remaining <= 0 && initial > 0;
 
