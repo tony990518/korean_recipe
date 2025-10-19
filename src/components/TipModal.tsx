@@ -274,10 +274,9 @@ const TipModal = ({ tip, onClose }: { tip: Tip | null; onClose: () => void }) =>
                     “{tip.shortDescription}”
                   </p>
                 </blockquote>
-                <p className="text-sm text-slate-500">
-                  자세한 내용은 아래 '자세히 보기'를 눌러 확인하세요.
-                </p>
-              </div>
+                                                                      <p className="text-sm text-slate-500">
+                                                                        更多精彩內容，請點擊下方「查看詳情」！
+                                                                      </p>              </div>
             )}
           </div>
 
@@ -288,14 +287,14 @@ const TipModal = ({ tip, onClose }: { tip: Tip | null; onClose: () => void }) =>
                 onClick={handleShare}
                 className="px-4 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
               >
-                공유
+                分享
               </button>
               <Link
                 to={`/tip/${tip.id}`}
                 onClick={handleClose}
                 className="flex-1 text-center px-4 py-3 rounded-xl bg-red-500 hover:bg-red-600 text-white font-semibold shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
               >
-                자세히 보기
+                查看詳情
               </Link>
             </div>
           </div>

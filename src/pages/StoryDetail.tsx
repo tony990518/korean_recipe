@@ -60,7 +60,18 @@ const StoryDetail = () => {
                 {section.title}
               </h2>
               <div className="space-y-4 text-slate-600 leading-relaxed text-base sm:text-lg">
-                <p className="whitespace-pre-line">{section.text}</p>
+                {section.text.includes('•') ? (
+                  <ul className="list-none space-y-2">
+                    {section.text.split('\n').map((item, i) => (
+                      <li key={i} className="flex items-start">
+                        {item.startsWith('•') && <span className="mr-2">•</span>}
+                        <span>{item.replace(/^•\s?/, '')}</span>
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <p className="whitespace-pre-line">{section.text}</p>
+                )}
                 {section.image && (
                   <img
                     src={section.image}

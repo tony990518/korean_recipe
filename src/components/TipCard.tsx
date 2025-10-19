@@ -16,7 +16,7 @@ const TipCard = ({ data, onTipClick }: Props) => {
       <button
         type="button"
         onClick={open}
-        aria-label={`${data.title} 상세 보기`}
+        aria-label={`${data.title} 詳細資訊`}
         aria-haspopup="dialog"
         // className="w-full text-left focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500 cursor-pointer"
         className="w-full text-left cursor-pointer focus:outline-none
