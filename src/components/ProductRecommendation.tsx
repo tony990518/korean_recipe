@@ -16,11 +16,11 @@ const ProductRecommendation: React.FC<ProductRecommendationProps> = ({ products 
       <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
         {products.map((product, index) => (
           <div key={index} className="border rounded-lg p-4 text-center">
-            <a href={product.link} target="_blank" rel="noopener noreferrer">
+            <a href={product.link} target="_blank" rel="noopener noreferrer" className="group">
               <img src={product.image} alt={product.name} className="w-full h-32 object-cover mb-2" />
+              <h4 className="font-semibold group-hover:underline">{product.name}</h4>
+              <p className="text-sm text-gray-600 group-hover:underline">{product.description}</p>
             </a>
-            <h4 className="font-semibold">{product.name}</h4>
-            <p className="text-sm text-gray-600">{product.description}</p>
           </div>
         ))}
       </div>
