@@ -2,19 +2,19 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>K-Food Studio</title>
+    <title>K-Food Studio - Page Not Found</title>
     <script type="text/javascript">
-      // créditos: https://github.com/rafgraph/spa-github-pages
-      // Redireciona para o index.html mantendo o caminho original
-      var segmentCount = 0;
-      var l = window.location;
-      l.replace(
-        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-        l.pathname.split('/').slice(0, 1 + segmentCount).join('/') + '/?p=/' +
-        l.pathname.slice(1).split('/').slice(segmentCount).join('/').replace(/&/g, '~and~') +
-        (l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-        l.hash
-      );
+      (function() {
+        var path = window.location.pathname;
+        // Prevent redirect loops on the root path and for files with extensions.
+        if (path === '/' || path.split('/').pop().indexOf('.') > -1) {
+          return;
+        }
+        var trailingSlash = path.slice(-1) === '/';
+        if (!trailingSlash) {
+          window.location.replace(path + '/' + window.location.search + window.location.hash);
+        }
+      })();
     </script>
   </head>
   <body>
