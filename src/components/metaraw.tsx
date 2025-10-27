@@ -98,7 +98,7 @@ export default function MetaRow({ servings, minutes, difficulty, spicy }: Props)
             {[0, 1, 2].map(i => (
               <img
                 key={i}
-                src={i < spicy ? "/images/spicyColor.png" : "/images/spicyone.png"}
+                src={i < spicy ? "/images/spicyColor.webp" : "/images/spicyone.webp"}
                 alt={spicyLabel}
                 className="w-6 h-6 md:w-8 md:h-8 object-contain"
               />

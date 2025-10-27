@@ -3,7 +3,7 @@ import type { Recipe, Tip } from "./types";
 
 export const SITE_URL = "https://www.k-foodstudio.com";
 const SITE_NAME = "Studio.K 韓味研究所";
-const DEFAULT_OG_IMAGE = absoluteUrl("/images/logo_noText.png");
+const DEFAULT_OG_IMAGE = absoluteUrl("/images/logo_noText.webp");
 const BUILD_DATE = new Date().toISOString().split("T")[0];
 
 export type RouteMeta = {
