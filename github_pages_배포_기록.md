@@ -1,4 +1,3 @@
-
 # GitHub Pages 배포 과정 요약
 
 ## 1. `gh-pages` 패키지를 이용한 초기 시도
@@ -52,3 +51,34 @@ GitHub Actions로 배포한 후, CSS, JS, 이미지 파일 등 각종 리소스�
     3. **동적 SEO 태그 추가**: `react-helmet-async` 라이브러리를 설치하고 `RecipeDetail.tsx` 같은 상세 페이지 컴포넌트에 적용했습니다. 이를 통해 각 레시피 페이지마다 고유한 `<title>`과 `<meta name="description">`이 동적으로 생성됩니다.
     4. **크롤러 가이드 파일 생성**: 검색 엔진이 사이트의 전체 구조를 쉽게 파악할 수 있도록 모든 주요 경로가 포함된 `sitemap.xml`을 생성했습니다. 또한, 모든 크롤러의 사이트 접근을 허용하고 사이트맵 위치를 알려주는 `robots.txt` 파일을 추가했습니다.
 - **결과**: 검색 엔진 친화적인 URL 구조와 풍부한 페이지별 메타 정보를 제공하게 되어, 향후 구글 검색 순위 및 노출률 향상을 기대할 수 있게 되었습니다.
+
+### 코드 변경 요약
+
+Google Search Console에서 보고된 "리디렉션이 포함된 페이지" 문제를 해결하고 URL 일관성을 확보하기 위해 다음과 같은 변경 사항이 적용되었습니다.
+
+**목표:** `404.html` 파일의 리디렉션 로직(URL 끝에 슬래시 추가) 및 `sitemap.xml`의 URL 형식과 일치하도록 애플리케이션의 라우팅 및 내부 링크를 수정하여 URL 표준화를 달성합니다.
+
+**적용된 변경 사항:**
+
+1.  **`src/App.tsx`**
+    *   **변경 내용:** 모든 `<Route>` 컴포넌트의 `path` 속성에 슬래시(`/`)를 추가했습니다. (루트 경로 `/` 및 와일드카드 경로 `*` 제외)
+        *   예시: `<Route path="/recipes"` -> `<Route path="/recipes/"`
+        *   영향을 받은 라우트: `/recipes`, `/tips`, `/recipe/:id`, `/tip/:id`, `/terms`, `/privacy`
+    *   **롤백된 변경 내용:** 사용자 요청에 따라 `StoriesPage`, `StoryDetail`, `LabsPage`, `LabDetail` 컴포넌트의 임포트 및 해당 라우트 추가는 롤백되었습니다.
+
+2.  **`src/pages/HomePage.tsx`**
+    *   **변경 내용:** 내부 `<Link>` 컴포넌트의 `to` 속성 경로에 슬래시를 추가했습니다.
+        *   `<Link to="/recipes"` -> `<Link to="/recipes/"`
+        *   `<Link to="/tips"` -> `<Link to="/tips/"`
+
+3.  **`src/pages/TipDetail.tsx`**
+    *   **변경 내용:** 내부 `<Link>` 컴포넌트의 `to` 속성 경로에 슬래시를 추가했습니다.
+        *   `<Link to="/tips"` -> `<Link to="/tips/"`
+
+4.  **`src/components/Footer.tsx`**
+    *   **변경 내용:** 내부 `<Link>` 컴포넌트의 `to` 속성 경로에 슬래시를 추가했습니다.
+        *   `<Link to="/privacy"` -> `<Link to="/privacy/"`
+        *   `<Link to="/terms"` -> `<Link to="/terms/"`
+
+**변경의 목적:**
+이러한 변경을 통해 애플리케이션의 모든 내부 URL이 슬래시로 끝나도록 통일되었습니다. 이는 `404.html`의 리디렉션 동작 및 `sitemap.xml`의 URL 형식과 일치하여 Google이 웹사이트의 표준 URL을 더 명확하게 이해하고 색인하는 데 도움을 줍니다. 결과적으로 Google Search Console의 "리디렉션이 포함된 페이지" 보고서가 점차 개선될 것으로 예상됩니다.

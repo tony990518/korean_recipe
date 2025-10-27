@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { Recipe } from "../types";
 
 const RecipeCard = ({ data }: { data: Recipe }) => (
-    <Link to={`/recipe/${data.id}`} className="group text-left bg-white rounded-2xl border overflow-hidden hover:shadow-md transition">
+    <Link to={`/recipe/${data.id}/`} className="group text-left bg-white rounded-2xl border overflow-hidden hover:shadow-md transition">
       <div className="aspect-video w-full bg-slate-100 overflow-hidden">
         <img
           src={data.hero}

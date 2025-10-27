@@ -25,12 +25,12 @@ const AppShell = () => (
     <ScrollToTop />
     <Routes>
       <Route path="/" element={<HomePage />} />
-      <Route path="/recipes" element={<RecipesPage />} />
-      <Route path="/tips" element={<TipsPage />} />
-      <Route path="/recipe/:id" element={<RecipeRoute />} />
-      <Route path="/tip/:id" element={<TipDetail />} />
-      <Route path="/terms" element={<Terms />} />
-      <Route path="/privacy" element={<Privacy />} />
+      <Route path="/recipes/" element={<RecipesPage />} />
+      <Route path="/tips/" element={<TipsPage />} />
+      <Route path="/recipe/:id/" element={<RecipeRoute />} />
+      <Route path="/tip/:id/" element={<TipDetail />} />
+      <Route path="/terms/" element={<Terms />} />
+      <Route path="/privacy/" element={<Privacy />} />
       <Route path="*" element={
         <main className="max-w-3xl mx-auto px-4 py-20 text-center">
           <SEOHelmet meta={getNotFoundMeta()} />

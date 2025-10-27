@@ -296,7 +296,7 @@ const TipModal = ({ tip, onClose }: { tip: Tip | null; onClose: () => void }) =>
                 分享
               </button>
               <Link
-                to={`/tip/${tip.id}`}
+                to={`/tip/${tip.id}/`}
                 onClick={handleClose}
                 className="flex-1 text-center px-4 py-3 rounded-xl bg-red-500 hover:bg-red-600 text-white font-semibold shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
               >

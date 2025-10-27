@@ -46,7 +46,7 @@ const HomePage = () => {
       subtitle: firstRecipe.title,
       desc: firstRecipe.shortDescription,
       buttons: [
-        <Link key="view" to={`/recipe/${firstRecipe.id}`} className="px-4 py-2 rounded-lg bg-slate-900 text-white text-sm">
+        <Link key="view" to={`/recipe/${firstRecipe.id}/`} className="px-4 py-2 rounded-lg bg-slate-900 text-white text-sm">
           查看食譜
         </Link>,
         <a key="more" href="#recipes" className="px-4 py-2 rounded-lg border text-sm">更多食譜</a>,
@@ -352,7 +352,7 @@ const HomePage = () => {
       <section id="recipes" className="mb-10 scroll-mt-24 md:scroll-mt-28">
         <div className="flex items-end justify-between mb-4">
           <h2 className="text-xl font-bold text-slate-900">最新食譜</h2>
-          <Link to="/recipes" className="text-sm text-red-600">全部查看 →</Link>
+          <Link to="/recipes/" className="text-sm text-red-600">全部查看 →</Link>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {(DB.recipes ?? []).slice(0, 3).map((r) => <RecipeCard key={r.id} data={r} />)}
@@ -363,7 +363,7 @@ const HomePage = () => {
       <section id="tips" className="mb-10 scroll-mt-24 md:scroll-mt-28">
         <div className="flex items-end justify-between mb-3">
           <h2 className="text-xl font-bold text-slate-900">料理小撇步</h2>
-          <Link to="/tips" className="text-sm text-red-600">全部查看 →</Link>
+          <Link to="/tips/" className="text-sm text-red-600">全部查看 →</Link>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {(DB.tips ?? []).slice(0, 3).map((tip) => (

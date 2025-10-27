@@ -16,7 +16,7 @@ const TipDetail = () => {
         <SEOHelmet meta={notFoundMeta} />
         <h1 className="text-2xl font-bold">팁을 찾을 수 없습니다.</h1>
         <div className="mt-6">
-          <Link className="text-red-600 underline" to="/tips">
+          <Link className="text-red-600 underline" to="/tips/">
             모든 팁 보기
           </Link>
         </div>
@@ -112,7 +112,7 @@ const TipDetail = () => {
 
         {/* ===== Block: Back Link ===== */}
         <div className="mt-12">
-          <Link to="/tips" className="text-red-600 hover:underline">
+          <Link to="/tips/" className="text-red-600 hover:underline">
             ← 모든 팁 보기
           </Link>
         </div>

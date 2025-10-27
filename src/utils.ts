@@ -1,9 +1,9 @@
 
 export function buildRecipeUrl(id: string) {
     if (typeof window !== "undefined" && window.location?.origin) {
-      return `${window.location.origin}/recipe/${id}`;
+      return `${window.location.origin}/recipe/${id}/`;
     }
-    return `/recipe/${id}`;
+    return `/recipe/${id}/`;
   }
   
 export function withUTM(

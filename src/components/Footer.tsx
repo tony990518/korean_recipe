@@ -74,8 +74,8 @@ const Footer = () => {
           <div className="space-y-3">
             <h3 className="text-lg font-semibold text-white">政策</h3>
             <ul className="space-y-2">
-              <li><Link to="/privacy" className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition">📜<span>隱私權政策</span></Link></li>
-              <li><Link to="/terms" className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition">⚖️<span>使用條款</span></Link></li>
+              <li><Link to="/privacy/" className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition">📜<span>隱私權政策</span></Link></li>
+              <li><Link to="/terms/" className="inline-flex items-center gap-2 text-sm text-slate-300 hover:text-white transition">⚖️<span>使用條款</span></Link></li>
             </ul>
           </div>
 
