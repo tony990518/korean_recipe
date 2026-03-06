@@ -11,14 +11,14 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
       difficulty: "易",
       servings: 1,
       flavor: { spicy: 4, salty: 4, sweet: 1, fermented: 2 },
-      shortDescription: "最近剛好在看韓綜叢林飯的第二季，看到料理狂人伊男老主廚用炸醬泡麵做的辣油炸醬麵，就馬上做來吃吃看了，推薦給喜歡吃辣的朋友一起來試試～ 那就趕快開始吧！",
+      shortDescription: "最近剛好在看韓綜叢林飯的第二季，看到料理狂人伊男老主廚用炸醬泡麵做的辣油炸醬麵，就馬上做來吃吃看了！\n\n尹男老（윤남노）主廚在Netflix實境節目《黑白大廚》（The Chefs' Line）中被稱為「料理狂人」，他那不按牌理出牌但又充滿創意的料理風格深受許多人喜愛。雖然在這檔節目中他沒有直接示範這道麵，但他在另一檔節目《叢林飯》裡大展身手，用最平易近人的韓國泡麵，升級成了帶有高級餐廳水準的辣油炸醬麵。\n\n其實在韓國，炸醬麵（짜장면）一直是非常親民且充滿靈魂的國民美食，有別於高檔粵菜，它是韓國人畢業、搬家或日常嘴饞時的首選。這款食譜完美融合了韓國人最愛的炸醬風味與微刺激的青陽辣椒，那股用橄欖油嗆出的獨特辣油香氣，真的會讓人一口接一口停不下來。推薦給喜歡吃辣、又想把平凡泡麵吃出儀式感的朋友一起來試試～ 那就趕快開始吧！",
       ingredients: [
 
         { label: "韓式炸醬泡麵", amount: "1 包", image: "/images/recipes/yoon-nam-no/i1.webp", link: { url: "https://afflink.one/s/6WHUp", label: "酷澎" } },
         { label: "青陽辣椒", amount: "1 根", image: "/images/recipes/yoon-nam-no/i2.webp", link: { url: "https://linkgo.one/s/uljVu", label: "酷澎" } },
         { label: "辣椒粉", amount: "1 大匙", image: "/images/recipes/yoon-nam-no/i3.webp", link: { url: "https://afflink.one/s/izm8l", label: "酷澎" } },
         { label: "鹽巴", amount: "一小撮", image: "/images/recipes/yoon-nam-no/i4.webp", link: [{ url: "https://onelink.one/s/ZJR4d", label: "酷澎" }, { url: "https://linkgo.one/s/hBdx7", label: "家樂福" }] },
-        { label: "橄欖油", amount: "3 大匙", image: "/images/recipes/yoon-nam-no/i5.webp", link: [{ url: "https://linkgo.one/s/Y6Exz", label: "酷澎" } , { url: "https://linkgo.one/s/PYhnv", label: "家樂福" }]},
+        { label: "橄欖油", amount: "3 大匙", image: "/images/recipes/yoon-nam-no/i5.webp", link: [{ url: "https://linkgo.one/s/Y6Exz", label: "酷澎" }, { url: "https://linkgo.one/s/PYhnv", label: "家樂福" }] },
         { label: "水", amount: "600 毫升", image: "/images/recipes/yoon-nam-no/i6.webp", link: [{ url: "https://onelink.one/s/1VEeE", label: "酷澎" }, { url: "https://onelink.one/s/JUVPW", label: "家樂福" }] }
       ],
       steps: [
@@ -48,11 +48,11 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
       difficulty: "易",
       servings: 1,
       flavor: { spicy: 0, salty: 1, sweet: 4, fermented: 0 },
-      shortDescription: "這款吐司因為一則網路小故事而爆紅：有人忍不住去問前男友常做的點心食譜，結果就是這個神組合！外酥內軟的吐司，抹上奶油乳酪與藍莓果醬，酸酸甜甜，保證一吃就愛上～",
+      shortDescription: "這款吐司因為一則網路真實小故事而爆紅：有一位韓國女網友在與前男友分手後，依然對前男友曾經做給她吃的「藍莓奶油乳酪吐司」念念不忘。實在是太想念那個味道了，她竟然厚著臉皮傳訊息向前男友討教食譜，甚至連食材的指定品牌都問得一清二楚！前男友雖然滿腹無奈，還是非常詳細地分享了做法。\n\n這段誠實又帶點可愛的對話截圖在社群媒體上迅速傳開，引爆熱烈討論，因為這真的是「好吃到讓人連自尊心都不要了」的神仙組合！隨後，這款吐司就被大家戲稱為「前男友吐司」（전남친 토스트），甚至紅到連人氣韓綜《Biong Biong地球娛樂室3》都有提起，韓國超商更順勢推出了致敬款的「男朋友三明治」。\n\n外酥內軟的熱烤厚片吐司，抹上一層厚厚的奶油乳酪（原版據說是法國Madame Loïk），再鋪滿酸甜的藍莓果醬（推薦ST. Dalfour），最後微波10秒讓乳酪半融化......酸酸甜甜的豐富層次，保證一吃就愛上～",
       ingredients: [
-        { label: "吐司", amount: "2 片", image: "/images/recipes/ex-bf-toast/i1.webp" , link: { url: "https://linkgo.one/s/qJuCG", label: "家樂福" }},
-        { label: "奶油乳酪", amount: "2-3 大匙", image: "/images/recipes/ex-bf-toast/i2.webp" , link: { url: "https://linkgo.one/s/kmhZ8", label: "家樂福" }},
-        { label: "藍莓果醬", amount: "1-2 大匙", image: "/images/recipes/ex-bf-toast/i3.webp" , link: { url: "https://afflink.one/s/dOfZf", label: "酷澎" }},
+        { label: "吐司", amount: "2 片", image: "/images/recipes/ex-bf-toast/i1.webp", link: { url: "https://linkgo.one/s/qJuCG", label: "家樂福" } },
+        { label: "奶油乳酪", amount: "2-3 大匙", image: "/images/recipes/ex-bf-toast/i2.webp", link: { url: "https://linkgo.one/s/kmhZ8", label: "家樂福" } },
+        { label: "藍莓果醬", amount: "1-2 大匙", image: "/images/recipes/ex-bf-toast/i3.webp", link: { url: "https://afflink.one/s/dOfZf", label: "酷澎" } },
         { label: "奶油", amount: "少許（可選）", image: "/images/recipes/ex-bf-toast/i4.webp", link: { url: "https://onelink.one/s/OFb8T", label: "家樂福" } }
       ],
       steps: [
@@ -101,19 +101,19 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
       difficulty: "易",
       servings: 1,
       flavor: { spicy: 2, salty: 2, sweet: 2, fermented: 2 },
-      shortDescription: "Kaguri是韓國很有名的一種泡麵吃法，做法很簡單，就是在浣熊泡麵裡加入咖哩塊一起煮。這個吃法最早在韓國的網咖（PC房）裡很流行，因為方便又好吃，後來透過網友口耳相傳變得越來越受歡迎。甚至因為人氣太高，農心還真的推出了官方版的Kaguri產品呢！懶得自己做的朋友也可以直接買官方產品來吃喔！",
+      shortDescription: "「Kaguri（咖哩浣熊麵）」是韓國近年來超級火紅的一種泡麵隱藏吃法！它的做法非常簡單，就是在農心經典的「浣熊海鮮烏龍麵（Neoguri）」裡加入一塊咖哩（Curry）一起煮，所以名字就被合稱為「Kaguri」。\n\n這個神仙吃法最早其實發源於韓國的網咖（PC房）。大家都知道，在網咖吃泡麵總是比在家裡自己煮的還要好吃！韓國網咖的工讀生們發明了這種濃郁又開胃的加料煮法，透過熟客們的口耳相傳，瞬間在網路上引發熱潮。這種由消費者自己發明混搭吃法的「模範消費者（modisumers）」文化在韓國非常盛行，就像因為電影《寄生上流》紅遍全世界的「炸醬浣熊麵（Jjapaguri）」一樣。\n\n因為Kaguri的人氣實在太高，農心公司順應民意，竟然在2021年把這個網咖隱藏菜單「官方產品化」，直接推出了Kaguri的實體泡麵！濃厚的海鮮湯底結合咖哩的辛香，配上滑Ｑ的粗麵條，簡直是追劇或打電動時的完美宵夜。今天我們就來還原這個網咖傳說，自己在家動手煮煮看吧！",
       ingredients: [
         { label: "浣熊海鮮烏龍麵", amount: "1 包", link: { url: "https://onelink.one/s/EOClb", label: "酷澎" }, image: "/images/recipes/Kaguri/i1.webp" },
         { label: "咖哩塊", amount: "1 塊", link: [{ url: "https://linkgo.one/s/IMrsO", label: "酷澎" }, { url: "https://afflink.one/s/809Qz", label: "家樂福" }], image: "/images/recipes/Kaguri/i2.webp" },
         { label: "雞蛋(可省略)", amount: "1 顆", link: { url: "https://onelink.one/s/tUWPq", label: "家樂福" }, image: "/images/recipes/Kaguri/i3.webp" },
         { label: "青蔥(可省略)", amount: "少許", link: { url: "https://onelink.one/s/QB3LO", label: "家樂福" }, image: "/images/recipes/Kaguri/i4.webp" },
-        { label: "辣椒粉(可省略)", amount: "1 大匙" ,link: { url: "https://linkgo.one/s/X9HqM", label: "酷澎" }, image: "/images/recipes/Kaguri/i5.webp"},
+        { label: "辣椒粉(可省略)", amount: "1 大匙", link: { url: "https://linkgo.one/s/X9HqM", label: "酷澎" }, image: "/images/recipes/Kaguri/i5.webp" },
         { label: "水", amount: "550 ml", link: [{ url: "https://afflink.one/s/4VbZS", label: "酷澎" }, { url: "https://afflink.one/s/c8iCw", label: "家樂福" }], image: "/images/recipes/yoon-nam-no/i6.webp", imageFit: "contain" },
       ],
       steps: [
-        { title: "溶解咖哩", text: "在鍋中加入水 550 ml，並放入泡麵的乾燥蔬菜包以及咖哩塊，加熱慢慢讓咖哩塊溶解，期間輕拌防沾底。", heat: "med", image:"/images/recipes/Kaguri/s1.webp" },
-        { title: "煮麵", text: "水滾後，加入麵條以及半包湯包，將麵煮至喜歡的口感。", heat: "med", time: "5 分" ,tip: "官方建議煮5分鐘",image:"/images/recipes/Kaguri/s2.webp"},
-        { title: "加入配料", text: "根據個人喜好加入雞蛋、青蔥、辣椒粉等可選食材，完成！",image:"/images/recipes/Kaguri/s3.webp" }
+        { title: "溶解咖哩", text: "在鍋中加入水 550 ml，並放入泡麵的乾燥蔬菜包以及咖哩塊，加熱慢慢讓咖哩塊溶解，期間輕拌防沾底。", heat: "med", image: "/images/recipes/Kaguri/s1.webp" },
+        { title: "煮麵", text: "水滾後，加入麵條以及半包湯包，將麵煮至喜歡的口感。", heat: "med", time: "5 分", tip: "官方建議煮5分鐘", image: "/images/recipes/Kaguri/s2.webp" },
+        { title: "加入配料", text: "根據個人喜好加入雞蛋、青蔥、辣椒粉等可選食材，完成！", image: "/images/recipes/Kaguri/s3.webp" }
       ],
     },
     // {
@@ -168,28 +168,59 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
     //     { text: "倒入水煮 15 分調味即可。", heat: "high", time: "15 分" }
     //   ]
     // },
-    // {
-    //   id: "soy-sauce-eggs",
-    //   title: "醬油溏心蛋（마약계란장）",
-    //   hero: "https://images.unsplash.com/photo-1581447109200-1cfd5f2bfae4?q=80&w=1600&auto=format&fit=crop",
-    //   minutes: 30,
-    //   difficulty: "初",
-    //   servings: 4,
-    //   flavor: { spicy: 0, salty: 3, sweet: 2, fermented: 1 },
-    //   shortDescription: "提前做起來的萬用配飯神器。",
-    //   ingredients: [
-    //     { label: "雞蛋", amount: "6 顆" },
-    //     { label: "醬油", amount: "150 ml" },
-    //     { label: "水", amount: "150 ml" },
-    //     { label: "糖", amount: "1 大匙" },
-    //     { label: "蒜末", amount: "1 小匙" },
-    //     { label: "蔥花", amount: "適量" }
-    //   ],
-    //   steps: [
-    //     { text: "蛋入滾水煮 6 分鐘成半熟，冰水冷卻剝殼。", heat: "high", time: "6 分" },
-    //     { text: "醬油、水、糖、蒜混合，加入蛋浸泡至少 2 小時。", heat: "low" }
-    //   ]
-    // },
+    {
+      id: "dujjonku",
+      title: "杜拜麻糬軟餅乾 (두쫀쿠)",
+      hero: "/images/recipes/dujjonku/hero.png",
+      minutes: 45,
+      difficulty: "中",
+      servings: 25,
+      flavor: { spicy: 0, salty: 1, sweet: 5, fermented: 0 },
+      shortDescription: "「杜拜麻糬軟餅乾（Dujjonku）」是韓國社群近期最火熱的變種甜點！它的名字是由「杜拜巧克力」、「軟糯（쫀득）」與「餅乾」組合而成。自從充滿開心果與酥脆卡達伊夫（Kataifi）的杜拜巧克力爆紅後，因為市面上不僅價格昂貴且一粒難求，韓國烘焙圈便掀起了一股自製熱潮。這款「杜拜麻糬軟餅乾」正是這波熱潮中的天才發明！\n\n有別於一般單純的巧克力塊，它外層使用了融化棉花糖與可可粉混合製成的外皮，帶來如同麻糬般無敵軟糯拉絲的誘人嚼勁（겉쫀）；而切開內餡，則是滿滿的開心果醬與奶油現炒的卡達伊夫麵線，交織出極致的酥脆口感（속바）。這種「外軟糯、內酥脆」的雙重極端口感衝擊，加上濃郁的開心果堅果香氣與可可的微苦甘甜，絕對會讓你一口接一口停不下來。不用花大錢排隊，現在就跟著韓國烘焙達人的秘方，在家自己動手做出這款風靡全網的夢幻甜點吧！",
+      ingredients: [
+        { label: "卡達伊夫麵線", amount: "200 g", image: "/images/recipes/dujjonku/i1.png" },
+        { label: "無鹽奶油", amount: "25 g", note: "炒麵線10g, 融化棉花糖15g", image: "/images/recipes/dujjonku/i2.png" },
+        { label: "開心果醬", amount: "180 g", image: "/images/recipes/dujjonku/i3.png" },
+        { label: "白巧克力", amount: "60 g", image: "/images/recipes/dujjonku/i4.png" },
+        { label: "棉花糖", amount: "350 g", note: "建議使用小顆粒", image: "/images/recipes/dujjonku/i5.png" },
+        { label: "無糖可可粉", amount: "25 g", note: "另備半杯作為外層裹粉", image: "/images/recipes/dujjonku/i6.png" },
+        { label: "脫脂奶粉", amount: "15 g", image: "/images/recipes/dujjonku/i7.png" }
+      ],
+      steps: [
+        { title: "炒酥卡達伊夫", text: "在平底鍋中融化 10g 奶油，加入卡達伊夫麵線，用中火翻炒 3~4 分鐘直到極致酥脆。炒好後平鋪放涼。", heat: "med", time: "4 分", tip: "即使買的是熟麵線，用奶油回炒能去除冰箱雪櫃味並大幅提升酥脆度與香氣。", image: "/images/recipes/dujjonku/s1.png" },
+        { title: "製作開心果內餡", text: "將放涼的卡達伊夫、180g 開心果醬與融化的 60g 白巧克力混合均勻。將餡料分成每個 25~30g 的小圓球，放入冷凍庫稍微冰鎮定型。", image: "/images/recipes/dujjonku/s2.png" },
+        { title: "製作麻糬外皮", text: "鍋中融化 15g 奶油，加入 350g 棉花糖用中小火慢慢壓融。完全融化且無顆粒後關火，趁熱拌入 25g 可可粉與 15g 脫脂奶粉，攪拌均勻後倒在托盤上稍微放涼。", heat: "low", tip: "棉花糖不要過度加熱，以免水分流失導致冷卻後變硬難以包覆。", image: "/images/recipes/dujjonku/s3.png" },
+        { title: "包覆與定型", text: "雙手抹上一點食用油防沾黏，取約 15g 的麻糬麵糰壓平，包入剛剛冷凍定型的開心果球，收口捏緊搓圓。最後在外層均勻滾上一層優質的無糖可可粉即完成！", tip: "完成後放冰箱冷凍保存，吃之前微波 5~10 秒，拉絲口感最完美！", image: "/images/recipes/dujjonku/s4.png" }
+      ]
+    },
+    {
+      id: "bomdong-bibimbap",
+      title: "超簡單當季美味！春白菜拌飯",
+      difficulty: "易",
+      minutes: 10,
+      servings: 1,
+      hero: "/images/recipes/bomdong/hero.png",
+      flavor: { spicy: 2, salty: 3, sweet: 2, fermented: 2 },
+      shortDescription: "在韓國的冬末春初，有一道讓無數韓國人為之瘋狂的家常美味——「春白菜拌飯（봄동 비빔밥）」。近期它在韓國社群平台上的討論度甚至超越了爆紅的杜拜巧克力！為什麼一道看似平凡的蔬菜拌飯會如此受歡迎？故事要從韓國國民綜藝節目《兩天一夜》說起。當年主持人姜鎬童在節目中大口扒著這道拌飯、滿臉幸福的模樣，成為了韓國人心目中無法抹滅的「吃播神級畫面」。最近，隨著知名演員柳秀榮等明星在節目中分享了升級版秘方，這股春白菜熱潮再度席捲全韓！\n\n春白菜（Bomdong）生長在寒冷的冬季，為了抵抗嚴寒，它的葉片不像一般白菜那樣包覆成長，而是貼著地面如同一朵盛開的綠色花朵般展開。正因為經歷了寒冬的冰霜，春白菜的口感極致爽脆，咀嚼時還會散發出令人驚豔的天然清甜。這道拌飯的精髓就在於「生拌」——不需開火煮菜，只要將洗淨的春白菜撕成小塊，拌入以粗辣椒粉、醬油、魚露和芝麻油調製而成的靈魂醬汁，最後蓋在熱騰騰的白飯上，放上一顆半熟荷包蛋。當戳破蛋黃、與微辣鹹香的脆口白菜拌在一起送入口中時，那種清爽解膩又充滿生機的滋味，絕對會讓你一口接一口。對於忙碌的現代人或租屋族來說，這是一道充滿大自然恩賜、零失敗且超級療癒的必學料理！",
+      ingredients: [
+        { label: "春白菜 (Bomdong)", amount: "150 g", image: "/images/recipes/bomdong/i1.png" },
+        { label: "溫白飯", amount: "1 碗" },
+        { label: "雞蛋", amount: "1 顆", image: "/images/recipes/bomdong/i6.png" },
+        { label: "粗辣椒粉", amount: "1.5 大匙", image: "/images/recipes/bomdong/i4.png" },
+        { label: "醬油", amount: "1 大匙" },
+        { label: "鯷魚魚露", amount: "1 大匙", image: "/images/recipes/bomdong/i3.png" },
+        { label: "白醋", amount: "0.5 大匙" },
+        { label: "砂糖", amount: "0.5 大匙" },
+        { label: "蒜末", amount: "0.5 大匙", image: "/images/recipes/bomdong/i2.png" },
+        { label: "芝麻油", amount: "2 大匙", image: "/images/recipes/bomdong/i5.png" }
+      ],
+      steps: [
+        { title: "準備春白菜", text: "將春白菜切去根部，將葉片一片片剝下後用清水洗淨瀝乾。用手將葉片撕成適合入口的大小。", tip: "用手撕的切口比用刀切更不規則，能吸附更多美味的醬汁！", image: "/images/recipes/bomdong/s1.png" },
+        { title: "調製靈魂醬汁", text: "在一個大碗中，加入 1.5 大匙粗辣椒粉、1 大匙醬油、1 大匙鯷魚魚露、0.5 大匙白醋、0.5 大匙砂糖與 0.5 大匙蒜末。先將這些材料攪拌均勻，讓糖完全融化。", image: "/images/recipes/bomdong/s2.png" },
+        { title: "輕柔拌菜", text: "將撕好的春白菜放入醬汁碗中，加入 1 大匙芝麻油。用手「輕輕地」由下往上翻拌讓葉片均勻沾附醬汁。", tip: "切記不要用力揉捏，以免白菜出水變軟並產生生澀的青草味，保持清脆是關鍵！", image: "/images/recipes/bomdong/s3.png" },
+        { title: "完美組合", text: "在大碗中盛入熱騰騰的白飯，將拌好的春白菜滿滿地鋪在飯上。煎一顆邊緣微焦的半熟荷包蛋放在正中央，最後再淋上 1 大匙芝麻油並撒上滿滿的烤白芝麻。戳破蛋黃拌勻享用吧！", heat: "med", time: "3 分", image: "/images/recipes/bomdong/s4.png" }
+      ]
+    }
   ],
 
   tips: [
@@ -197,7 +228,7 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
       id: "gochugaru-smell",
       title: "辣椒粉有陳味怎麼辦？！",
       hero: "/images/tips/redpepper/thumbnail.webp",
-      shortDescription: "辣椒粉放久了有味道？別擔心，簡單幾招就能解決！",
+      shortDescription: "「奇怪，這包韓國買回來的辣椒粉怎麼有一股怪味？」這是很多人在家做韓式料理時常遇到的困擾。\n\n辣椒粉（고춧가루）是韓式料理的靈魂，無論是做泡菜、辣炒年糕還是煮各種湯品，絕對少不了它。但買了一大包如果沒有馬上用完，放著放著就會發現它不僅顏色變暗，還會飄出一股難以形容的「陳味」或「油耗味」。這其實是因為辣椒粉表面積大，非常容易吸收空氣中的濕氣和冰箱裡的各種異味，加上台灣氣候潮濕，更容易加速氧化。\n\n雖然這不代表它壞掉了，但如果直接加進料理中，整鍋湯的味道可能都會被破壞掉！別擔心，今天就來教大家幾個韓國主婦都在用的超簡單實用小撇步，不僅能輕鬆幫辣椒粉「去霉味、恢復香氣」，還要告訴你到底該怎麼正確保存，才能讓辣椒粉從第一匙到最後一匙都像剛磨好一樣新鮮！",
       content: {
         sections: [
           {
@@ -238,7 +269,7 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
       id: "seeweed-moistened",
       title: "海苔放久變軟了要怎麼辦？！",
       hero: "/images/tips/seeweed/thumbnail1.webp",
-      shortDescription: "海苔是韓國餐桌上常見的配菜，不論是搭配白飯或是包飯卷都少不了它。但如果放久變軟了該怎麼辦？一起來看看解決方法吧！",
+      shortDescription: "海苔（김）絕對是韓國餐桌上最不可或缺的國民配菜！不管是拿來包白飯、做紫菜包飯（김밥），還是單純當零食吃，那種又薄又脆、帶點芝麻油香氣的口感，真的是大人小孩都無法抗拒的美味。\n\n但是，海苔最大的敵人就是「濕氣」！特別是在台灣這種潮濕的氣候下，有時候一包海苔打開沒吃完，才過一個晚上，原本酥脆的海苔就變得軟趴趴、韌韌的（甚至有點難咬斷），完全失去了靈魂。直接丟掉覺得太浪費，但直接吃口感又很差。\n\n遇到海苔變軟到底該怎麼辦？其實只要掌握幾個簡單的小魔法，短短10秒鐘就能讓軟掉的海苔「死而復生」，重新恢復剛出廠般的酥脆咔滋聲！除了教你如何神救援軟海苔，還要分享幾個韓國人都在用的隱藏版消耗吃法，保證讓你家的海苔不僅不會浪費，還能變換出更多超讚的家庭料理！",
       content: {
         sections: [
           {
@@ -276,13 +307,13 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
       id: "chopped-garlic",
       title: "韓式料理的必備食材--蒜末，如何大量製作與保存？",
       hero: "/images/tips/garlic/thumbnail.webp",
-      shortDescription: "在韓國料理中，蒜末是絕對不可或缺的食材！從醃泡菜、煮湯到炒菜，幾乎無處不在。但每次都要剝蒜、切蒜實在是太麻煩了，手上還會沾滿蒜味。現在，讓我們來學習如何一次大量處理及保存蒜末！",
+      shortDescription: "如果說辣椒粉是韓式料理的靈魂，那「蒜末（다진 마늘）」絕對是韓式料理的心臟！\n\n你看韓國大媽做菜的影片就會發現，她們加蒜末通常不是用「顆」算，而是用「一大匙、兩大匙」在狂挖的。不管是醃製辛奇（泡菜）、涼拌小菜、烤肉沾醬，還是滾煮各種濃郁的鍋物與湯品，蒜末的嗆辣與香氣都是撐起整道料理底蘊的關鍵。\n\n但問題來了：每次煮飯都要重新剝蒜皮、切蒜末，不僅非常花時間，手指還會殘留好幾天洗不掉的蒜味！如果是偶爾煮飯就算了，但對於經常下廚的人來說，這真的是一件很勸退的事。其實，韓國家庭都有自己一套「大量處理與保存蒜末」的聰明秘訣。今天就來大公開，教你如何像韓國主婦一樣，一次搞定一個月份的蒜末，不僅能輕鬆幫蒜頭脫衣服，還能聰明冷凍保存，讓妳以後下廚只要「啪」一聲折下一小塊蒜末冰磚，就能立刻爆香，省時省力又優雅！",
       content: {
         sections: [
           {
             title: "總結",
             text: "• 想一次處理大量蒜頭，可先用浸水或微波法輕鬆去皮。\n• 蒜頭去除根部後用刀、攪拌機或袋子搗碎，並用密封袋或分格容器冷凍保存。\n• 處理完可用檸檬水或不鏽鋼去除手上蒜味，蒜皮也能再利用熬湯或煮茶，健康又環保。",
-            
+
           },
           {
             title: "處理蒜頭",
@@ -291,18 +322,18 @@ const DB: { recipes: Recipe[]; tips: Tip[] } = {
           {
             title: "製作蒜末",
             text: "• 用刀切碎：將蒜用刀背壓扁後，細細切碎，是一般家庭最常用的傳統方法。\n• 用攪拌機：大量處理時，使用攪拌機能快速且均勻地打碎蒜頭。但要注意不要過度攪拌，以免蒜末變得太碎，可分次短時間攪打。\n• 用塑膠袋搗碎：將蒜放入堅固的塑膠袋或夾鍊袋中，用擀麵棍或重物敲打搗碎，這樣手不會黏上太多蒜末。",
-        
+
           },
           {
             title: "保存方法",
             text: "• 使用密封袋並劃分小格：將蒜末放入密封袋中，封口後壓平，用刀背輕輕劃出格線，冷凍後就會分成一格一格的。需要時可直接取出一格使用。\n• 使用分格容器：將蒜末放入有分格的矽膠密封模具冷凍保管。每次只取出一小塊即可。\n• 冷凍保存：將密封袋或容器放冷凍，使用時無需解凍，直接加入料理即可！",
-            
+
           },
           {
             title: "延伸應用",
             text: "• 去除蒜味：處理蒜頭後，可用檸檬水、醋水或鹽水與肥皂一起洗手來去除手上的味道。若仍有氣味殘留，也可以拿不鏽鋼湯匙或任何不銹鋼製品在手上摩擦幾下，效果會更好。\n• 蒜皮再利用：將蒜皮放入蔬菜湯料袋中，可為高湯增添自然鮮味。若將蒜皮洗淨晾乾後煮茶，也可以加入洋蔥皮一起煮，不僅可增強免疫力、促進血液循環，還有助於體脂肪代謝。",
-            
-          },    
+
+          },
         ]
       },
       recommendedProducts: [
@@ -387,106 +418,6 @@ export type SimplePost = {
   recommendedProducts?: Product[];
 };
 
-export const STORIES: SimplePost[] = [
-  {
-    id: "army soup",
-    title: "韓國經典料理故事：部隊鍋的誕生",
-    shortDescription: "你知道為什麼部隊鍋被稱為「部隊鍋」嗎？部隊鍋的誕生其實蘊含了韓國一段悲傷的歷史。現在，就讓我們一起揭開這道料理背後的故事吧！",
-    hero: "/images/stories/army-soup/thumbnail.webp",
-    content: {
-      sections: [
-        { title: "部隊鍋的起源", text: "在韓戰（1950–1953）結束後，韓國正處於物資極度匱乏的時期。當時駐韓美軍基地附近，偶爾能取得美軍為士兵從美國運來的食材，像是罐頭火腿、香腸、培根等。這些原本只供給美軍的食材，被人們稱作「部隊肉」。\n起初，人們會利用這些補給品或是美軍吃剩的食材，拿來炒著吃。後來加入辣椒醬、泡菜與高湯煮成鍋物，這道結合了美式與韓式元素的料理因此被稱為「部隊鍋（부대찌개）」。\n美軍基地所在的松炭、議政府、坡州等地，也各自發展出不同的部隊鍋風格，大致可分為議政府式和松炭式。議政府式部隊鍋以泡菜為基底，口味清爽，比較接近傳統韓式的口味；松炭式部隊鍋則以牛骨高湯和起司為代表，味道濃郁也更為濃稠。至於哪一種才是最早的「正統」部隊鍋，至今仍有不同的說法。" },
-        { title: "議政府式部隊鍋的起源", text: "其中，最廣為人知的部隊鍋起源說法是，1960年代，京畿道議政府的一位攤販許基淑（허기숙）奶奶率先利用西式食材，創作了最初的部隊鍋。\n1968 年，她以「魚板食堂（오뎅식당）」的名字正式登記營業，這家店也成為議政府最有名的「元祖部隊鍋」店。隨著「魚板食堂」的名氣越來越大，附近陸續出現了許多部隊鍋專門店，最終形成了如今的「議政府部隊鍋一條街」。\n如今，「魚板食堂」也開設了多家分店，在金浦機場與仁川機場都能找到它的蹤影。如果有機會去韓國玩，不妨親自去品嚐一下正宗的原味。" },
-        { title: "Studio.K 推薦", text: "쿠팡 부대찌개 밀키트\n코스트코 밀키트" },
-        { title: "參考資料", text: "https://encykorea.aks.ac.kr/Article/E0079968 \nhttps://namu.wiki/w/%EB%B6%80%EB%8C%80%EC%B0%8C%EA%B0%9C \nhttps://ko.wikipedia.org/wiki/%EB%B6%80%EB%8C%80%EC%B0%8C%EA%B0%9C \nhttps://odengsikdang.com/28 " }
-      ]
-    }
-  },
-  {
-    id: "korean-chuseok",
-    title: "韓國中秋也吃烤肉嗎？",
-    shortDescription: "韓國人中秋節吃什麼？！",
-    hero: "https://images.unsplash.com/photo-1555939594-58d7cb561ad1?q=80&w=1600&auto=format&fit=crop",
-    content: {
-      sections: [
-        { title: "韓國的中秋節", text: "會祭祖，跟中華文化的過年一樣大的節日" },
-        { title: "吃什麼？", text: "介紹산적, 잡채, 송편 등등", image: "https://images.unsplash.com/photo-1582450871972-ab24278726e3?q=80&w=800&auto=format&fit=crop" },
-        { title: "那一口記憶", text: "酸香中帶著微甜，是家人一起的味道。" }
-      ]
-    }
-  },
-  {
-    id: "street-food-seoul",
-    title: "為什麼韓國會有中華料理？",
-    shortDescription: "從魚板湯到糖餅，小吃攤位背後的溫度。",
-    hero: "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600&auto=format&fit=crop",
-    content: {
-      sections: [
-        { title: "韓國的中秋節", text: "會祭祖，跟中華文化的過年一樣大的節日" },
-        { title: "吃什麼？", text: "介紹산적, 잡채, 송편 등등", image: "https://images.unsplash.com/photo-1582450871972-ab24278726e3?q=80&w=800&auto=format&fit=crop" },
-        { title: "那一口記憶", text: "酸香中帶著微甜，是家人一起的味道。" }
-      ]
-    }
-  },
-  {
-    id: "first-bibimbap",
-    title: "韓國人真的吃狗肉嗎？",
-    shortDescription: "滋滋作響的瞬間，香氣讓時間慢了下來。",
-    hero: "https://images.unsplash.com/photo-1604908554007-9a5e6dc49e45?q=80&w=1600&auto=format&fit=crop",
-    content: {
-      sections: [
-        { title: "部隊鍋的由來", text: "部隊鍋的由來" },
-        { title: "部隊鍋的特點", text: "部隊鍋的特點" },
-        { title: "部隊鍋的用途", text: "部隊鍋的用途" }
-      ]
-    }
-  },
-];
+export const STORIES: SimplePost[] = [];
 
-export const LABS: SimplePost[] = [
-  {
-    id: "allulose",
-    title: "什麼是阿洛酮糖(Allulose)？",
-    shortDescription: "低熱量、低GI、低血糖反應的甜味劑。",
-    hero: "https://images.unsplash.com/photo-1512058564366-18510be2db19?q=80&w=1600&auto=format&fit=crop",
-    content: {
-      sections: [
-        { title: "什麼是阿洛酮糖(Allulose)？", text: "阿洛酮糖是一種天然的甜味劑，由葡萄糖和果糖組成，具有低熱量、低GI、低血糖反應等特點。" },
-        { title: "阿洛酮糖的特點", text: "阿洛酮糖是一種天然的甜味劑，由葡萄糖和果糖組成，具有低熱量、低GI、低血糖反應等特點。" },
-        { title: "阿洛酮糖的用途", text: "阿洛酮糖的用途" }
-      ]
-    }
-  },
-  {
-    id: "marinate-science",
-    title: "煮泡麵要先放麵還是先放湯包？",
-    shortDescription: "雞腿排多汁的關鍵參數，逐一檢測。",
-    hero: "https://images.unsplash.com/photo-1526318472351-c75fcf070305?q=80&w=1600&auto=format&fit=crop",
-  },
-  {
-    id: "starch-thickening",
-    title: "韓式料理必勝公式-醬糖蔥蒜椒麻油",
-    shortDescription: "韓式料理竟然有公式？",
-    hero: "https://images.unsplash.com/photo-1514511547113-bff0191bcfd4?q=80&w=1600&auto=format&fit=crop",
-    content: {
-      sections: [
-        { title: "韓式料理必勝公式-醬糖蔥蒜椒麻油", text: "韓式料理竟然有公式？" },
-        { title: "醬糖蔥蒜椒麻油的特點", text: "醬糖蔥蒜椒麻油的特點" },
-        { title: "醬糖蔥蒜椒麻油的用途", text: "醬糖蔥蒜椒麻油的用途" }
-      ]
-    }
-  },
-  {
-    id: "doenjang-vs-miso",
-    title: "大醬與味噌的差別",
-    shortDescription: "韓式大醬和日式味噌到底哪裡不同？風味與用法一次看懂。",
-    hero: "https://images.unsplash.com/photo-1589308078059-be1415eab4c3?q=80&w=1600&auto=format&fit=crop",
-    content: {
-      sections: [
-        { title: "原料與發酵方式", text: "韓式大醬以整顆大豆與麥麩發酵，日式味噌則常加入米麴、麥麴，甜度與香氣更柔和。" },
-        { title: "風味比較", text: "大醬鹹香厚實、豆味濃烈，味噌則帶甜味、口感滑順。料理時可依風味調整鹽與糖的比例。" },
-        { title: "料理應用", text: "大醬適合湯品、醬燒、醃菜，味噌常用於湯、沾醬與調味醬。調和使用能創造新的風味層次。" }
-      ]
-    }
-  },
-];
+export const LABS: SimplePost[] = [];

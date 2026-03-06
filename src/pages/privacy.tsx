@@ -64,10 +64,13 @@ export default function Privacy() {
       </section>
 
       <section id="thirdparty" className="mb-6 scroll-mt-24">
-        <h2 className="text-xl font-semibold mb-2">4. 第三方提供</h2>
-        <p>
-          除法律規定之特殊情況外，不會將個人資料提供予第三方。
-        </p>
+        <h2 className="text-xl font-semibold mb-2">4. 第三方服務與廣告</h2>
+        <p className="mb-2">本網站為維持營運，可能使用第三方廣告服務（例如：Google AdSense）。</p>
+        <ul className="list-disc ml-6 space-y-1 text-sm">
+          <li>第三方供應商（包括 Google）會使用 Cookie 來放送廣告，其依據是使用者先前的網站造訪記錄。</li>
+          <li>Google 使用廣告 Cookie 可讓 Google 及其合作夥伴根據使用者瀏覽本網站及/或其他網站的資料，向使用者放送適當的廣告。</li>
+          <li>使用者可前往<a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" className="text-red-600 underline">廣告設定</a>，停用個人化廣告。</li>
+        </ul>
       </section>
 
       <section id="contact" className="mb-10 scroll-mt-24">
