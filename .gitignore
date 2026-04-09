@@ -74,3 +74,13 @@ dist/
 .DS_Store
 # vite cache (있을 때 대비)
 .vite/
+
+
+# md files:
+plan.md
+research.md
+adsense_rejection_analysis.md
+adsense.md
+
+home.html
+recipe.html

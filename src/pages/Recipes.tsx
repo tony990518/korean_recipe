@@ -15,7 +15,7 @@ const RecipesPage = () => {
         <Link to="/" className="text-sm text-red-600">返回首頁 →</Link>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {DB.recipes.map(r => (
+        {DB.recipes.map((r) => (
           <RecipeCard key={r.id} data={r} />
         ))}
       </div>

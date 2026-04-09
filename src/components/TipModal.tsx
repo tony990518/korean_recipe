@@ -1,5 +1,6 @@
 // src/components/TipModal.tsx
 import { useCallback, useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { Link } from "react-router-dom";
 import { Tip } from "../types";
 
@@ -154,16 +155,13 @@ const TipModal = ({ tip, onClose }: { tip: Tip | null; onClose: () => void }) =>
   if (!tip) return null;
   const modalTitleId = "tip-modal-title";
 
-  return (
+  return createPortal(
     <div
       ref={overlayRef}
       role="dialog"
       aria-modal="true"
       aria-labelledby={modalTitleId}
-      // 가로 넘침 방지 + overscroll 차단
-      className={`fixed inset-0 z-50 p-4 flex items-center justify-center transition-opacity duration-300
-                  overflow-x-hidden overscroll-y-none touch-pan-y
-                  ${show ? "bg-black/50" : "bg-black/0"}`}
+      className={`fixed inset-0 bg-on-surface/40 backdrop-blur-sm z-[60] transition-[opacity,visibility] duration-300 flex items-center justify-center p-4 overflow-x-hidden overscroll-y-none touch-pan-y ${show ? "opacity-100 visible" : "opacity-0 invisible"}`}
       onClick={(e) => {
         if (e.target === e.currentTarget) {
           closeByKeyboardRef.current = false;
@@ -171,142 +169,82 @@ const TipModal = ({ tip, onClose }: { tip: Tip | null; onClose: () => void }) =>
         }
       }}
     >
-      {/* 부모 컨테이너: 둥근 모서리 통일 + 가로 넘침 차단 */}
       <div
         ref={dialogRef}
         tabIndex={-1}
-        className={`relative bg-white rounded-2xl overflow-hidden overscroll-x-none
-                    max-w-md sm:max-w-lg md:max-w-xl w-full
-                    max-h-[86svh] md:max-h-[90vh]
-                    shadow-2xl border border-gray-100
-                    transition-all duration-300 transform motion-reduce:transition-none motion-reduce:duration-0 motion-reduce:transform-none
-                    ${show ? "opacity-100 scale-100 translate-y-0" : "opacity-0 scale-95 translate-y-4"}`}
+        className={`bg-surface w-full max-w-2xl rounded-3xl shadow-2xl overflow-hidden transition-transform duration-300 flex flex-col max-h-[90vh] pb-[env(safe-area-inset-bottom)] transform motion-reduce:transition-none ${show ? "scale-100" : "scale-95"}`}
         onClick={(e) => e.stopPropagation()}
-        style={{ transformStyle: "preserve-3d" }}
       >
-        {/* 닫기 버튼 (고정) */}
-        <button
-          onClick={() => { closeByKeyboardRef.current = false; handleClose(); }}
-          className="absolute top-4 right-4 z-20 w-9 h-9 bg-white/90 rounded-full flex items-center justify-center shadow-md hover:bg-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
-          aria-label="닫기"
-        >
-          <svg className="w-4 h-4 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-
-        {/* 레이아웃: header / body / footer */}
-        <div className="grid grid-rows-[auto_1fr_auto] max-h-[inherit]">
-          {/* HEADER */}
-          <div className="relative w-full bg-gray-100">
-            <div className="h-[clamp(160px,30svh,280px)] md:h-[clamp(220px,38vh,420px)]">
-              {/* 블러 배경(여백 채우기) */}
-              <img
-                src={tip.hero}
-                aria-hidden="true"
-                className="absolute inset-0 w-full h-full object-cover scale-110 blur-md opacity-60"
-              />
-              {/* 실제 사진 (모바일 contain, 데스크톱 cover) */}
-              <img
-                src={tip.hero}
-                alt={tip.title}
-                className="relative w-full h-full object-contain md:object-cover"
-                loading="lazy"
-              />
-            </div>
-            <div className="absolute inset-x-0 bottom-0 p-4 sm:p-6">
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/70 to-transparent" />
-              <h2
-                id={modalTitleId}
-                className="relative text-white text-lg sm:text-xl md:text-2xl font-bold drop-shadow-sm break-keep break-words"
-              >
-                {tip.title}
-              </h2>
-            </div>
-          </div>
-
-          {/* BODY (본문만 스크롤) */}
-          <div
-            ref={contentRef}
-            className="overflow-y-auto overscroll-contain overflow-x-hidden min-w-0 p-4 sm:p-6"
+        <div className="relative h-64 shrink-0">
+          <img src={tip.hero} alt={tip.title} className="w-full h-full object-cover" loading="lazy" />
+          <button
+            onClick={() => { closeByKeyboardRef.current = false; handleClose(); }}
+            className="absolute top-4 right-4 bg-surface/50 hover:bg-surface backdrop-blur p-2 rounded-full text-on-surface transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary flex items-center justify-center"
+            aria-label="닫기"
           >
-            <div className="flex items-center justify-between gap-3 mb-5">
-              <span className="inline-flex items-center gap-2 text-xs font-medium px-2.5 py-1 rounded-full bg-yellow-100 text-yellow-800">
-                💡 小撇步
-              </span>
-            </div>
-
-            {tip.modalData ? (
-              <div className="space-y-5">
-                <section className="space-y-2">
-                  <h3 className="flex items-center gap-2 font-semibold text-gray-900 text-sm break-keep break-words">
-                    <span className="inline-block w-5 h-5">🧠</span> 이유
-                  </h3>
-                  <p className="text-gray-600 text-xs leading-relaxed break-keep break-words">
-                    {tip.modalData.reason}
-                  </p>
-                </section>
-
-                <hr className="border-gray-100" />
-
-                <section className="space-y-2">
-                  <h3 className="flex items-center gap-2 font-semibold text-gray-900 text-sm break-keep break-words">
-                    <span className="inline-block w-5 h-5">🛠️</span> 해결방법
-                  </h3>
-                  <p className="text-gray-600 text-xs leading-relaxed break-keep break-words">
-                    {tip.modalData.solution}
-                  </p>
-                </section>
-
-                {tip.modalData.example && (
-                  <>
-                    <hr className="border-gray-100" />
-                    <section className="space-y-2">
-                      <h3 className="flex items-center gap-2 font-semibold text-gray-900 text-sm break-keep break-words">
-                        <span className="inline-block w-5 h-5">📌</span> 예시
-                      </h3>
-                      <p className="text-gray-700 text-xs leading-relaxed bg-gray-50 p-3 rounded-lg break-keep break-words">
-                        {tip.modalData.example}
-                      </p>
-                    </section>
-                  </>
-                )}
-              </div>
-            ) : (
-              // `modalData`가 없을 경우, shortDescription과 행동 유도 텍스트 표시
-              <div className="text-center py-4">
-                <blockquote className="mb-4">
-                  <p className="text-lg sm:text-xl font-medium text-slate-800 leading-relaxed break-keep break-words">
-                    “{tip.shortDescription}”
-                  </p>
-                </blockquote>
-                                                                      <p className="text-sm text-slate-500">
-                                                                        更多精彩內容，請點擊下方「查看詳情」！
-                                                                      </p>              </div>
-            )}
+            <span className="material-symbols-outlined">close</span>
+          </button>
+        </div>
+        
+        <div ref={contentRef} className="p-6 md:p-8 overflow-y-auto">
+          <div className="flex items-center gap-2 mb-4">
+            <span className="bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold font-label">
+              烹飪秘訣
+            </span>
           </div>
-
-          {/* FOOTER */}
-          <div className="border-t border-gray-100 bg-white/90 backdrop-blur supports-[backdrop-filter]:bg-white/70 pb-[env(safe-area-inset-bottom)]">
-            <div className="p-3 sm:p-4 flex gap-3">
-              <button
-                onClick={handleShare}
-                className="px-4 py-3 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
-              >
-                分享
-              </button>
-              <Link
-                to={`/tip/${tip.id}/`}
-                onClick={handleClose}
-                className="flex-1 text-center px-4 py-3 rounded-xl bg-red-500 hover:bg-red-600 text-white font-semibold shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
-              >
-                查看詳情
-              </Link>
+          <h2 id={modalTitleId} className="font-headline font-extrabold text-3xl text-on-surface mb-6">
+            {tip.title}
+          </h2>
+          
+          {tip.modalData ? (
+            <div className="prose prose-slate max-w-none text-on-surface-variant font-label space-y-6">
+               <div>
+                 <h3 className="text-xl font-bold text-on-surface mb-2 flex items-center gap-2">
+                   <span className="material-symbols-outlined text-primary">psychology</span> 原因
+                 </h3>
+                 <p className="leading-relaxed">{tip.modalData.reason}</p>
+               </div>
+               <div>
+                 <h3 className="text-xl font-bold text-on-surface mb-2 flex items-center gap-2">
+                   <span className="material-symbols-outlined text-primary">build</span> 解決辦法
+                 </h3>
+                 <p className="leading-relaxed">{tip.modalData.solution}</p>
+               </div>
+               {tip.modalData.example && (
+                 <div className="bg-surface-container-low p-4 rounded-xl border border-outline-variant/30">
+                   <h3 className="text-lg font-bold text-on-surface mb-2 flex items-center gap-2">
+                     <span className="material-symbols-outlined text-primary">lightbulb</span> 範例
+                   </h3>
+                   <p className="leading-relaxed text-sm">{tip.modalData.example}</p>
+                 </div>
+               )}
             </div>
+          ) : (
+            <div className="text-center py-6">
+               <p className="text-lg text-on-surface-variant italic mb-4 font-label leading-relaxed">"{tip.shortDescription}"</p>
+               <p className="text-sm text-on-surface-variant/70 font-label">更詳細的內容將在未來提供！</p>
+            </div>
+          )}
+
+          <div className="mt-8 pt-6 border-t border-outline-variant/30 flex flex-col sm:flex-row gap-4 font-label">
+            <button
+              onClick={handleShare}
+              className="flex-1 bg-secondary-container text-on-secondary-container hover:bg-secondary-container/80 transition-colors py-3 rounded-full font-bold flex items-center justify-center gap-2"
+            >
+              <span className="material-symbols-outlined text-[18px]">share</span> 分享
+            </button>
+            <Link
+              to={`/tip/${tip.id}/`}
+              onClick={handleClose}
+              className="flex-1 bg-primary text-on-primary hover:bg-primary/90 transition-colors py-3 rounded-full font-bold flex items-center justify-center gap-2"
+            >
+              <span className="material-symbols-outlined text-[18px]">open_in_new</span> 查看完整文章
+            </Link>
           </div>
         </div>
       </div>
-    </div>
+    </div>,
+    document.body
   );
 };
 

@@ -1,12 +1,10 @@
 import React from 'react';
 import { Ingredient } from "../types";
 
-/** 썸네일 */
 const IngredientThumb = React.memo(({ url, label, fit }: { url?: string; label: string; fit?: "cover" | "contain" }) => (
   <div
     className="
-      w-20 h-20 md:w-24 md:h-24 aspect-square rounded-xl overflow-hidden border bg-slate-100 shrink-0
-      max-[360px]:w-16 max-[360px]:h-16
+      w-14 h-14 md:w-16 md:h-16 mx-auto mb-4 bg-white rounded-full flex items-center justify-center overflow-hidden shrink-0 shadow-sm
     "
     aria-hidden={!url ? true : false}
   >
@@ -19,7 +17,7 @@ const IngredientThumb = React.memo(({ url, label, fit }: { url?: string; label: 
         decoding="async"
       />
     ) : (
-      <div className="w-full h-full" />
+      <div className="w-full h-full bg-slate-100" />
     )}
   </div>
 ));
@@ -32,118 +30,53 @@ const IconCart = (props: React.SVGProps<SVGSVGElement>) => (
 );
 
 const IngredientList = ({ ingredients }: { ingredients: Ingredient[] }) => (
-  <div className="w-full">
-    <ul className="space-y-3 md:space-y-4 max-[360px]:space-y-2">
+  <div className="w-full mt-8">
+    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-6">
       {ingredients.map((it, idx) => {
-        const key = `${it.label}-${idx}`; // 가능하면 고유 id 사용
+        const key = `${it.label}-${idx}`;
         return (
-          <li
+          <div
             key={key}
-            className="
-              flex items-center justify-between bg-white rounded-2xl border p-4 md:p-5
-              gap-4 max-[360px]:gap-3 max-[360px]:p-3
-            "
+            className="bg-surface-container-low p-6 rounded-lg text-center transition-transform hover:-translate-y-1 relative"
           >
-            {/* Left: 썸네일 + 텍스트 (텍스트 칸이 공간 우선권 갖도록) */}
-            <div className="flex items-center gap-4 max-[360px]:gap-3 flex-1 min-w-0">
-              <IngredientThumb url={it.image} label={it.label} fit={it.imageFit} />
-              {/* 텍스트 래퍼: basis-0 + min-w-0 로 줄바꿈/클램프가 제대로 작동 */}
-              <div className="min-w-0 basis-0 flex-1">
-                {/* 제목: SE(≤360px)에서는 두 줄 허용 + 단어 강제 줄바꿈, 큰 화면에선 단계별 확대 */}
-                <div
-                  className="
-                    font-semibold text-slate-900 leading-snug
-                    text-base sm:text-lg md:text-xl
-                    lg:text-[clamp(1.25rem,1vw+1.05rem,1.6rem)]
-                    /* 작은 화면에서 줄바꿈 허용 & 2줄 클램프 */
-                    max-[360px]:whitespace-normal max-[360px]:break-words max-[360px]:line-clamp-2
-                    /* 그 외 구간에선 너무 길면 한 줄 말줄임 */
-                    sm:truncate
-                  "
-                  title={it.label}
-                >
-                  {it.label}
-                  {it.brand ? (
-                    <span
-                      className="
-                        ml-1 align-middle text-slate-600 font-normal
-                        text-sm sm:text-base md:text-lg
-                        max-[360px]:hidden
-                      "
-                    >
-                      （{it.brand}）
-                    </span>
-                  ) : null}
-                </div>
+            <IngredientThumb url={it.image} label={it.label} fit={it.imageFit} />
+            
+            <p className="font-headline font-bold text-on-surface line-clamp-1" title={it.label}>
+              {it.label}
+              {it.brand && (
+                <span className="text-xs font-normal text-on-surface-variant block">({it.brand})</span>
+              )}
+            </p>
+            
+            {it.amount && (
+              <p className="text-sm text-on-surface-variant mt-1 line-clamp-1">{it.amount}</p>
+            )}
 
-                {/* 보조설명: 초소형은 숨김 (여백 확보) */}
-                {it.note ? (
-                  <div
-                    className="
-                      mt-1 text-slate-600/90 line-clamp-2
-                      text-sm sm:text-base md:text-lg
-                      max-[360px]:hidden
-                    "
-                  >
-                    {it.note}
-                  </div>
-                ) : null}
-              </div>
-            </div>
-
-            {/* Right: 수량 + 버튼 (줄어들지 않게 shrink-0; SE에선 세로 스택) */}
-            <div
-              className="
-                text-slate-700 flex items-center gap-3 md:gap-4
-                text-sm sm:text-base md:text-lg
-                shrink-0
-                max-[360px]:flex-col max-[360px]:items-end max-[360px]:gap-2
-              "
-            >
-              {it.amount ? (
-                <span className="whitespace-nowrap font-medium text-slate-800 shrink-0">
-                  {it.amount}
-                </span>
-              ) : null}
-
-              {it.link &&
-                (() => {
+            {/* Links/Buttons integrated safely into the card if present */}
+            {it.link && (
+              <div className="mt-4 flex flex-col gap-2 relative z-10 w-full">
+                {(() => {
                   const links = Array.isArray(it.link) ? it.link : [it.link];
-                  return (
-                    <div className="flex flex-col sm:flex-row sm:w-[190px] gap-2 sm:gap-0 sm:rounded-full sm:overflow-hidden sm:border sm:border-red-600 sm:divide-x sm:divide-red-500">
-                      {links.map((link, index, arr) => (
-                        <a
-                          key={index}
-                          href={link.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className={`
-                            inline-flex items-center justify-center 
-                            bg-red-600 text-white hover:bg-red-700
-                            focus:outline-none focus:ring-2 focus:ring-red-500/40 transition
-                            w-10 h-10 rounded-full
-                            sm:w-auto sm:h-auto sm:rounded-none sm:px-3.5 sm:py-2 sm:font-semibold
-                            ${arr.length > 1 ? 'sm:flex-1' : 'sm:w-full'}
-                          `}
-                          aria-label={`${it.label} ${link.label}（新視窗開啟）`}
-                          title={`${it.label} ${link.label}`}
-                        >
-                          {/* 큰 화면 + 버튼 여러개일 때 두 번째 버튼부터 아이콘 숨김 */}
-                          <IconCart className={`shrink-0 ${arr.length > 1 && index > 0 ? 'sm:hidden' : ''}`} />
-                          <span className={`hidden sm:inline ${arr.length > 1 && index > 0 ? 'sm:ml-0' : 'sm:ml-2'}`}>
-                            {link.label}
-                          </span>
-                        </a>
-                      ))}
-                    </div>
-                  );
-                })()
-              }
-            </div>
-          </li>
+                  return links.map((link, index) => (
+                    <a
+                      key={index}
+                      href={link.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center bg-primary text-white hover:bg-primary-dim focus:outline-none transition w-full px-2 py-1.5 rounded-full text-xs font-bold shadow-sm"
+                      title={`${it.label} ${link.label}`}
+                    >
+                      <IconCart className="shrink-0 mr-1" width="14" height="14" />
+                      <span className="truncate">{link.label}</span>
+                    </a>
+                  ));
+                })()}
+              </div>
+            )}
+          </div>
         );
       })}
-    </ul>
+    </div>
   </div>
 );
 

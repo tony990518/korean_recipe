@@ -12,6 +12,9 @@ export type RouteMeta = {
   description: string;
   canonical: string;
   ogImage?: string;
+  ogImageAlt?: string;
+  ogTitle?: string;
+  ogDescription?: string;
   ogType?: "website" | "article";
   robots?: string;
   jsonLd?: string;
@@ -33,57 +36,88 @@ function baseMeta(meta: Omit<RouteMeta, "lastmod">): RouteMeta {
   return { lastmod: BUILD_DATE, ...meta };
 }
 
+function buildSocialDescription(preview?: string, description?: string): string {
+  const shortPreview = preview?.trim();
+  if (shortPreview) return shortPreview;
+
+  const firstParagraph = description
+    ?.split(/\n\s*\n/)
+    .map((part) => part.trim())
+    .find(Boolean);
+
+  if (!firstParagraph) return "";
+
+  return firstParagraph.length > 88
+    ? `${firstParagraph.slice(0, 88).trimEnd()}…`
+    : firstParagraph;
+}
+
 export function getHomeMeta(): RouteMeta {
+  const description = "用 Studio.K 韓味研究所，一起探索韓國料理：家常麵、甜點、料理小撇步通通都有，簡單上桌也能吃到道地風味。";
   return baseMeta({
     path: "",
     title: `${SITE_NAME}｜今天想吃什麼韓式？`,
-    description: "用 Studio.K 韓味研究所，一起探索韓國料理：家常麵、甜點、料理小撇步通通都有，簡單上桌也能吃到道地風味。",
+    description,
     canonical: `${SITE_URL}/`,
     ogImage: DEFAULT_OG_IMAGE,
+    ogImageAlt: `${SITE_NAME} logo`,
+    ogDescription: description,
     ogType: "website",
   });
 }
 
 export function getRecipesMeta(): RouteMeta {
+  const description = "韓式主食、小菜、甜點一次看，從新手入門到快速上桌的料理都在這裡。";
   return baseMeta({
     path: "recipes",
     title: `全部食譜｜${SITE_NAME}`,
-    description: "韓式主食、小菜、甜點一次看，從新手入門到快速上桌的料理都在這裡。",
+    description,
     canonical: `${SITE_URL}/recipes/`,
     ogImage: DB.recipes[0] ? absoluteUrl(DB.recipes[0].hero) : DEFAULT_OG_IMAGE,
+    ogImageAlt: "韓式食譜精選封面",
+    ogDescription: description,
     ogType: "website",
   });
 }
 
 export function getTipsMeta(): RouteMeta {
+  const description = "整理韓國料理實用小技巧：保存祕訣、備料方法、味道調整一次掌握。";
   return baseMeta({
     path: "tips",
     title: `料理小撇步｜${SITE_NAME}`,
-    description: "整理韓國料理實用小技巧：保存祕訣、備料方法、味道調整一次掌握。",
+    description,
     canonical: `${SITE_URL}/tips/`,
     ogImage: DB.tips[0] ? absoluteUrl(DB.tips[0].hero) : DEFAULT_OG_IMAGE,
+    ogImageAlt: "韓式料理小撇步封面",
+    ogDescription: description,
     ogType: "website",
   });
 }
 
 export function getTermsMeta(): RouteMeta {
+  const description = "閱讀 Studio.K 韓味研究所的服務使用條款，了解網站使用規範與權益說明。";
   return baseMeta({
     path: "terms",
     title: `使用條款｜${SITE_NAME}`,
-    description: "閱讀 Studio.K 韓味研究所的服務使用條款，了解網站使用規範與權益說明。",
+    description,
     canonical: `${SITE_URL}/terms/`,
     ogImage: DEFAULT_OG_IMAGE,
+    ogImageAlt: `${SITE_NAME} logo`,
+    ogDescription: description,
     ogType: "website",
   });
 }
 
 export function getPrivacyMeta(): RouteMeta {
+  const description = "了解我們如何保護與使用您的個人資料，安心享受韓味研究所的各項服務。";
   return baseMeta({
     path: "privacy",
     title: `隱私權政策｜${SITE_NAME}`,
-    description: "了解我們如何保護與使用您的個人資料，安心享受韓味研究所的各項服務。",
+    description,
     canonical: `${SITE_URL}/privacy/`,
     ogImage: DEFAULT_OG_IMAGE,
+    ogImageAlt: `${SITE_NAME} logo`,
+    ogDescription: description,
     ogType: "website",
   });
 }
@@ -117,12 +151,15 @@ function buildRecipeJsonLd(recipe: Recipe, canonical: string) {
 
 export function getRecipeMeta(recipe: Recipe): RouteMeta {
   const canonical = `${SITE_URL}/recipe/${recipe.id}/`;
+  const description = recipe.shortDescription ?? "跟著步驟簡單做出美味的韓式料理。";
   return baseMeta({
     path: `recipe/${recipe.id}`,
     title: `${recipe.title}｜${SITE_NAME}`,
-    description: recipe.shortDescription ?? "跟著步驟簡單做出美味的韓式料理。",
+    description,
     canonical,
     ogImage: absoluteUrl(recipe.hero),
+    ogImageAlt: recipe.title,
+    ogDescription: buildSocialDescription(recipe.preview, description),
     ogType: "article",
     jsonLd: buildRecipeJsonLd(recipe, canonical),
   });
@@ -155,12 +192,15 @@ function buildTipJsonLd(tip: Tip, canonical: string) {
 
 export function getTipMeta(tip: Tip): RouteMeta {
   const canonical = `${SITE_URL}/tip/${tip.id}/`;
+  const description = tip.shortDescription;
   return baseMeta({
     path: `tip/${tip.id}`,
     title: `${tip.title}｜${SITE_NAME}`,
-    description: tip.shortDescription,
+    description,
     canonical,
     ogImage: absoluteUrl(tip.hero),
+    ogImageAlt: tip.title,
+    ogDescription: buildSocialDescription(tip.preview, description),
     ogType: "article",
     jsonLd: buildTipJsonLd(tip, canonical),
   });
@@ -177,12 +217,15 @@ export function getTipMetaById(id: string): RouteMeta | undefined {
 }
 
 export function getNotFoundMeta(): RouteMeta {
+  const description = "您造訪的頁面不存在，請回到首頁探索更多韓式料理。";
   return baseMeta({
     path: "404",
     title: `找不到頁面｜${SITE_NAME}`,
-    description: "您造訪的頁面不存在，請回到首頁探索更多韓式料理。",
+    description,
     canonical: `${SITE_URL}/404`,
     ogImage: DEFAULT_OG_IMAGE,
+    ogImageAlt: `${SITE_NAME} logo`,
+    ogDescription: description,
     ogType: "website",
     robots: "noindex, nofollow",
   });

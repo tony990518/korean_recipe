@@ -56,6 +56,7 @@ export type Recipe = {
   ingredients: Ingredient[];
   steps: Step[]; 
   shortDescription?: string;
+  preview?: string;
   /** 레시피 팁(선택): 스텝 이후 요약 팁들 */
   tips?: string[];
   /** 結語/마무리 한 문단(선택) */
@@ -68,6 +69,7 @@ export type Tip = {
   title: string;
   hero: string;
   shortDescription: string;
+  preview?: string;
   content: {
     sections: {
       title: string;

@@ -1,27 +1,35 @@
-
 import { Link } from "react-router-dom";
 import { Recipe } from "../types";
 
-const RecipeCard = ({ data }: { data: Recipe }) => (
-    <Link to={`/recipe/${data.id}/`} className="group text-left bg-white rounded-2xl border overflow-hidden hover:shadow-md transition">
-      <div className="aspect-video w-full bg-slate-100 overflow-hidden">
+const RecipeCard = ({ data }: { data: Recipe }) => {
+  return (
+    <Link 
+      to={`/recipe/${data.id}/`} 
+      className={`group block cursor-pointer bg-surface-container-lowest border border-outline-variant/30 rounded-xl overflow-hidden transition-all shadow-sm hover:shadow-md hover:border-primary/30 text-left w-full`}
+    >
+      <div className="aspect-video w-full overflow-hidden relative shrink-0">
         <img
           src={data.hero}
           alt={data.title}
-          className={`w-full h-full ${data.cardImageFit === "contain" ? "object-contain" : "object-cover"} group-hover:scale-[1.03] transition`}
+          className={`absolute inset-0 w-full h-full ${data.cardImageFit === "contain" ? "object-contain" : "object-cover"} transition-transform duration-500 group-hover:scale-110`}
           loading="lazy"
         />
-      </div>
-      <div className="p-4 space-y-2">
-        <div className="flex items-center gap-2 text-xs text-slate-600">
-          <span className="px-2 py-0.5 rounded-full bg-slate-100">⏱ {data.minutes} 分</span>
-          <span className="px-2 py-0.5 rounded-full bg-slate-100">難度 {data.difficulty}</span>
-          <span className="px-2 py-0.5 rounded-full bg-slate-100">{data.servings} 人份</span>
+        <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-bold text-primary shadow-sm">
+          {data.minutes} 分鐘
         </div>
-        <h3 className="font-semibold text-slate-900">{data.title}</h3>
-        {data.shortDescription ? <p className="text-sm text-slate-600">{data.shortDescription}</p> : null}
+      </div>
+      <div className="p-6 space-y-2">
+        <h3 className="font-headline font-bold text-xl text-on-surface group-hover:text-primary transition-colors line-clamp-1">
+          {data.title}
+        </h3>
+        {data.preview && (
+          <p className="text-on-surface-variant text-sm leading-relaxed line-clamp-2">
+            {data.preview}
+          </p>
+        )}
       </div>
     </Link>
   );
+};
 
 export default RecipeCard;

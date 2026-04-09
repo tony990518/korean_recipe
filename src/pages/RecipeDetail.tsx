@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { DB } from "../data";
 import { Recipe } from "../types";
 import AffiliateNotice from "../components/AffiliateNotice";
@@ -12,123 +12,90 @@ import MetaRow from "../components/metaraw";
 import ProductRecommendation from "../components/ProductRecommendation";
 import SEOHelmet from "../components/SEOHelmet";
 import { getRecipeMeta, getNotFoundMeta } from "../seo";
+import SmartClampText from "../components/SmartClampText";
 
 const RecipeDetail = ({ recipe }: { recipe: Recipe }) => {
   const meta = useMemo(() => getRecipeMeta(recipe), [recipe]);
 
-  const nav = useNavigate();
-
   return (
     <>
       <SEOHelmet meta={meta} />
-      <main
-        className="
-        max-w-5xl mx-auto px-4 pb-20
-        max-[360px]:px-3 max-[360px]:pb-16
-      "
-      >
-      {/* back */}
-      <button
-        onClick={() => nav(-1)}
-        className="
-          mt-6 text-slate-600 hover:text-red-600
-          text-sm sm:text-base
-          max-[360px]:mt-4
-        "
-      >
-        ← 返回
-      </button>
+      <main className="w-full">
+        <article>
+          {/* Navigation Row removed as requested */}
+          {/* Hero */}
+          <section className="relative max-w-5xl mx-auto px-4 sm:px-6 pt-6 sm:pt-8 z-0">
+          <div className="w-full aspect-[4/3] sm:aspect-video lg:aspect-auto lg:h-[500px] rounded-3xl overflow-hidden shadow-lg relative">
+            <img
+              src={recipe.hero}
+              alt={recipe.title}
+              className="w-full h-full object-cover"
+              loading="lazy"
+              decoding="async"
+            />
+            {/* Subtle bottom gradient to help blend the overlapping card */}
+            <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/20 to-transparent"></div>
+          </div>
+        </section>
 
-      <article className="mt-4">
-        {/* Hero */}
-        <div className="rounded-2xl overflow-hidden border bg-white">
-          <img
-            src={recipe.hero}
-            alt={recipe.title}
-            className="w-full max-h-[460px] object-cover"
-            loading="lazy"
-            decoding="async"
-          />
-        </div>
-
-        {/* Content */}
-        <div className="mt-4 flex flex-col md:flex-row gap-6">
-          {/* ⬇️ 본문 공통 폰트 스케일 상향 (여기 한 줄로 전체 체감 상승) */}
-          <div className="
-              flex-1 space-y-4 max-[360px]:space-y-3
-              text-[15px] sm:text-base md:text-[17px]
-            ">
-            {/* ===== Block: Title ===== */}
-            <h1
-              className="
-                font-extrabold text-slate-900 leading-snug
-                text-2xl sm:text-3xl md:text-4xl
-                lg:text-[clamp(2rem,1.2vw+1.8rem,2.5rem)]
-                break-words
-              "
-            >
+        {/* Intro / Title Overlay */}
+        <section className="relative -mt-16 sm:-mt-24 px-6 sm:px-8 max-w-4xl mx-auto z-10">
+          <div className="bg-surface backdrop-blur-2xl p-6 sm:p-8 md:p-12 rounded-[2rem] shadow-xl text-center border border-outline-variant/30">
+            {/* Tag Badges (Placeholder since actual data doesn't have categories yet) */}
+            <div className="flex flex-wrap justify-center gap-3 mb-6">
+              <span className="px-4 py-1.5 bg-secondary-container text-on-secondary-container rounded-full text-xs font-bold uppercase tracking-widest">
+                韓國食譜
+              </span>
+            </div>
+            
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-headline font-extrabold text-on-surface tracking-tight leading-tight mb-6">
               {recipe.title}
             </h1>
-
-            {/* ===== Block: Short Description ===== */}
+            
             {recipe.shortDescription ? (
-              <p
-                className="
-                  text-slate-700 leading-relaxed
-                  text-[15px] sm:text-base md:text-lg
-                  max-[360px]:line-clamp-3 max-[360px]:whitespace-normal
-                "
-              >
-                {recipe.shortDescription}
-              </p>
+              <SmartClampText 
+                text={recipe.shortDescription}
+                maxLines={3}
+                className="text-on-surface-variant text-base sm:text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-8 font-medium"
+              />
             ) : null}
 
             {/* ===== Block: Meta Info (Time, Difficulty, etc.) ===== */}
-            <MetaRow servings={recipe.servings} minutes={recipe.minutes} difficulty={recipe.difficulty} spicy={recipe.flavor.spicy} />
+            <div className="flex justify-center">
+              <MetaRow servings={recipe.servings} minutes={recipe.minutes} difficulty={recipe.difficulty} spicy={recipe.flavor.spicy} />
+            </div>
+          </div>
+        </section>
+
+        {/* Main Content Area */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-12 pb-24 pt-16 space-y-24">
 
             {/* ===== Block: Ingredients ===== */}
-            <div className="rounded-2xl border p-4 max-[360px]:p-3">
-              <h3
-                className="
-                    font-semibold mb-3 text-slate-900
-                    text-lg sm:text-xl md:text-2xl
-                    leading-snug
-                  "
-              >
-                材料
-                <em className="ml-2 text-xs sm:text-sm italic text-slate-500">Ingredient</em>
-              </h3>
-
-              <div className="text-xs sm:text-sm text-slate-600">
+            <section className="scroll-mt-24">
+              <div className="flex items-center justify-between mb-8 sm:mb-12">
+                <h2 className="font-headline text-3xl sm:text-4xl font-bold tracking-tight text-on-surface">材料 Ingredient</h2>
+              </div>
+              
+              <div className="text-xs sm:text-sm text-slate-600 mb-6">
                 <AffiliateNotice />
               </div>
-              <div className="mt-3">
-                <IngredientList ingredients={recipe.ingredients} />
-              </div>
-            </div>
+              
+              <IngredientList ingredients={recipe.ingredients} />
+            </section>
 
             {/* ===== Block: Steps ===== */}
-            <div className="rounded-2xl border p-4 max-[360px]:p-3">
-              <h3
-                className="
-                    font-semibold mb-3 text-slate-900
-                    text-lg sm:text-xl md:text-2xl
-                    leading-snug
-                  "
-              >
-                步驟
-                <em className="ml-2 text-xs sm:text-sm italic text-slate-500">Steps</em>
-              </h3>
+            <section className="scroll-mt-24">
+              <div className="mb-12">
+                <h2 className="font-headline text-3xl sm:text-4xl font-bold tracking-tight text-on-surface">步驟 Steps</h2>
+                <p className="text-on-surface-variant mt-2 font-body text-base sm:text-lg">照著節奏一步一步做，味道就會到位。</p>
+              </div>
 
-              <div className="
-                  space-y-3 max-[360px]:space-y-2
-                  text-[15px] sm:text-base md:text-lg
-                ">
+              <div className="space-y-8 md:space-y-12">
                 {recipe.steps.map((s, i) => (
                   <StepBlock key={i} step={s} index={i} />
                 ))}
               </div>
-            </div>
+            </section>
 
             {/* ===== Block: Extra Tips ===== */}
             {Array.isArray(recipe.tips) && recipe.tips.length > 0 ? (
@@ -137,18 +104,27 @@ const RecipeDetail = ({ recipe }: { recipe: Recipe }) => {
 
             {/* ===== Block: Conclusion ===== */}
             {recipe.conclusion ? (
-              <ConclusionBlock text={recipe.conclusion} />
+              <section className="mt-12">
+                <ConclusionBlock text={recipe.conclusion} />
+              </section>
             ) : null}
 
             {/* ===== Block: Share Icons ===== */}
-            <ShareIcons recipe={recipe} />
+            <div className="w-full max-w-xl mx-auto pt-2 text-center">
+              <h3 className="font-headline text-xl sm:text-2xl font-bold text-on-surface">分享</h3>
+              <div className="mt-5 flex justify-center">
+                <ShareIcons recipe={recipe} />
+              </div>
+            </div>
 
             {/* ===== Block: Recommended Products ===== */}
             {recipe.recommendedProducts && recipe.recommendedProducts.length > 0 && (
-              <ProductRecommendation products={recipe.recommendedProducts} />
+              <section className="mt-16">
+                <ProductRecommendation products={recipe.recommendedProducts} />
+              </section>
             )}
           </div>
-        </div>
+
       </article>
     </main>
   </>

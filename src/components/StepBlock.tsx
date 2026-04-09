@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Step } from "../types";
-import HeatBadge from "./HeatBadge";
 
 /** 문자열 시간을 '초'로 파싱 (秒/分/小時, mm:ss, 숫자만=분) */
 function parseDurationSeconds(input?: string | number): { seconds: number; label: string } {
@@ -118,37 +117,27 @@ function TimerBadge({
       <button
         onClick={toggle}
         className={
-          "inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs sm:text-sm font-medium transition " +
-          (isDone ? "bg-emerald-600 text-white hover:bg-emerald-700"
-                  : running ? "bg-red-600 text-white hover:bg-red-700"
-                            : "bg-slate-100 text-slate-700 hover:bg-slate-200")
+          "inline-flex items-center gap-1.5 rounded-full px-3 py-1 text-[10px] sm:text-xs font-bold uppercase tracking-widest transition " +
+          (isDone ? "bg-emerald-600/10 text-emerald-700 hover:bg-emerald-600/20"
+                  : running ? "bg-red-600/10 text-red-700 hover:bg-red-600/20"
+                            : "bg-primary/10 text-primary hover:bg-primary/20")
         }
         aria-pressed={running}
         aria-live="polite"
         title={running ? "일시정지" : "시작"}
       >
-        <span aria-hidden>⏱</span>
+        <span className="material-symbols-outlined text-[12px]" aria-hidden>timer</span>
         <span className="tabular-nums">
           {initial > 0 ? (running || isDone ? mmss(remaining) : parsed.label) : "타이머"}
         </span>
       </button>
-
-      {/* <button
-        onClick={reset}
-        className="inline-flex items-center justify-center rounded-full border border-slate-200 w-7 h-7 text-xs text-slate-600 hover:bg-slate-50"
-        title="리셋"
-        aria-label="리셋"
-      >
-        ⟲
-      </button> */}
     </div>
   );
 }
 
-/** Step 이미지(생략: 기존 동일) */
 const StepImage = ({ url, color, alt }: { url?: string; color?: string; alt?: string }) => (
-  <div className="w-full sm:w-44 md:w-56 lg:w-64 aspect-[4/3] md:aspect-[16/9] rounded-xl overflow-hidden border bg-slate-100 shrink-0" aria-hidden={!url}>
-    {url ? (<img src={url} alt={alt || "step"} className="w-full h-full object-cover" loading="lazy" decoding="async" />)
+  <div className="w-full h-full min-h-[250px] md:min-h-full overflow-hidden bg-slate-100" aria-hidden={!url}>
+    {url ? (<img src={url} alt={alt || "step"} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" loading="lazy" decoding="async" />)
          : (<div className="w-full h-full" style={{ backgroundColor: color || "#E5E7EB" }} />)}
   </div>
 );
@@ -170,30 +159,32 @@ const StepBlock = ({ step, index }: { step: Step; index: number }) => {
     return () => clearTimeout(t);
   }, [remaining, urgent]);
 
+  // For styling the index number padding, `01` `02` format
+  const paddedIndex = String(index + 1).padStart(2, '0');
+
   return (
     <div
       className={
-        "rounded-2xl border p-4 sm:p-5 flex flex-col-reverse sm:flex-row sm:items-start gap-4 md:gap-5 transition " +
-        (urgent ? "bg-red-50 border-red-400 " : "bg-white border ") +
-        (flash ? "ring-2 ring-red-300 scale-[0.998]" : "")
+        "group bg-surface-container grid md:grid-cols-12 rounded-xl overflow-hidden shadow-sm transition-all hover:shadow-md " +
+        (urgent ? "ring-2 ring-red-400 " : "") +
+        (flash ? "ring-4 ring-red-300 scale-[0.998] " : "")
       }
     >
-      {/* Left/Text */}
-      <div className="flex-1 min-w-0">
-        <div className="flex items-center gap-3 mb-2 flex-wrap">
-          <div className="w-8 h-8 md:w-9 md:h-9 rounded-full bg-slate-900 text-white grid place-items-center text-sm md:text-base" aria-hidden>
-            {index + 1}
-          </div>
+      {/* Index Panel */}
+      <div className="md:col-span-1 bg-primary text-white flex items-center justify-center p-6 md:p-8 shrink-0">
+        <span className="text-3xl md:text-4xl font-black italic">{paddedIndex}</span>
+      </div>
 
-          {step.title ? (
-            <span className="font-semibold text-slate-900 mr-1 text-base sm:text-lg md:text-xl leading-snug break-words">
-              {step.title}
-            </span>
-          ) : null}
-
-          {step.heat && <HeatBadge level={step.heat} />}
-
-          {step.time ? (
+      {/* Content Panel */}
+      <div className="md:col-span-7 p-6 sm:p-8 md:p-10 flex flex-col justify-center">
+        {/* Badges Container */}
+        <div className="flex flex-wrap gap-3 mb-4">
+          {step.heat && (
+            <div className="bg-primary/10 text-primary text-[10px] sm:text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest flex items-center">
+              {step.heat}
+            </div>
+          )}
+          {step.time && (
             <TimerBadge
               timeText={step.time}
               onChange={({ remaining: r, running: run }) => {
@@ -201,28 +192,35 @@ const StepBlock = ({ step, index }: { step: Step; index: number }) => {
                 setRunning(run);
               }}
             />
-          ) : null}
+          )}
         </div>
 
-        {step.text ? (
-          <p className="text-slate-800 leading-relaxed text-[15px] sm:text-base md:text-lg max-[360px]:text-[14px]">
+        {step.title && (
+          <h3 className="text-xl sm:text-2xl font-bold mb-3 text-on-surface font-headline">{step.title}</h3>
+        )}
+
+        {step.text && (
+          <p className="text-on-surface-variant leading-relaxed font-body text-[15px] sm:text-base">
             {step.text}
           </p>
-        ) : null}
+        )}
 
-        {step.tip ? (
-          <p className="mt-2 text-xs sm:text-sm text-amber-700 bg-amber-50 border border-amber-200 rounded px-2 py-1 inline-block">
-            Tips：{step.tip}
-          </p>
-        ) : null}
+        {step.tip && (
+          <div className="mt-4 inline-flex items-start gap-2 text-[13px] sm:text-sm text-on-surface-variant bg-surface-container-high px-3 py-2.5 rounded-lg border border-outline-variant/30">
+            <span className="material-symbols-outlined text-[16px] text-primary mt-0.5 shrink-0" aria-hidden>info</span>
+            <span className="leading-relaxed">{step.tip}</span>
+          </div>
+        )}
 
         <span className="sr-only" role="status" aria-live="assertive">
           {urgent ? "此步驟即將結束。請準備進入下一步。" : ""}
         </span>
       </div>
 
-      {/* Right/Image */}
-      <StepImage url={step.image} color={color} alt={step.title || `步驟 ${index + 1}`} />
+      {/* Image Panel */}
+      <div className="md:col-span-4 h-64 md:h-auto overflow-hidden">
+        <StepImage url={step.image} color={color} alt={step.title || `步驟 ${index + 1}`} />
+      </div>
     </div>
   );
 };

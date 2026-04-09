@@ -1,43 +1,44 @@
 const TipsBlock = ({ items }: { items: string[] }) => (
   <section
-    className="
-      rounded-2xl border bg-white p-4 sm:p-5
-      max-[360px]:p-3
-    "
-    aria-label="小撇步 Tips"
+    className="bg-tertiary-container/40 p-6 sm:p-8 md:p-12 rounded-xl border-l-8 border-tertiary mb-12"
+    aria-label="Pro Culinary Tips"
   >
-    <div className="flex items-baseline gap-2 mb-3">
-      <h3
-        className="
-          font-semibold text-slate-900
-          text-base sm:text-lg md:text-xl
-          leading-snug
-        "
-      >
-        小撇步
-      </h3>
-      <em className="text-xs sm:text-sm italic text-slate-500">Tips</em>
+    <div className="flex items-center gap-4 mb-6 md:mb-8">
+      <div className="bg-tertiary text-white w-10 h-10 sm:w-12 sm:h-12 rounded-full flex items-center justify-center shrink-0">
+        <span className="material-symbols-outlined text-xl sm:text-2xl">lightbulb</span>
+      </div>
+      <h2 className="font-headline text-2xl sm:text-3xl font-bold tracking-tight text-on-surface">Pro Culinary Tips</h2>
     </div>
 
-    <ul
-      className="
-        text-slate-700
-        text-[15px] sm:text-base md:text-lg
-        space-y-2 sm:space-y-2.5
-      "
-    >
-      {items.map((t, i) => (
-        <li key={i} className="flex gap-2">
-          {/* 장식용 불릿 */}
-          <span aria-hidden className="mt-1.5 sm:mt-2 leading-none">•</span>
-
-          {/* 긴 문장 안정적 줄바꿈 + iOS 클리핑 방지 */}
-          <span className="leading-relaxed break-words">
-            {t}
-          </span>
-        </li>
-      ))}
-    </ul>
+    <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+      {items.map((t, i) => {
+        // Assume tips are formatted with colons if they have titles like "Title: Description"
+        const parts = t.split(":");
+        if (parts.length > 1 && parts[0].length < 20) {
+          return (
+            <div key={i} className="space-y-2.5">
+              <h4 className="font-headline font-bold text-tertiary uppercase text-base sm:text-lg tracking-widest leading-snug">
+                {parts[0]}
+              </h4>
+              <p className="text-on-surface-variant font-body leading-relaxed text-base sm:text-lg">
+                {parts.slice(1).join(":")}
+              </p>
+            </div>
+          );
+        } else {
+          return (
+            <div key={i} className="space-y-2.5">
+              <h4 className="font-headline font-bold text-tertiary uppercase text-base sm:text-lg tracking-widest">
+                Tip {i + 1}
+              </h4>
+              <p className="text-on-surface-variant font-body leading-relaxed text-base sm:text-lg">
+                {t}
+              </p>
+            </div>
+          );
+        }
+      })}
+    </div>
   </section>
 );
 

@@ -20,10 +20,11 @@ const ScrollToTop = () => {
 };
 
 const AppShell = () => (
-  <div className="min-h-dvh bg-gradient-to-b from-white to-slate-50 text-slate-900">
+  <div className="min-h-dvh flex flex-col relative w-full overflow-x-hidden">
     <Header />
     <ScrollToTop />
-    <Routes>
+    <div className="flex-1 w-full pt-28">
+      <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/recipes/" element={<RecipesPage />} />
       <Route path="/tips/" element={<TipsPage />} />
@@ -40,7 +41,8 @@ const AppShell = () => (
           </div>
         </main>
       } />
-    </Routes>
+      </Routes>
+    </div>
     <Footer />
   </div>
 );

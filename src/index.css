@@ -5,3 +5,20 @@
 html:focus-within {
   scroll-behavior: smooth;
 }
+
+body {
+  @apply bg-surface font-body text-on-surface;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

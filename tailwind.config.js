@@ -4,19 +4,85 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
+      colors: {
+        "inverse-surface": "#0f0e0c",
+        "tertiary-fixed": "#fef2af",
+        "surface-container-low": "#fdf9f5",
+        "primary-dim": "#9c3623",
+        "on-secondary": "#ffffff",
+        "on-tertiary-container": "#625b27",
+        "tertiary-fixed-dim": "#efe4a2",
+        "on-error-container": "#510017",
+        "surface-container": "#f7f3ef",
+        "error-container": "#f74b6d",
+        "on-surface": "#393836",
+        "tertiary-container": "#fef2af",
+        "tertiary": "#6d6530",
+        "on-tertiary": "#ffffff",
+        "secondary-fixed": "#c3eeb8",
+        "surface-container-highest": "#ebe7e3",
+        "outline": "#82807d",
+        "secondary-fixed-dim": "#b6e0aa",
+        "on-tertiary-fixed-variant": "#6d6530",
+        "surface-container-high": "#f1ede9",
+        "surface-container-lowest": "#ffffff",
+        "secondary": "#486d42",
+        "error": "#c12048",
+        "on-primary": "#ffffff",
+        "surface-bright": "#fffbff",
+        "inverse-primary": "#fa7b62",
+        "surface-variant": "#ebe7e3",
+        "error-dim": "#a70138",
+        "on-secondary-fixed-variant": "#40643a",
+        "on-background": "#393836",
+        "on-secondary-container": "#365a31",
+        "secondary-dim": "#3c6137",
+        "on-primary-container": "#4c0600",
+        "surface": "#fffbff",
+        "on-surface-variant": "#666462",
+        "outline-variant": "#bcb9b6",
+        "primary-fixed-dim": "#e96e57",
+        "primary-container": "#fa7b62",
+        "on-tertiary-fixed": "#504916",
+        "on-secondary-fixed": "#244720",
+        "secondary-container": "#c3eeb8",
+        "background": "#fffbff",
+        "primary": "#ac412d",
+        "on-primary-fixed-variant": "#5d0900",
+        "on-error": "#ffffff",
+        "primary-fixed": "#fa7b62",
+        "on-primary-fixed": "#000000",
+        "surface-dim": "#e6e2dd",
+        "inverse-on-surface": "#9f9c99",
+        "tertiary-dim": "#615925",
+        "surface-tint": "#ac412d"
+      },
+      borderRadius: {
+        "DEFAULT": "1rem",
+        "lg": "2rem",
+        "xl": "3rem",
+        "full": "9999px"
+      },
       fontFamily: {
-        sans: [
-          '"Noto Sans TC"', // 대만어 전용 글꼴
-          'PingFang TC',    // macOS/iOS
-          'Microsoft JhengHei', // Windows
+        "headline": ["Plus Jakarta Sans", "sans-serif"],
+        "body": ["Be Vietnam Pro", "sans-serif"],
+        "label": ["Be Vietnam Pro", "sans-serif"],
+        "sans": [
+          '"Noto Sans TC"',
+          'PingFang TC',
+          'Microsoft JhengHei',
           'Helvetica Neue',
           'Arial',
           'sans-serif',
-        ],
-      },
+        ]
+      }
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/container-queries')
+  ],
 }
